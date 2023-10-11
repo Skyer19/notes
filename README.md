@@ -4,7 +4,7 @@
 
 ### git clone 到本地
 <pre>
-git clone git@github.com:MIECer/FZU-flying-book.git
+git clone git@github.com:Skyer19/library.git
 </pre>
 
 ### 修改 ./docs 文件夹中的相关的.md 文件

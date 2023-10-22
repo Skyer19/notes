@@ -6,7 +6,7 @@ site_author: author
 # repo_url: https://github.com/Skyer19/library
 # edit_uri
 docs_dir: 'docs'
-copyright: "Copyright &copy; 2023 Skyer19"
+copyright: "Copyright &copy; 2023"
 
 theme:
   name: 'material'
@@ -55,9 +55,12 @@ markdown_extensions:
 
 nav:
     - Home: 'index.md'
-    - User Guide:
-      - 'Writing your docs': 'writing-your-docs.md'
-      - 'Styling your docs': 'styling-your-docs.md'
+    - Principle of Distributed Ledgers:
+      - 'Lecture 1': ./PDL/lecture1.md
+      - 'Lecture 2': ./PDL/lecture2.md
+    # - User Guide:
+    #   - 'Writing your docs': 'writing-your-docs.md'
+    #   - 'Styling your docs': 'styling-your-docs.md'
     - About: 'about.md'
 
 

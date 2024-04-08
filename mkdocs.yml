@@ -1,4 +1,4 @@
-site_name: My library
+site_name: My notes
 site_url: null
 site_description: null
 site_author: author
@@ -6,7 +6,7 @@ site_author: author
 # repo_url: https://github.com/Skyer19/library
 # edit_uri
 docs_dir: 'docs'
-copyright: "Copyright &copy; 2023"
+copyright: "Copyright &copy; 2024"
 
 theme:
   name: 'material'

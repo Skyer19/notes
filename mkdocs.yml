@@ -19,7 +19,8 @@ theme:
     code: 'Ubuntu Mono'
 
 feature:
-  tabs: false
+  - navigation.tabs # 使用Tab来进行分类
+  # tabs: false
 
 
 # Customization
@@ -33,7 +34,7 @@ extra_javascript:
 
 # Extensions
 markdown_extensions:
-  - admonition                                                # 注解块支持
+  - admonition                                      # 注解块支持
   - pymdownx.arithmatex                             # 数学公式的TeX语法支持
   - pymdownx.betterem:
       smart_enable: all

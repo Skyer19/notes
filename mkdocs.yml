@@ -1,9 +1,9 @@
-site_name: My notes
+site_name: My notes # 左上角标题
 site_url: null
 site_description: null
 site_author: author
 # repo_name: 'GitHub'
-# repo_url: https://github.com/Skyer19/library
+# repo_url: https://github.com/Skyer19/notes
 # edit_uri
 docs_dir: 'docs'
 copyright: "Copyright &copy; 2024"
@@ -18,9 +18,10 @@ theme:
     text: 'Ubuntu'
     code: 'Ubuntu Mono'
 
-feature:
-  - navigation.tabs # 使用Tab来进行分类
-  # tabs: false
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.path
 
 
 # Customization
@@ -41,7 +42,7 @@ markdown_extensions:
   - pymdownx.caret
   - pymdownx.critic
   - pymdownx.details
-  - pymdownx.emoji:                                     # 表情支持
+  - pymdownx.emoji:                                 # 表情支持
       emoji_generator: !!python/name:pymdownx.emoji.to_svg
   - pymdownx.inlinehilite
   - pymdownx.magiclink
@@ -51,17 +52,24 @@ markdown_extensions:
   - pymdownx.tasklist:                              # 任务清单支持
       custom_checkbox: true
   - pymdownx.tilde
-  - meta                                                            # 元数据支持
+  - meta                                            # 元数据支持
 
 
 nav:
     - Home: 'index.md'
-    - Principle of Distributed Ledgers:
-      - 'Lecture 1': ./PDL/lecture1.md
-      - 'Lecture 2': ./PDL/lecture2.md
-    # - User Guide:
-    #   - 'Writing your docs': 'writing-your-docs.md'
-    #   - 'Styling your docs': 'styling-your-docs.md'
+    - Course:
+      - Principle of Distributed Ledgers:
+        - 'Lecture 1': ./PDL/lecture1.md
+        - 'Lecture 2': ./PDL/lecture2.md
+    - Project:
+        - '404': ./404.md
+    - Quant:
+        - 'Quant': ./Quant/quant.md
+    - Finance:
+        - '基本金融知识': ./Finance/1-基本金融知识.md
+        - '金融工具': ./Finance/2-金融工具.md
+        - '金融分析': ./Finance/3-金融分析.md
+        - '金融市场参与者': ./Finance/4-金融市场参与者.md
     - About: 'about.md'
 
 

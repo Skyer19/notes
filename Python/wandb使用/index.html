@@ -11,7 +11,7 @@
       
       
       
-        <link rel="prev" href="../../PDL/lecture2/">
+        <link rel="prev" href="../Python%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/">
       
       
         <link rel="next" href="../../Project/1/">
@@ -21,7 +21,7 @@
     
     
       
-        <title>Python常用指令 - My notes</title>
+        <title>wandb使用 - My notes</title>
       
     
     
@@ -97,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Python常用指令
+              wandb使用
             
           </span>
         </div>
@@ -200,7 +200,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="./" class="md-tabs__link md-tabs__link--active">
+      <a href="../Python%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/" class="md-tabs__link md-tabs__link--active">
         Python
       </a>
     </li>
@@ -448,6 +448,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../Python%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/" class="md-nav__link">
+        Python常用指令
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -458,7 +472,7 @@
       
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Python常用指令
+        wandb使用
       </a>
       
     </li>
@@ -735,11 +749,11 @@
                   
 
 
-  <h1>Python常用指令</h1>
+  <h1>wandb使用</h1>
 
 <p>python怎样判断一个目录中的文件有哪些</p>
 <pre>
-    directory = model_dir
+    directory = path
     entries = os.listdir(directory)
     # 筛选出所有文件，忽略文件夹
     files = [entry for entry in entries if os.path.isfile(os.path.join(directory, entry))]
@@ -750,7 +764,7 @@
 
 python怎样判断一个文件存不存在
 <pre>
-    if os.path.exists(model_config_file):
+    if os.path.exists(path):
         print("文件存在")
     else:
         print("文件不存在")

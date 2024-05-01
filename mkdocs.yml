@@ -52,7 +52,10 @@ markdown_extensions:
   - pymdownx.tasklist:                              # 任务清单支持
       custom_checkbox: true
   - pymdownx.tilde
-  - meta                                            # 元数据支持
+  - meta # 元数据支持
+  # 图片                                         
+  - attr_list
+  - md_in_html
 
 
 nav:
@@ -61,15 +64,19 @@ nav:
       - Principle of Distributed Ledgers:
         - 'Lecture 1': ./PDL/lecture1.md
         - 'Lecture 2': ./PDL/lecture2.md
+    - Python:
+        - 'Python常用指令': ./Python/1.md
     - Project:
-        - '404': ./404.md
+        - '生物信息学领域的任务': ./Project/1.md
+        - 'scGPT': ./Project/scGPT.md
     - Quant:
-        - 'Quant': ./Quant/quant.md
+        - '量化工作介绍': ./Quant/量化工作介绍.md
+        - '量化技能': ./Quant/量化技能.md
     - Finance:
         - '基本金融知识': ./Finance/1-基本金融知识.md
         - '金融工具': ./Finance/2-金融工具.md
         - '金融分析': ./Finance/3-金融分析.md
-        - '金融市场参与者': ./Finance/4-金融市场参与者.md
+        - '金融机构': ./Finance/4-金融机构.md
     - About: 'about.md'
 
 

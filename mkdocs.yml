@@ -95,11 +95,14 @@ nav:
         - 'conda使用': ./Linux/conda使用.md
     - Project:
         - '生物信息学领域的任务': ./Project/生物信息学领域的任务.md
-        - '基因调控网络': ./Project/基因调控网络.md
-        - 'H5AD文件格式': ./Project/H5AD文件格式.md
+        - 'H5AD文件': ./Project/H5AD文件格式.md
+        - 基因调控网络:
+          - '基因调控网络': ./Project/GRN.md
+          - 'Transformer GRN Inference': ./Project/transformer_GRN_Inference.md    
         - scGPT: 
           - 'scGPT pipline': ./Project/scGPT/scGPT_pipline.md
-          - 'scGPT 结构': ./Project/scGPT/scGPT_structure.md       
+   #       - 'scGPT 结构': ./Project/scGPT/scGPT_structure.md       
+         
     - Finance:
         - '基本金融知识': ./Finance/1-基本金融知识.md
         - '金融工具': ./Finance/2-金融工具.md

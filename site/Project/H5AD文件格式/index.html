@@ -11,17 +11,17 @@
       
       
       
-        <link rel="prev" href="../%E5%9F%BA%E5%9B%A0%E8%B0%83%E6%8E%A7%E7%BD%91%E7%BB%9C/">
+        <link rel="prev" href="../%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E9%A2%86%E5%9F%9F%E7%9A%84%E4%BB%BB%E5%8A%A1/">
       
       
-        <link rel="next" href="../scGPT/scGPT_pipline/">
+        <link rel="next" href="../GRN/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.6">
     
     
       
-        <title>H5AD文件格式 - My notes</title>
+        <title>H5AD文件 - My notes</title>
       
     
     
@@ -70,6 +70,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#scanpy" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -99,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              H5AD文件格式
+              H5AD文件
             
           </span>
         </div>
@@ -730,9 +735,161 @@
               
   
   
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          H5AD文件
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        H5AD文件
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#anndata" class="md-nav__link">
+    AnnData对象
+  </a>
+  
+    <nav class="md-nav" aria-label="AnnData对象">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    主要组成部分
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    常用api
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adatax" class="md-nav__link">
+    adata的.X属性
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    过滤表达矩阵
+  </a>
+  
+    <nav class="md-nav" aria-label="过滤表达矩阵">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    过滤细胞
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    过滤基因
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    示例代码
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#h5ad" class="md-nav__link">
+    保存为新.h5ad 文件
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+          基因调控网络
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          基因调控网络
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
   
     <li class="md-nav__item">
-      <a href="../%E5%9F%BA%E5%9B%A0%E8%B0%83%E6%8E%A7%E7%BD%91%E7%BB%9C/" class="md-nav__link">
+      <a href="../GRN/" class="md-nav__link">
         基因调控网络
       </a>
     </li>
@@ -744,19 +901,18 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        H5AD文件格式
+    <li class="md-nav__item">
+      <a href="../transformer_GRN_Inference/" class="md-nav__link">
+        Transformer GRN Inference
       </a>
-      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -799,20 +955,6 @@
     <li class="md-nav__item">
       <a href="../scGPT/scGPT_pipline/" class="md-nav__link">
         scGPT pipline
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../scGPT/scGPT_structure/" class="md-nav__link">
-        scGPT 结构
       </a>
     </li>
   
@@ -1052,6 +1194,91 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#anndata" class="md-nav__link">
+    AnnData对象
+  </a>
+  
+    <nav class="md-nav" aria-label="AnnData对象">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    主要组成部分
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    常用api
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adatax" class="md-nav__link">
+    adata的.X属性
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    过滤表达矩阵
+  </a>
+  
+    <nav class="md-nav" aria-label="过滤表达矩阵">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    过滤细胞
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    过滤基因
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    示例代码
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#h5ad" class="md-nav__link">
+    保存为新.h5ad 文件
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1066,8 +1293,6 @@
                   
 
 
-  <h1>H5AD文件格式</h1>
-
 <p>H5AD 是一种文件格式，用于存储生物信息学中的单细胞表达数据。这种格式是基于 HDF5（层次数据格式版本 5）技术，HDF5 是一种用来存储大规模科学数据的通用文件格式。H5AD 特别适用于处理单细胞 RNA 测序（scRNA-seq）数据，这是一种用于在单个细胞层面上研究基因表达的技术。</p>
 <p>H5AD 文件通常包含以下主要组件：</p>
 <ol>
@@ -1077,6 +1302,255 @@
 <li><strong>非矩阵数据</strong>：可以包括聚类结果、维度缩减坐标（例如 t-SNE 或 UMAP）、细胞轨迹分析结果等。</li>
 </ol>
 <p>H5AD 格式被广泛应用于生物信息学软件和数据分析工具中，特别是在使用单细胞 RNA 测序数据进行高级分析时。例如，<code>Scanpy</code> 这一流行的 Python 库就支持读取和写入 H5AD 文件，以便于进行复杂的数据分析和可视化。这种格式的目的是为了实现高效的数据存储、快速访问和便于交换，从而支持生物医学研究中单细胞层面的复杂数据分析。</p>
+<h1 id="scanpy">使用scanpy操作</h1>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">scanpy</span> <span class="k">as</span> <span class="nn">sc</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># 加载 h5ad 文件</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">adata</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">read_h5ad</span><span class="p">(</span><span class="s1">&#39;mtg_subset_filtered.h5ad&#39;</span><span class="p">)</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1"># 显示adata的简要概览</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="nb">print</span><span class="p">(</span><span class="n">adata</span><span class="p">)</span>
+</span></code></pre></div>
+<h2 id="anndata">AnnData对象</h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>AnnData object with n_obs × n_vars = 4893 × 18896
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    obs: &#39;orig.ident&#39;, &#39;nCount_RNA&#39;, &#39;nFeature_RNA&#39;, &#39;assay_ontology_term_id&#39;, &#39;cell_type_ontology_term_id&#39;, &#39;disease_ontology_term_id&#39;, &#39;self_reported_ethnicity_ontology_term_id&#39;, &#39;organism_ontology_term_id&#39;, &#39;sex_ontology_term_id&#39;, &#39;tissue_ontology_term_id&#39;, &#39;is_primary_data&#39;, &#39;Neurotypical.reference&#39;, &#39;Class&#39;, &#39;Subclass&#39;, &#39;Supertype&#39;, &#39;Age.at.death&#39;, &#39;Years.of.education&#39;, &#39;Cognitive.status&#39;, &#39;ADNC&#39;, &#39;Braak.stage&#39;, &#39;Thal.phase&#39;, &#39;CERAD.score&#39;, &#39;APOE4.status&#39;, &#39;Lewy.body.disease.pathology&#39;, &#39;LATE.NC.stage&#39;, &#39;Microinfarct.pathology&#39;, &#39;Specimen.ID&#39;, &#39;donor_id&#39;, &#39;PMI&#39;, &#39;Number.of.UMIs&#39;, &#39;Genes.detected&#39;, &#39;Fraction.mitochrondrial.UMIs&#39;, &#39;suspension_type&#39;, &#39;development_stage_ontology_term_id&#39;, &#39;Continuous.Pseudo.progression.Score&#39;, &#39;cell_type&#39;, &#39;assay&#39;, &#39;disease&#39;, &#39;organism&#39;, &#39;sex&#39;, &#39;tissue&#39;, &#39;self_reported_ethnicity&#39;, &#39;development_stage&#39;, &#39;ident&#39;, &#39;percent.mt&#39;, &#39;RNA_snn_res.0.5&#39;, &#39;seurat_clusters&#39;
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    var: &#39;vst.mean&#39;, &#39;vst.variance&#39;, &#39;vst.variance.expected&#39;, &#39;vst.variance.standardized&#39;, &#39;vst.variable&#39;, &#39;highly_variable&#39;, &#39;means&#39;, &#39;dispersions&#39;, &#39;dispersions_norm&#39;
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    uns: &#39;neighbors&#39;
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    obsm: &#39;X_pca&#39;, &#39;X_umap&#39;
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    varm: &#39;PCs&#39;
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    obsp: &#39;distances&#39;
+</span></code></pre></div>
+<h3 id="_1">主要组成部分</h3>
+<p><strong><code>n_obs × n_vars</code></strong>:</p>
+<ul>
+<li><code>4893 × 18896</code> 表示数据集中有 4893 个观测（通常是单个细胞）和 18896 个变量（通常是基因或特征）</li>
+<li>意味着对于这 4893 个单独的细胞，每个细胞都被测量了 18896 个不同的变量</li>
+</ul>
+<p><strong><code>obs</code>(Observations)</strong>: 存储与观测相关的注释信息，每一行代表一个观测（细胞），每一列代表一个观测的属性</p>
+<ul>
+<li>这是一个 DataFrame，其中包含与每个观测（细胞）相关的元数据</li>
+<li>obs 属性每行代表一个观测，通常是一个细胞。在举例的数据中，每行代表一个单独的细胞，意味着有 4893 行</li>
+<li>obs 的列数并不等于 n_vars（18896），而是取决于有多少种元数据特征被记录。例如，细胞的类型、获取时间、实验条件等</li>
+<li>在举例的数据中，obs 是一个 4893 x m 的 DataFrame</li>
+</ul>
+<p><strong><code>var</code>(Variables)</strong>: 存储与变量相关的信息，每行代表一个变量（基因），每列代表一个变量的属性。在举例的数据中包括：</p>
+<ul>
+<li><code>vst.mean</code>, <code>vst.variance</code> 等统计特征和<code>highly_variable</code> 表示是否为高变异基因</li>
+<li>var 属性包含与每个变量（基因）相关的元数据。在举例的数据中，var 属性（变量或基因的元数据）有 18896 行（每行一个基因)</li>
+<li>var 的列数取决于记录了多少基因特征，例如基因名称、功能、是否高度可变等</li>
+<li>在举例的数据中，var 是一个 18896 x n 的 DataFrame</li>
+</ul>
+<p><strong><code>uns</code>(Unstructured)</strong>: 用来存储非结构化的数据，比如整体数据集的统计数据或元数据，如邻居图（<code>neighbors</code>）</p>
+<p><strong><code>obsm</code>(Observation matrices)</strong>: 存储观测级别的矩阵数据，通常用于降维的结果，例如：
+     - <code>X_pca</code> (主成分分析结果)
+     - <code>X_umap</code> (UMAP降维结果)</p>
+<p><strong><code>varm</code>(Variable matrices)</strong>: 存储变量级别的矩阵数据，例如主成分（<code>PCs</code>）</p>
+<p><strong><code>obsp</code>(Observation pairwise)</strong>: 存储观测之间成对的数据，如距离矩阵（<code>distances</code>）</p>
+<h3 id="api">常用api</h3>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># 查看变量（基因）的名称</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">adata</span><span class="o">.</span><span class="n">var_names</span><span class="p">)</span>
+</span></code></pre></div>
+<pre>
+Output:
+Index(['TSPAN6', 'TNMD', 'DPM1', 'SCYL3', 'C1orf112', 'FGR', 'CFH', 'FUCA2',
+       'GCLC', 'NFYA',
+       ...
+       'SMIM40', 'NPBWR1', 'CDR1', 'ACTL10', 'PANO1', 'PRRC2B', 'UGT1A3',
+       'UGT1A5', 'F8A2', 'F8A1'],
+      dtype='object', length=18896)
+</pre>
+
+<div class="language-py highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># 查看观测（细胞）的名称</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">adata</span><span class="o">.</span><span class="n">obs_names</span><span class="p">)</span>
+</span></code></pre></div>
+<pre>
+Output:
+Index(['mtg_GTTACAGGTGTAGTGG-L8TX_210513_01_C09-1142430429', 
+       ...
+       'mtg_TAACGACCATCTCCCA-L8TX_210506_01_E08-1153814230'],
+      dtype='object', length=4893)
+</pre>
+
+<div class="language-py highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># 查看观测的元数据</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">adata</span><span class="o">.</span><span class="n">obs</span><span class="p">)</span>
+</span></code></pre></div>
+<pre>
+Output:
+                                                       orig.ident  nCount_RNA  \
+mtg_GTTACAGGTGTAGTGG-L8TX_210513_01_C09-1142430429  SeuratProject      9370.0   
+...                                                           ...         ...   
+mtg_TAACGACCATCTCCCA-L8TX_210506_01_E08-1153814230  SeuratProject     10144.0   
+
+......
+                                                        organism     sex  \
+mtg_GTTACAGGTGTAGTGG-L8TX_210513_01_C09-1142430429  Homo sapiens  female    
+...                                                          ...     ...   
+mtg_TAACGACCATCTCCCA-L8TX_210506_01_E08-1153814230  Homo sapiens  female   
+
+......                                             seurat_clusters  
+
+mtg_GTTACAGGTGTAGTGG-L8TX_210513_01_C09-1142430429               0  
+...                                                            ...   
+mtg_TAACGACCATCTCCCA-L8TX_210506_01_E08-1153814230               6  
+
+[4893 rows x 47 columns]
+</pre>
+
+<div class="language-py highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># 查看变量的元数据</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">adata</span><span class="o">.</span><span class="n">var</span><span class="p">)</span>
+</span></code></pre></div>
+<pre>
+Output:
+          vst.mean  vst.variance  vst.variance.expected  \
+TSPAN6    0.002310      0.003428               0.002755   
+ ...            ...           ...                    ...     
+F8A1      0.014633      0.015318               0.020033   
+
+          vst.variance.standardized  vst.variable  highly_variable  \
+TSPAN6                     1.244589             1             True    
+...                             ...           ...              ...     
+F8A1                       0.764648             0            False   
+
+                 means  dispersions  dispersions_norm  
+TSPAN6    2.944253e+00     9.999864          0.828220  
+...                ...          ...               ...  
+F8A1      3.671453e+00     9.613371         -0.455848  
+
+[18896 rows x 9 columns]
+</pre>
+
+<h3 id="adatax">adata的.X属性</h3>
+<p><strong>对于基因表达数据本身，即实际的测量数据，通常存储在 AnnData 对象的 .X 属性中。</strong> 比如在单细胞基因表达分析中，.X 通常包含细胞（行）和基因（列）的表达数据。这个矩阵可能是稠密的（如 NumPy 数组）或稀疏的（如 SciPy 稀疏矩阵），这取决于数据的性质和存储需求。</p>
+<p>对于举例，这是一个形状为 4893 x 18896 的矩阵，其中每行代表一个细胞，每列代表一个基因的表达水平。</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kn">import</span> <span class="nn">scanpy</span> <span class="k">as</span> <span class="nn">sc</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="c1"># 加载数据</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="n">adata</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">read_h5ad</span><span class="p">(</span><span class="s1">&#39;path/to/your_data.h5ad&#39;</span><span class="p">)</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="c1"># 访问 .X 属性</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="n">data_matrix</span> <span class="o">=</span> <span class="n">adata</span><span class="o">.</span><span class="n">X</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="c1"># 打印 .X 属性的一些信息</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="nb">print</span><span class="p">(</span><span class="n">data_matrix</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>  <span class="c1"># 显示矩阵的维度</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="nb">print</span><span class="p">(</span><span class="n">data_matrix</span><span class="p">[:</span><span class="mi">5</span><span class="p">,</span> <span class="p">:</span><span class="mi">5</span><span class="p">])</span>  <span class="c1"># 打印矩阵的前5行和前5列的数据</span>
+</span></code></pre></div>
+<pre>
+Output:
+(4893, 18896)
+[[-4.1185167e-02 -3.8049729e-03  2.0831785e+00 -3.7935510e-01]
+ [-4.1185167e-02 -3.8049729e-03 -4.2588213e-01 -3.7935510e-01]
+ [-4.1185167e-02 -3.8049729e-03  3.8974628e+00 -3.7935510e-01]
+ [-4.1185167e-02 -3.8049729e-03 -4.2588213e-01  3.5818794e+00]
+ [-4.1185167e-02 -3.8049729e-03 -4.2588213e-01 -3.7935510e-01]]
+
+</pre>
+
+<p><strong>.X 属性的用途：</strong></p>
+<p><code>.X</code> 属性通常用于执行各种数据分析任务，包括但不限于：</p>
+<ul>
+<li><strong>数据预处理</strong>：如标准化、对数转换等。</li>
+<li><strong>统计分析</strong>：如计算基因的平均表达水平、变异性等。</li>
+<li><strong>降维分析</strong>：如 PCA、t-SNE、UMAP。</li>
+<li><strong>聚类和分类</strong>：用于细胞类型的鉴定或样本分组。</li>
+</ul>
+<p>访问 <code>.X</code> 属性后，可以使用 Python 的数据分析和机器学习工具（如 Pandas, Scikit-learn, TensorFlow 等）来处理和分析这些数据。</p>
+<p><strong>注意事项：</strong></p>
+<ul>
+<li>如果 <code>.X</code> 存储为稀疏矩阵，在处理前可能需要转换为稠密格式，特别是在某些函数或方法不支持稀疏格式的情况下。</li>
+<li>对于大型数据集，直接处理 <code>.X</code> 可能需要大量内存。在这种情况下，考虑使用分批处理或数据降维技术。</li>
+</ul>
+<h2 id="_2">过滤表达矩阵</h2>
+<h3 id="_3">过滤细胞</h3>
+<p><code>scanpy</code> 的 <code>sc.pp.filter_cells</code>函数是一个预处理函数，用于根据细胞的特性过滤细胞。这通常是基于细胞的一些计数数据，如UMI计数、检测到的基因数量等。这个函数可以帮助去除由于技术原因或样本质量问题而产生的低质量细胞。</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">sc</span><span class="o">.</span><span class="n">pp</span><span class="o">.</span><span class="n">filter_cells</span><span class="p">(</span><span class="n">adata</span><span class="p">,</span> <span class="n">min_counts</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>                    <span class="n">max_counts</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">min_genes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">max_genes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></code></pre></div>
+<p><strong>参数:</strong></p>
+<ul>
+<li><strong>adata</strong> (<code>AnnData</code>): <code>AnnData</code> 对象，包含要过滤的数据。</li>
+<li><strong>min_counts</strong> (<code>int</code>, 可选): 每个细胞的最小计数（总UMI计数）。低于此值的细胞将被过滤掉。</li>
+<li><strong>max_counts</strong> (<code>int</code>, 可选): 每个细胞的最大计数。高于此值的细胞将被过滤掉，通常用于去除双细胞或污染。</li>
+<li><strong>min_genes</strong> (<code>int</code>, 可选): 每个细胞必须表达的最小基因数。低于此数的细胞将被过滤掉，可以帮助去除损坏或空的细胞。</li>
+<li><strong>max_genes</strong> (<code>int</code>, 可选): 每个细胞的最大基因数。高于此数的细胞可能表明样本污染或其他异常。</li>
+<li><strong>inplace</strong> (<code>bool</code>, 默认是 <code>True</code>)</li>
+</ul>
+<p><strong>返回值:</strong></p>
+<ul>
+<li>如果 <code>inplace=True</code>，则函数没有返回值，直接修改传入的 <code>adata</code> 对象。</li>
+<li>如果 <code>inplace=False</code>，则返回一个元组，其中包含两个元素，这两个返回值是：<ul>
+<li>cells_subset (ndarray): 一个布尔索引掩码，用于过滤细胞。True 表示保留该细胞，False 表示移除该细胞</li>
+<li>number_per_cell (ndarray): Depending on what was thresholded (counts or genes), the array stores n_counts or n_cells per gene.</li>
+</ul>
+</li>
+</ul>
+<h3 id="_4">过滤基因</h3>
+<p><code>scanpy</code> 的 <code>sc.pp.filter_genes</code>函数是一个预处理函数，用于根据基因的表达特性来过滤基因。这通常是基于基因的计数数据，如在多少个细胞中表达、总计数等。这个函数可以帮助去除不表达或低表达的基因，也可以去除异常高表达的基因，这通常是由于技术噪声或数据处理错误造成的。</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">scanpy</span><span class="o">.</span><span class="n">pp</span><span class="o">.</span><span class="n">filter_genes</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">min_counts</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>                        <span class="n">min_cells</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">max_counts</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">max_cells</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span></code></pre></div>
+<p><strong>参数:</strong></p>
+<ul>
+<li><strong>data</strong> (<code>AnnData</code>): 需要进行过滤的 <code>AnnData</code> 对象。</li>
+<li><strong>min_counts</strong> (<code>int</code>, 可选): 基因在所有细胞中的最小总计数。低于此值的基因将被过滤掉。</li>
+<li><strong>min_cells</strong> (<code>int</code>, 可选): 基因至少需要在这么多个细胞中表达。低于此数字的基因将被过滤掉。</li>
+<li><strong>max_counts</strong> (<code>int</code>, 可选): 基因在所有细胞中的最大总计数。高于此值的基因可能会被过滤掉，用来移除异常高表达的基因。</li>
+<li><strong>max_cells</strong> (<code>int</code>, 可选): 基因最多只能在这么多个细胞中表达。超过此数的基因可能会被过滤掉。</li>
+<li><strong>inplace</strong> (<code>bool</code>, 默认是 <code>True</code>)</li>
+</ul>
+<p><strong>返回值:</strong></p>
+<ul>
+<li>如果 <code>inplace=True</code>，则函数没有返回值，直接修改传入的 <code>adata</code> 对象。</li>
+<li>如果 <code>inplace=False</code>，则返回一个元组，其中包含两个元素，这两个返回值是：<ul>
+<li>gene_subset (ndarray): 一个布尔索引掩码，用于标记哪些基因被保留。其中 True 表示保留该基因，False 表示移除该基因</li>
+<li>number_per_gene (ndarray): Depending on what was thresholded (counts or cells), the array stores n_counts or n_cells per gene</li>
+</ul>
+</li>
+</ul>
+<h3 id="_5">示例代码</h3>
+<p><strong>直接更新原来的adata：</strong></p>
+<p><div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kn">import</span> <span class="nn">scanpy</span> <span class="k">as</span> <span class="nn">sc</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="c1"># 加载数据</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="n">adata</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">read_h5ad</span><span class="p">(</span><span class="s1">&#39;path/to/your_data.h5ad&#39;</span><span class="p">)</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="c1"># 过滤基因，根据在至少3个细胞中有表达，且总计数至少为20</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="n">sc</span><span class="o">.</span><span class="n">pp</span><span class="o">.</span><span class="n">filter_genes</span><span class="p">(</span><span class="n">adata</span><span class="p">,</span> <span class="n">min_cells</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="c1"># 查看过滤后的数据</span>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="nb">print</span><span class="p">(</span><span class="n">adata</span><span class="p">)</span>
+</span></code></pre></div>
+<strong>生成新的的adata：</strong></p>
+<ul>
+<li>
+<p>在应用sc.pp.filter_cells后进行细胞过滤
+<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># 进行细胞过滤</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="n">cell_subset</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">pp</span><span class="o">.</span><span class="n">filter_cells</span><span class="p">(</span><span class="n">adata</span><span class="p">,</span> <span class="n">min_counts</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">cell_subset</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="c1"># 应用过滤掩码来更新原始adata对象</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="n">filtered_adata</span> <span class="o">=</span> <span class="n">adata</span><span class="p">[</span><span class="n">cell_subset</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="nb">print</span><span class="p">(</span><span class="n">filtered_adata</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p>在应用sc.pp.filter_genes后进行细胞过滤
+<div class="language-py highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># 使用 inplace=False 进行细胞过滤，并从返回的元组中提取 AnnData 对象</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="n">gene_subset</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">pp</span><span class="o">.</span><span class="n">filter_genes</span><span class="p">(</span><span class="n">filtered_adata</span><span class="p">,</span> <span class="n">min_cells</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">gene_subset</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="c1"># 应用过滤掩码来更新原始adata对象</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="n">filtered_adata</span> <span class="o">=</span> <span class="n">filtered_adata</span><span class="p">[:,</span><span class="n">gene_subset</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="nb">print</span><span class="p">(</span><span class="n">filtered_adata</span><span class="p">)</span>
+</span></code></pre></div></p>
+</li>
+</ul>
+<h3 id="h5ad">保存为新.h5ad 文件</h3>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">filtered_adata</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;filtered_data.h5ad&#39;</span><span class="p">)</span>
+</span></code></pre></div>
 
 
 

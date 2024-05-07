@@ -12,7 +12,7 @@ git clone git@github.com:Skyer19/notes.git
 ### 提交文件过程
 <pre>
 git add .
-git commit -m" "
+git commit -m " "
 git push [a new branch]
 
 </pre>

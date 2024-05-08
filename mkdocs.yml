@@ -98,6 +98,7 @@ nav:
         - 'H5AD文件': ./Project/H5AD文件格式.md
         - 基因调控网络:
           - '基因调控网络': ./Project/GRN.md
+          - 'Transformer': ./courses/nlp/transformer.md
           - 'Transformer GRN Inference': ./Project/transformer_GRN_Inference.md    
         - scGPT: 
           - 'scGPT pipline': ./Project/scGPT/scGPT_pipline.md

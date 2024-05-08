@@ -11,7 +11,7 @@
       
       
       
-        <link rel="prev" href="../GRN/">
+        <link rel="prev" href="../../courses/nlp/transformer/">
       
       
         <link rel="next" href="../scGPT/scGPT_pipline/">
@@ -794,6 +794,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../../courses/nlp/transformer/" class="md-nav__link">
+        Transformer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -1214,39 +1228,31 @@
 <h4 id="_1">基本原理</h4>
 <p>Transformer模型基于自注意力机制（self-attention），能够处理序列中的长距离依赖问题。在GRN推断中，这意味着模型可以有效捕捉不同基因之间的复杂和远程的相互作用。</p>
 <h4 id="_2">推断过程</h4>
-<ol>
-<li><strong>数据准备</strong>:</li>
+<p><strong>数据准备</strong>:</p>
+<ul>
 <li><strong>收集数据</strong>：通常使用高通量的基因表达数据（如RNA-seq）。</li>
-<li>
-<p><strong>数据预处理</strong>：包括归一化处理和可能的降维操作，以适应模型需求。</p>
-</li>
-<li>
+<li><strong>数据预处理</strong>：包括归一化处理和可能的降维操作，以适应模型需求。</li>
+</ul>
 <p><strong>模型设计</strong>:</p>
-</li>
+<ul>
 <li><strong>构建Transformer模型</strong>：设计特定于基因表达数据的Transformer架构。通常包括多个自注意力层和前馈网络。</li>
-<li>
-<p><strong>输入输出定义</strong>：模型的输入通常是基因表达矩阵的转置（基因为序列，样本为特征），<strong>输出是基因之间相互作用的概率</strong>。</p>
-</li>
-<li>
+<li><strong>输入输出定义</strong>：模型的输入通常是基因表达矩阵的转置（基因为序列，样本为特征），<strong>输出是基因之间相互作用的概率</strong>。</li>
+</ul>
 <p><strong>训练模型</strong>:</p>
-</li>
+<ul>
 <li><strong>损失函数</strong>：定义损失函数来量化模型输出与已知基因调控信息的差异，如交叉熵损失。</li>
-<li>
-<p><strong>优化算法</strong>：使用Adam等优化算法进行模型参数的优化。</p>
-</li>
-<li>
+<li><strong>优化算法</strong>：使用Adam等优化算法进行模型参数的优化。</li>
+</ul>
 <p><strong>模型评估与验证</strong>:</p>
-</li>
+<ul>
 <li><strong>交叉验证</strong>：采用交叉验证等方法评估模型的泛化能力。</li>
-<li>
-<p><strong>性能指标</strong>：使用ROC曲线、精确度、召回率等指标评估模型的预测性能。</p>
-</li>
-<li>
+<li><strong>性能指标</strong>：使用ROC曲线、精确度、召回率等指标评估模型的预测性能。</li>
+</ul>
 <p><strong>网络推断</strong>:</p>
-</li>
+<ul>
 <li><strong>阈值设置</strong>：根据需要设置阈值，将模型输出的相互作用概率转化为确定的调控关系。</li>
 <li><strong>网络构建</strong>：根据确定的调控关系构建基因调控网络。</li>
-</ol>
+</ul>
 <h4 id="_3">应用示例</h4>
 <p>假设研究者想要推断一个细胞类型在特定治疗条件下的GRN。他们可以训练一个Transformer模型，使用来自不同时间点的基因表达数据。模型将学习在这些条件下基因如何相互作用，最终输出一个预测的GRN，揭示哪些基因是关键调控因子，这些信息对于理解疾病机制或开发新的治疗策略是非常宝贵的。</p>
 

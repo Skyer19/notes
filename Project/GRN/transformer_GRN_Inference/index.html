@@ -11,17 +11,17 @@
       
       
       
-        <link rel="prev" href="../l1/">
+        <link rel="prev" href="../GRN_code/">
       
       
-        <link rel="next" href="../../nlp/l1/">
+        <link rel="next" href="../../scGPT/scGPT_pipeline/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.6">
     
     
       
-        <title>Lecture 2 - My notes</title>
+        <title>GRN Inference - Transformer - My notes</title>
       
     
     
@@ -58,6 +58,8 @@
   
     
     
+      
+    
     
     
     
@@ -65,13 +67,15 @@
   
     
     
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
         
-        <a href="#lecture-2-consensus-and-ethereum" class="md-skip">
+        <a href="#transformergrn" class="md-skip">
           Skip to content
         </a>
       
@@ -104,12 +108,32 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lecture 2
+              GRN Inference - Transformer
             
           </span>
         </div>
       </div>
     </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+            </label>
+          
+        
+      </form>
     
     
     
@@ -176,8 +200,6 @@
         
   
   
-    
-  
 
 
   
@@ -189,7 +211,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../l1/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../../Courses/pdl/l1/" class="md-tabs__link">
         Courses
       </a>
     </li>
@@ -233,13 +255,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../../Project/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E9%A2%86%E5%9F%9F%E7%9A%84%E4%BB%BB%E5%8A%A1/" class="md-tabs__link">
+      <a href="../../%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/" class="md-tabs__link md-tabs__link--active">
         Project
       </a>
     </li>
@@ -347,16 +371,14 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
       
       
       
@@ -365,7 +387,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
           Courses
@@ -376,18 +398,16 @@
               
   
   
-    
-  
   
     
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
       
       
       
@@ -396,7 +416,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_2_1">
           <span class="md-nav__icon md-icon"></span>
           Principle of Distributed Ledgers
@@ -409,7 +429,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../l1/" class="md-nav__link">
+      <a href="../../../Courses/pdl/l1/" class="md-nav__link">
         Lecture 1
       </a>
     </li>
@@ -421,79 +441,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Lecture 2
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../Courses/pdl/l2/" class="md-nav__link">
         Lecture 2
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#consensus" class="md-nav__link">
-    Consensus
-  </a>
-  
-    <nav class="md-nav" aria-label="Consensus">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#problem" class="md-nav__link">
-    Problem
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#state-machine-replication-smr" class="md-nav__link">
-    State Machine Replication (SMR)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#consensus-machanism" class="md-nav__link">
-    Consensus Machanism
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -541,22 +493,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../nlp/l1/" class="md-nav__link">
-        Lecture 1
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../nlp/l2/" class="md-nav__link">
-        Lecture 2
+      <a href="../../../Courses/nlp/transformer/" class="md-nav__link">
+        Transformer
       </a>
     </li>
   
@@ -627,6 +565,20 @@
     <li class="md-nav__item">
       <a href="../../../Python/wandb%E4%BD%BF%E7%94%A8/" class="md-nav__link">
         wandb使用
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/dataFrame%E4%BD%BF%E7%94%A8/" class="md-nav__link">
+        DataFrame
       </a>
     </li>
   
@@ -764,14 +716,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
       
       
       
@@ -780,7 +734,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           Project
@@ -793,7 +747,21 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Project/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E9%A2%86%E5%9F%9F%E7%9A%84%E4%BB%BB%E5%8A%A1/" class="md-nav__link">
+      <a href="../../%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/" class="md-nav__link">
+        名词解释
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E9%A2%86%E5%9F%9F%E7%9A%84%E4%BB%BB%E5%8A%A1/" class="md-nav__link">
         生物信息学领域的任务
       </a>
     </li>
@@ -807,7 +775,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Project/H5AD%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F/" class="md-nav__link">
+      <a href="../../H5AD%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F/" class="md-nav__link">
         H5AD文件
       </a>
     </li>
@@ -819,26 +787,28 @@
               
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" checked>
       
       
       
-        <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
           基因调控网络
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_5_3">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_5_4">
           <span class="md-nav__icon md-icon"></span>
           基因调控网络
         </label>
@@ -850,8 +820,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Project/GRN/" class="md-nav__link">
-        基因调控网络
+      <a href="../GRN/" class="md-nav__link">
+        GRN
       </a>
     </li>
   
@@ -864,8 +834,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../nlp/transformer/" class="md-nav__link">
-        Transformer
+      <a href="../GRN_code/" class="md-nav__link">
+        GRN Code
       </a>
     </li>
   
@@ -876,11 +846,75 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../Project/transformer_GRN_Inference/" class="md-nav__link">
-        Transformer GRN Inference
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          GRN Inference - Transformer
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        GRN Inference - Transformer
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#transformergrn" class="md-nav__link">
+    基于Transformer的模型进行基因调控网络（GRN）
+  </a>
+  
+    <nav class="md-nav" aria-label="基于Transformer的模型进行基因调控网络（GRN）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    基本原理
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    推断过程
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    应用示例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -906,17 +940,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
       
       
       
-        <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
           scGPT
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_5_4">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_5">
           <span class="md-nav__icon md-icon"></span>
           scGPT
         </label>
@@ -928,8 +962,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Project/scGPT/scGPT_pipline/" class="md-nav__link">
-        scGPT pipline
+      <a href="../../scGPT/scGPT_pipeline/" class="md-nav__link">
+        Pipeline
       </a>
     </li>
   
@@ -1169,8 +1203,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1179,30 +1211,30 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#consensus" class="md-nav__link">
-    Consensus
+  <a href="#transformergrn" class="md-nav__link">
+    基于Transformer的模型进行基因调控网络（GRN）
   </a>
   
-    <nav class="md-nav" aria-label="Consensus">
+    <nav class="md-nav" aria-label="基于Transformer的模型进行基因调控网络（GRN）">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#problem" class="md-nav__link">
-    Problem
+  <a href="#_1" class="md-nav__link">
+    基本原理
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#state-machine-replication-smr" class="md-nav__link">
-    State Machine Replication (SMR)
+  <a href="#_2" class="md-nav__link">
+    推断过程
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#consensus-machanism" class="md-nav__link">
-    Consensus Machanism
+  <a href="#_3" class="md-nav__link">
+    应用示例
   </a>
   
 </li>
@@ -1227,32 +1259,41 @@
                   
 
 
-<h1 id="lecture-2-consensus-and-ethereum">Lecture 2 Consensus and Ethereum</h1>
-<h2 id="consensus">Consensus</h2>
-<h3 id="problem">Problem</h3>
-<p>We need: a shared, immutable, non-custodial, robust public record of state</p>
-<p><strong>Soluction:</strong></p>
-<p>Decentralisation -&gt; ? How can we keep the machines/snodes in sync? -&gt; State Machine Replication Problem</p>
-<h3 id="state-machine-replication-smr">State Machine Replication (SMR)</h3>
-<p>What is the SMR: A message system supporting fault-tolerance.</p>
-<p>How to realise: Multiple machines</p>
-<p>How to keep machines in sync? Replicate servers and coordinating client interactions with server replicas.</p>
-<p><strong>Determinism:</strong></p>
-<p>Start from a shared initial state, the same instructions given to each machine should result in the same end state.</p>
-<p><strong>Some components:</strong></p>
+  <h1>GRN Inference - Transformer</h1>
+
+<h3 id="transformergrn">基于Transformer的模型进行基因调控网络（GRN）</h3>
+<p>基于Transformer的模型进行基因调控网络（GRN）推断是一种利用深度学习技术来解析基因之间复杂相互作用的方法。Transformer模型由于其在处理序列数据方面的优越性，特别是在自然语言处理领域取得的显著成功，已经开始被应用于生物信息学和系统生物学中。</p>
+<p><a href="../../../Courses/nlp/transformer/">Transformer 知识</a></p>
+<h4 id="_1">基本原理</h4>
+<p>Transformer模型基于自注意力机制（self-attention），能够处理序列中的长距离依赖问题。在GRN推断中，这意味着模型可以有效捕捉不同基因之间的复杂和远程的相互作用。</p>
+<h4 id="_2">推断过程</h4>
+<p><strong>数据准备</strong>:</p>
 <ul>
-<li>Nodes</li>
-<li>Clients </li>
+<li><strong>收集数据</strong>：通常使用高通量的基因表达数据（如RNA-seq）。</li>
+<li><strong>数据预处理</strong>：包括归一化处理和可能的降维操作，以适应模型需求。</li>
 </ul>
-<p><strong>How to solve consensus problem?</strong></p>
-<p>Workout a node with two properities:</p>
+<p><strong>模型设计</strong>:</p>
 <ul>
-<li>Consistency: There is no disagree of the order of the transactions of two nodes</li>
-<li>Liveness: Any transactions sent by clients to nodes should eventually be added to the local history of each node.</li>
+<li><strong>构建Transformer模型</strong>：设计特定于基因表达数据的Transformer架构。通常包括多个自注意力层和前馈网络。</li>
+<li><strong>输入输出定义</strong>：模型的输入通常是基因表达矩阵的转置（基因为序列，样本为特征），<span style="color: red;">输出是基因之间相互作用的概率</span></li>
 </ul>
-<h3 id="consensus-machanism">Consensus Machanism</h3>
-<p>A mechanism that allows a network of nodes to agree on the state of a blockchain.</p>
-<p>Consensus Machanism = a sybil resistance machanism(eg: PoW or PoS) + a chain selection machanism + additional economic structure</p>
+<p><strong>训练模型</strong>:</p>
+<ul>
+<li><strong>损失函数</strong>：定义损失函数来量化模型输出与已知基因调控信息的差异，如交叉熵损失。</li>
+<li><strong>优化算法</strong>：使用Adam等优化算法进行模型参数的优化。</li>
+</ul>
+<p><strong>模型评估与验证</strong>:</p>
+<ul>
+<li><strong>交叉验证</strong>：采用交叉验证等方法评估模型的泛化能力。</li>
+<li><strong>性能指标</strong>：使用ROC曲线、精确度、召回率等指标评估模型的预测性能。</li>
+</ul>
+<p><strong>网络推断</strong>:</p>
+<ul>
+<li><strong>阈值设置</strong>：根据需要设置阈值，将模型输出的相互作用概率转化为确定的调控关系。</li>
+<li><strong>网络构建</strong>：根据确定的调控关系构建基因调控网络。</li>
+</ul>
+<h4 id="_3">应用示例</h4>
+<p>假设研究者想要推断一个细胞类型在特定治疗条件下的GRN。他们可以训练一个Transformer模型，使用来自不同时间点的基因表达数据。模型将学习在这些条件下基因如何相互作用，最终输出一个预测的GRN，揭示哪些基因是关键调控因子，这些信息对于理解疾病机制或开发新的治疗策略是非常宝贵的。</p>
 
 
 

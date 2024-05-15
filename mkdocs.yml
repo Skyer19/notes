@@ -25,6 +25,19 @@ theme:
     - content.code.copy
     - content.code.annotate
     - content.code.select
+  palette: 
+
+    # Palette toggle for light mode
+    - scheme: default
+      toggle:
+        icon: material/lightbulb
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/lightbulb-outline
+        name: Switch to light mode
 
 
 # Customization
@@ -78,14 +91,14 @@ nav:
     - Home: 'index.md'
     - Courses:
       - Principle of Distributed Ledgers:
-        - 'Lecture 1': ./courses/pdl/l1.md
-        - 'Lecture 2': ./courses/pdl/l2.md
+        - 'Lecture 1': ./Courses/pdl/l1.md
+        - 'Lecture 2': ./Courses/pdl/l2.md
       - Natural language processing:
-        - 'Lecture 1': ./courses/nlp/l1.md
-        - 'Lecture 2': ./courses/nlp/l2.md
+        - 'Transformer': ./Courses/nlp/transformer.md
     - Python:
         - 'Python常用指令': ./Python/Python常用指令.md
         - 'wandb使用': ./Python/wandb使用.md
+        - 'DataFrame': ./Python/dataFrame使用.md
     - Linux:
         - '终端命令': ./Linux/终端命令.md
         - '文件(目录)操作': ./Linux/文件(目录)操作.md
@@ -94,16 +107,29 @@ nav:
         - 'pip使用': ./Linux/pip使用.md
         - 'conda使用': ./Linux/conda使用.md
     - Project:
+        - '名词解释': ./Project/名词解释.md
         - '生物信息学领域的任务': ./Project/生物信息学领域的任务.md
         - 'H5AD文件': ./Project/H5AD文件格式.md
         - 基因调控网络:
-          - '基因调控网络': ./Project/GRN.md
-          - 'Transformer': ./courses/nlp/transformer.md
-          - 'Transformer GRN Inference': ./Project/transformer_GRN_Inference.md    
+          - 'GRN': ./Project/GRN/GRN.md
+          - 'GRN Code': ./Project/GRN/GRN_code.md  
+          - 'GRN Inference - Transformer': ./Project/GRN/transformer_GRN_Inference.md    
+
         - scGPT: 
-          - 'scGPT pipline': ./Project/scGPT/scGPT_pipline.md
-   #       - 'scGPT 结构': ./Project/scGPT/scGPT_structure.md       
-         
+          - 'Pipeline': ./Project/scGPT/scGPT_pipeline.md
+          - scGPT code Package:
+            - Modules:
+                - 'scgpt.model package': ./Project/scGPT/code/Modules/scGPT_code_scgpt.model_package.md
+                - 'scgpt.scbank package': ./Project/scGPT/code/Modules/scGPT_code_scgpt.scbank_package.md           
+                - 'scgpt.tasks package': ./Project/scGPT/code/Modules/scGPT_code_scgpt.tasks_package.md
+                - 'scgpt.tokenizer package': ./Project/scGPT/code/Modules/scGPT_code_scgpt.tokenizer_package.md               
+                - 'scgpt.utils package': ./Project/scGPT/code/Modules/scGPT_code_scgpt.utils_package.md 
+            - 'scgpt.data_collator': ./Project/scGPT/code/scgpt.data_collator.md   
+            - 'scgpt.data_sampler': ./Project/scGPT/code/scgpt.data_sampler.md   
+            - 'scgpt.loss': ./Project/scGPT/code/scgpt.loss.md   
+            - 'scgpt.preprocess': ./Project/scGPT/code/scgpt.preprocess.md
+            - 'scgpt.trainer': ./Project/scGPT/code/scgpt.trainer.md
+
     - Finance:
         - '基本金融知识': ./Finance/1-基本金融知识.md
         - '金融工具': ./Finance/2-金融工具.md
@@ -115,7 +141,7 @@ nav:
 
     - French:
         - 'French 1': ./French/1.md
-
+        - 'French 1': ./French/2.md
     # - About: 'about.md'
 
 

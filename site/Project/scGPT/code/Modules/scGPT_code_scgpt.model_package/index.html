@@ -1,0 +1,2687 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="author">
+      
+      
+      
+        <link rel="prev" href="../../../scGPT_pipeline/">
+      
+      
+        <link rel="next" href="../scGPT_code_scgpt.scbank_package/">
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.6">
+    
+    
+      
+        <title>scgpt.model package - My notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.ded33207.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,700,700i%7CUbuntu+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Ubuntu";--md-code-font:"Ubuntu Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#modules" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../../.." title="My notes" class="md-header__button md-logo" aria-label="My notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              scgpt.model package
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../../../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../Courses/pdl/l1/" class="md-tabs__link">
+        Courses
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../Python/Python%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/" class="md-tabs__link">
+        Python
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../Linux/%E7%BB%88%E7%AB%AF%E5%91%BD%E4%BB%A4/" class="md-tabs__link">
+        Linux
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/" class="md-tabs__link md-tabs__link--active">
+        Project
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../Finance/1-%E5%9F%BA%E6%9C%AC%E9%87%91%E8%9E%8D%E7%9F%A5%E8%AF%86/" class="md-tabs__link">
+        Finance
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../Quant/%E9%87%8F%E5%8C%96%E5%B7%A5%E4%BD%9C%E4%BB%8B%E7%BB%8D/" class="md-tabs__link">
+        Quant
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../French/1/" class="md-tabs__link">
+        French
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="My notes" class="md-nav__button md-logo" aria-label="My notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    My notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Courses
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Courses
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+          Principle of Distributed Ledgers
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Principle of Distributed Ledgers
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Courses/pdl/l1/" class="md-nav__link">
+        Lecture 1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Courses/pdl/l2/" class="md-nav__link">
+        Lecture 2
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+          Natural language processing
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Natural language processing
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Courses/nlp/transformer/" class="md-nav__link">
+        Transformer
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Python
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Python/Python%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/" class="md-nav__link">
+        Python常用指令
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Python/wandb%E4%BD%BF%E7%94%A8/" class="md-nav__link">
+        wandb使用
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Python/dataFrame%E4%BD%BF%E7%94%A8/" class="md-nav__link">
+        DataFrame
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Linux
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Linux
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Linux/%E7%BB%88%E7%AB%AF%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+        终端命令
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Linux/%E6%96%87%E4%BB%B6%28%E7%9B%AE%E5%BD%95%29%E6%93%8D%E4%BD%9C/" class="md-nav__link">
+        文件(目录)操作
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Linux/screen%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+        screen命令
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Linux/tmux%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+        tmux命令
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Linux/pip%E4%BD%BF%E7%94%A8/" class="md-nav__link">
+        pip使用
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Linux/conda%E4%BD%BF%E7%94%A8/" class="md-nav__link">
+        conda使用
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          Project
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Project
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/" class="md-nav__link">
+        名词解释
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E9%A2%86%E5%9F%9F%E7%9A%84%E4%BB%BB%E5%8A%A1/" class="md-nav__link">
+        生物信息学领域的任务
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../H5AD%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F/" class="md-nav__link">
+        H5AD文件
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+          基因调控网络
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_4">
+          <span class="md-nav__icon md-icon"></span>
+          基因调控网络
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../GRN/GRN/" class="md-nav__link">
+        GRN
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../GRN/GRN_code/" class="md-nav__link">
+        GRN Code
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../GRN/transformer_GRN_Inference/" class="md-nav__link">
+        GRN Inference - Transformer
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+          scGPT
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_5_5">
+          <span class="md-nav__icon md-icon"></span>
+          scGPT
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../scGPT_pipeline/" class="md-nav__link">
+        Pipeline
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5_2" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_5_2" id="__nav_5_5_2_label" tabindex="0">
+          scGPT code Package
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_5_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_5_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          scGPT code Package
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5_2_1" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_5_2_1" id="__nav_5_5_2_1_label" tabindex="0">
+          Modules
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_5_5_2_1_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_5_5_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Modules
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          scgpt.model package
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        scgpt.model package
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#scgptmodel-package" class="md-nav__link">
+    scgpt.model package
+  </a>
+  
+    <nav class="md-nav" aria-label="scgpt.model package">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scgptmodeldsbn-module" class="md-nav__link">
+    scgpt.model.dsbn module
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scgptmodelgeneration_model-module" class="md-nav__link">
+    scgpt.model.generation_model module
+  </a>
+  
+    <nav class="md-nav" aria-label="scgpt.model.generation_model module">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#clsdecoder" class="md-nav__link">
+    .ClsDecoder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geneencoder" class="md-nav__link">
+    .GeneEncoder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#positionalencoding" class="md-nav__link">
+    .PositionalEncoding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#similarity" class="md-nav__link">
+    .Similarity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transformergenerator" class="md-nav__link">
+    .TransformerGenerator
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generate_square_subsequent_mask" class="md-nav__link">
+    .generate_square_subsequent_mask
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scgptmodelgrad_reverse-module" class="md-nav__link">
+    scgpt.model.grad_reverse module
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scgptmodelmodel-module" class="md-nav__link">
+    scgpt.model.model module
+  </a>
+  
+    <nav class="md-nav" aria-label="scgpt.model.model module">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adversarialdiscriminator" class="md-nav__link">
+    .AdversarialDiscriminator
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batchlabelencoder" class="md-nav__link">
+    .BatchLabelEncoder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#categoryvalueencoder" class="md-nav__link">
+    .CategoryValueEncoder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clsdecoder_1" class="md-nav__link">
+    .ClsDecoder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#continuousvalueencoder" class="md-nav__link">
+    .ContinuousValueEncoder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exprdecoder" class="md-nav__link">
+    .ExprDecoder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fasttransformerencoderwrapper" class="md-nav__link">
+    .FastTransformerEncoderWrapper
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flashtransformerencoderlayer" class="md-nav__link">
+    .FlashTransformerEncoderLayer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geneencoder_1" class="md-nav__link">
+    .GeneEncoder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mvcdecoder" class="md-nav__link">
+    .MVCDecoder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#positionalencoding_1" class="md-nav__link">
+    .PositionalEncoding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#similarity_1" class="md-nav__link">
+    Similarity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transformermode" class="md-nav__link">
+    .TransformerMode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generate_square_subsequent_mask_1" class="md-nav__link">
+    generate_square_subsequent_mask
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scGPT_code_scgpt.scbank_package/" class="md-nav__link">
+        scgpt.scbank package
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scGPT_code_scgpt.tasks_package/" class="md-nav__link">
+        scgpt.tasks package
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scGPT_code_scgpt.tokenizer_package/" class="md-nav__link">
+        scgpt.tokenizer package
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scGPT_code_scgpt.utils_package/" class="md-nav__link">
+        scgpt.utils package
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scgpt.data_collator/" class="md-nav__link">
+        scgpt.data_collator
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scgpt.data_sampler/" class="md-nav__link">
+        scgpt.data_sampler
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scgpt.loss/" class="md-nav__link">
+        scgpt.loss
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scgpt.preprocess/" class="md-nav__link">
+        scgpt.preprocess
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scgpt.trainer/" class="md-nav__link">
+        scgpt.trainer
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          Finance
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Finance
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Finance/1-%E5%9F%BA%E6%9C%AC%E9%87%91%E8%9E%8D%E7%9F%A5%E8%AF%86/" class="md-nav__link">
+        基本金融知识
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Finance/2-%E9%87%91%E8%9E%8D%E5%B7%A5%E5%85%B7/" class="md-nav__link">
+        金融工具
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Finance/4-%E9%87%91%E8%9E%8D%E6%9C%BA%E6%9E%84/" class="md-nav__link">
+        金融机构
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Finance/3-%E9%87%91%E8%9E%8D%E5%88%86%E6%9E%90/" class="md-nav__link">
+        金融分析
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          Quant
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Quant
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Quant/%E9%87%8F%E5%8C%96%E5%B7%A5%E4%BD%9C%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
+        量化工作介绍
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Quant/%E9%87%8F%E5%8C%96%E6%8A%80%E8%83%BD/" class="md-nav__link">
+        量化技能
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          French
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          French
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../French/1/" class="md-nav__link">
+        French 1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../French/2/" class="md-nav__link">
+        French 1
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#scgptmodel-package" class="md-nav__link">
+    scgpt.model package
+  </a>
+  
+    <nav class="md-nav" aria-label="scgpt.model package">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scgptmodeldsbn-module" class="md-nav__link">
+    scgpt.model.dsbn module
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scgptmodelgeneration_model-module" class="md-nav__link">
+    scgpt.model.generation_model module
+  </a>
+  
+    <nav class="md-nav" aria-label="scgpt.model.generation_model module">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#clsdecoder" class="md-nav__link">
+    .ClsDecoder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geneencoder" class="md-nav__link">
+    .GeneEncoder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#positionalencoding" class="md-nav__link">
+    .PositionalEncoding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#similarity" class="md-nav__link">
+    .Similarity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transformergenerator" class="md-nav__link">
+    .TransformerGenerator
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generate_square_subsequent_mask" class="md-nav__link">
+    .generate_square_subsequent_mask
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scgptmodelgrad_reverse-module" class="md-nav__link">
+    scgpt.model.grad_reverse module
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scgptmodelmodel-module" class="md-nav__link">
+    scgpt.model.model module
+  </a>
+  
+    <nav class="md-nav" aria-label="scgpt.model.model module">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adversarialdiscriminator" class="md-nav__link">
+    .AdversarialDiscriminator
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batchlabelencoder" class="md-nav__link">
+    .BatchLabelEncoder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#categoryvalueencoder" class="md-nav__link">
+    .CategoryValueEncoder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clsdecoder_1" class="md-nav__link">
+    .ClsDecoder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#continuousvalueencoder" class="md-nav__link">
+    .ContinuousValueEncoder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exprdecoder" class="md-nav__link">
+    .ExprDecoder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fasttransformerencoderwrapper" class="md-nav__link">
+    .FastTransformerEncoderWrapper
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flashtransformerencoderlayer" class="md-nav__link">
+    .FlashTransformerEncoderLayer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geneencoder_1" class="md-nav__link">
+    .GeneEncoder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mvcdecoder" class="md-nav__link">
+    .MVCDecoder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#positionalencoding_1" class="md-nav__link">
+    .PositionalEncoding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#similarity_1" class="md-nav__link">
+    Similarity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transformermode" class="md-nav__link">
+    .TransformerMode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generate_square_subsequent_mask_1" class="md-nav__link">
+    generate_square_subsequent_mask
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="modules">Modules</h1>
+<h2 id="scgptmodel-package">scgpt.model package</h2>
+<h3 id="scgptmodeldsbn-module">scgpt.model.dsbn module</h3>
+<ul>
+<li>Domain-Specific Batch Normalization for Unsupervised Domain Adaptation (DSBN)</li>
+<li>from "Pytorch implementation of Domain-Specific Batch Normalization for Unsupervised Domain Adaptation" (CVPR2019).</li>
+</ul>
+<p><div class="language-py highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">class</span> <span class="nc">scgpt</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">dsbn</span><span class="o">.</span><span class="n">DomainSpecificBatchNorm1d</span><span class="p">(</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="n">num_features</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">num_domains</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">eps</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1e-05</span><span class="p">,</span> <span class="n">momentum</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="n">affine</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">track_running_stats</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">class</span> <span class="nc">scgpt</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">dsbn</span><span class="o">.</span><span class="n">DomainSpecificBatchNorm2d</span><span class="p">(</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="n">num_features</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">num_domains</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">eps</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1e-05</span><span class="p">,</span> <span class="n">momentum</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span> 
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="n">affine</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">track_running_stats</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</span></code></pre></div></p>
+<h3 id="scgptmodelgeneration_model-module">scgpt.model.generation_model module</h3>
+<h4 id="clsdecoder">.ClsDecoder</h4>
+<p>用于分类任务的解码器模块</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">d_model</span><span class="err">：</span><span class="n">整数</span><span class="err">，</span><span class="n">表示输入和输出特征的维度</span> <span class="p">(</span><span class="n">解码器中的每一个线性层的输入和输出维度都保持一致</span><span class="p">)</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">n_cls</span><span class="err">：</span><span class="n">整数</span><span class="err">，</span><span class="n">表示分类任务中的类别数</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">nlayers</span><span class="err">：</span><span class="n">整数</span><span class="err">，</span><span class="n">默认为3</span><span class="err">，</span><span class="n">指定解码器中线性层的数量</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">activation</span><span class="err">：</span><span class="n">激活函数</span><span class="err">，</span><span class="n">默认为</span> <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="n">输出</span><span class="err">：</span><span class="n">分类</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="k">class</span> <span class="nc">scgpt</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">generation_model</span><span class="o">.</span><span class="n">ClsDecoder</span><span class="p">(</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    <span class="n">d_model</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> 
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>    <span class="n">n_cls</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> 
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>    <span class="n">nlayers</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> 
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>    <span class="n">activation</span><span class="p">:</span> <span class="n">callable</span> <span class="o">=</span> <span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">modules</span><span class="o">.</span><span class="n">activation</span><span class="o">.</span><span class="n">ReLU</span><span class="s1">&#39;&gt;)</span>
+</span></code></pre></div>
+<h4 id="geneencoder">.GeneEncoder</h4>
+<p>将离散的符号转换为连续的向量表示（embedding)</p>
+<p>输入:</p>
+<ul>
+<li>类型: Tensor（张量）</li>
+<li>形状: [batch_size, sequence_length]</li>
+<li>内容: 这个张量包含整数，代表序列中每个元素的索引。在自然语言处理中，这些通常是词汇的索引；在其他应用，如基因序列分析中，这些可能代表特定的基因或编码标记。</li>
+</ul>
+<p>输出:</p>
+<ul>
+<li>类型: Tensor（张量）</li>
+<li>形状: [batch_size, sequence_length, embedding_dim]</li>
+<li>内容: 输出的张量包含了输入序列中每个元素的嵌入表示。每个嵌入是一个embedding_dim维的向量</li>
+</ul>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">num_embeddings</span><span class="err">：</span><span class="n">整数</span><span class="err">，</span><span class="n">表示嵌入层中的嵌入</span><span class="err">（</span><span class="n">词汇</span><span class="err">）</span><span class="n">数量</span><span class="err">，</span><span class="n">即词汇表的大小</span><span class="err">。</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">embedding_dim</span><span class="err">：</span><span class="n">整数</span><span class="err">，</span><span class="n">表示每个嵌入向量的维度</span><span class="err">。</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">padding_idx</span><span class="err">：</span><span class="n">可选的整数</span><span class="err">，</span><span class="n">如果提供</span><span class="err">，</span><span class="n">这个索引所对应的嵌入向量会被初始化为零</span><span class="err">，</span><span class="n">并且在训练过程中不会被更新</span><span class="err">。</span><span class="n">这通常用于序列处理中的填充字符</span><span class="err">。</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="k">class</span> <span class="nc">scgpt</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">generation_model</span><span class="o">.</span><span class="n">GeneEncoder</span><span class="p">(</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    <span class="n">num_embeddings</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> 
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="n">embedding_dim</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> 
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    <span class="n">padding_idx</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span>
+</span></code></pre></div>
+<p>举例：
+<div class="language-py highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># 假设的词汇表</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">vocab</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;hello&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;world&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;goodbye&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;earth&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;pad&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">}</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">padding_idx</span> <span class="o">=</span> <span class="n">vocab</span><span class="p">[</span><span class="s1">&#39;pad&#39;</span><span class="p">]</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="c1"># 构造GeneEncoder实例</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="n">encoder</span> <span class="o">=</span> <span class="n">GeneEncoder</span><span class="p">(</span><span class="n">num_embeddings</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">vocab</span><span class="p">),</span> <span class="n">embedding_dim</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">padding_idx</span><span class="o">=</span><span class="n">padding_idx</span><span class="p">)</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="c1"># 假设的输入数据（词汇索引）</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="n">sentences</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>    <span class="p">[</span><span class="n">vocab</span><span class="p">[</span><span class="s1">&#39;hello&#39;</span><span class="p">],</span> <span class="n">vocab</span><span class="p">[</span><span class="s1">&#39;world&#39;</span><span class="p">],</span> <span class="n">vocab</span><span class="p">[</span><span class="s1">&#39;pad&#39;</span><span class="p">]],</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>    <span class="p">[</span><span class="n">vocab</span><span class="p">[</span><span class="s1">&#39;goodbye&#39;</span><span class="p">],</span> <span class="n">vocab</span><span class="p">[</span><span class="s1">&#39;world&#39;</span><span class="p">],</span> <span class="n">vocab</span><span class="p">[</span><span class="s1">&#39;pad&#39;</span><span class="p">]]</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="p">])</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="c1"># 转换数据</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="n">encoded_sentences</span> <span class="o">=</span> <span class="n">encoder</span><span class="p">(</span><span class="n">sentences</span><span class="p">)</span>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Encoded Sentences:&quot;</span><span class="p">)</span>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="nb">print</span><span class="p">(</span><span class="n">encoded_sentences</span><span class="p">)</span>
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Shape of Encoded Sentences:&quot;</span><span class="p">,</span> <span class="n">encoded_sentences</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</span></code></pre></div>
+Output:</p>
+<pre>
+Encoded Sentences:
+tensor([[[ 0.5006,  0.0033,  0.7780,  0.2959, -0.8926, -2.3452, -0.5962,
+           0.0652,  1.1002,  1.0908],
+         [ 0.0698, -0.7755, -1.2345,  0.5933,  0.7286,  2.3914, -0.8417,
+          -0.2821,  0.0423, -0.6916],
+         [ 0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,
+           0.0000,  0.0000,  0.0000]],
+
+        [[ 0.0898,  0.2482, -0.4086, -1.2100, -1.4511, -1.0510,  0.3044,
+           1.5130,  1.6055,  0.3598],
+         [ 0.0698, -0.7755, -1.2345,  0.5933,  0.7286,  2.3914, -0.8417,
+          -0.2821,  0.0423, -0.6916],
+         [ 0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,
+           0.0000,  0.0000,  0.0000]]], grad_fn=<NativeLayerNormBackward0>)
+Shape of Encoded Sentences: torch.Size([2, 3, 10])
+</pre>
+
+<h4 id="positionalencoding">.PositionalEncoding</h4>
+<p>给序列中的每个元素添加位置信息，使模型能够考虑到序列中元素的顺序</p>
+<p>输入:</p>
+<ul>
+<li>类型: Tensor（张量）</li>
+<li>形状: [seq_len, batch_size, embedding_dim]</li>
+<li>内容: 其中包含了序列的嵌入表示。</li>
+</ul>
+<p>输出:</p>
+<ul>
+<li>类型: Tensor（张量）</li>
+<li>形状: [seq_len, batch_size, embedding_dim]</li>
+<li>内容:输入张量位置编码相加后的结果，并应用dropout。这样处理后的输出包含了原始嵌入信息和位置信息，可以被后续的模型层（如 Transformer 中的自注意力层）使用</li>
+</ul>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">d_model</span><span class="p">:</span> <span class="n">整数</span><span class="err">，</span><span class="n">表示嵌入的维度</span><span class="err">。</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">dropout</span><span class="p">:</span> <span class="n">浮点数</span><span class="err">，</span><span class="n">默认为0</span><span class="mf">.1</span><span class="err">，</span><span class="n">表示在位置编码添加到嵌入向量后应用的dropout比率</span><span class="err">，</span><span class="n">用于防止过拟合</span><span class="err">。</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">max_len</span><span class="p">:</span> <span class="n">整数</span><span class="err">，</span><span class="n">默认为5000</span><span class="err">，</span><span class="n">表示序列的最大长度</span><span class="err">，</span><span class="n">用于预先计算所有可能位置的位置编码</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="k">class</span> <span class="nc">scgpt</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">generation_model</span><span class="o">.</span><span class="n">PositionalEncoding</span><span class="p">(</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>    <span class="n">d_model</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> 
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>    <span class="n">dropout</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span> 
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>    <span class="n">max_len</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5000</span><span class="p">)</span>
+</span></code></pre></div>
+<p>举例：
+<div class="language-py highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># 假设我们有一个batch_size为1的输入序列，每个序列长度为10，嵌入维度为512</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">batch_size</span> <span class="o">=</span> <span class="mi">1</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">seq_len</span> <span class="o">=</span> <span class="mi">10</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="n">d_model</span> <span class="o">=</span> <span class="mi">512</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="n">encoder</span> <span class="o">=</span> <span class="n">PositionalEncoding</span><span class="p">(</span><span class="n">d_model</span><span class="p">)</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="n">input_tensor</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">seq_len</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">d_model</span><span class="p">)</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="c1"># 应用位置编码</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="n">output</span> <span class="o">=</span> <span class="n">encoder</span><span class="p">(</span><span class="n">input_tensor</span><span class="p">)</span>
+</span></code></pre></div></p>
+<h4 id="similarity">.Similarity</h4>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">temp</span><span class="p">:</span> <span class="n">表示温度参数</span><span class="err">，</span><span class="n">用于调节相似度的数值</span><span class="err">。</span><span class="n">温度参数较低时</span><span class="err">，</span><span class="n">相似度的差异会被放大</span><span class="err">，</span><span class="n">较高时则会减小差异</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="k">class</span> <span class="nc">scgpt</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">generation_model</span><span class="o">.</span><span class="n">Similarity</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
+</span></code></pre></div>
+<p>举例：
+<div class="language-py highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># 假设温度参数为 0.1</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">similarity</span> <span class="o">=</span> <span class="n">Similarity</span><span class="p">(</span><span class="n">temp</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="c1"># 创建两个随机的特征向量</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="n">feature_vector1</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>  <span class="c1"># 假设有1个样本，特征维度为10</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="n">feature_vector2</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="c1"># 计算两个特征向量之间的相似度</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="n">sim_value</span> <span class="o">=</span> <span class="n">similarity</span><span class="p">(</span><span class="n">feature_vector1</span><span class="p">,</span> <span class="n">feature_vector2</span><span class="p">)</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Similarity Value:&quot;</span><span class="p">,</span> <span class="n">sim_value</span><span class="p">)</span>
+</span></code></pre></div></p>
+<h4 id="transformergenerator">.TransformerGenerator</h4>
+<p>输入:</p>
+<p><code>src</code> (Tensor): </p>
+<ul>
+<li>形状: <code>[batch_size, seq_len]</code></li>
+<li>内容: 代表序列中每个位置的令牌索引，如基因或词的索引。</li>
+</ul>
+<p><code>values</code> (Tensor):</p>
+<ul>
+<li>形状: <code>[batch_size, seq_len]</code></li>
+<li>内容: 通常与<code>src</code>的令牌对应，表示每个令牌的数值信息，如基因的表达级别或任何其他相关的数值特征。</li>
+</ul>
+<p><code>input_pert_flags</code> (Tensor):</p>
+<ul>
+<li>形状: <code>[batch_size, seq_len]</code></li>
+<li>内容: 指示某个位置的令牌是否经历了扰动或修改，通常用于模型训练中的数据增强或特殊处理。</li>
+</ul>
+<p><code>src_key_padding_mask</code> (Tensor):</p>
+<ul>
+<li>形状: <code>[batch_size, seq_len]</code></li>
+<li>内容: 一个布尔张量，用于指示哪些元素是填充元素，因此在处理时应被忽略。</li>
+</ul>
+<p>输出:</p>
+<p>输出是一个字典，包含根据传入的标志参数决定的多个张量：</p>
+<p><code>mlm_output</code> (Tensor):</p>
+<ul>
+<li>形状: <code>[batch_size, seq_len]</code></li>
+<li>内容: 语言模型预测的输出，即预测每个位置的下一个可能的令牌。</li>
+</ul>
+<p><code>cls_output</code> (Tensor):</p>
+<ul>
+<li>条件: 当<code>CLS=True</code></li>
+<li>形状: <code>[batch_size, n_cls]</code></li>
+<li>内容: 分类任务的输出，其中<code>n_cls</code>是目标类别数。</li>
+</ul>
+<p><code>mvc_output</code> (Tensor):</p>
+<ul>
+<li>条件: 当<code>MVC=True</code></li>
+<li>形状: <code>[batch_size, seq_len]</code></li>
+<li>内容: 掩码值预测的输出，用于预测可能被掩码或扰动的值。</li>
+</ul>
+<p><code>loss_ecs</code> (Tensor):</p>
+<ul>
+<li>条件: 当<code>ECS=True</code></li>
+<li>形状: 标量</li>
+<li>内容: 弹性单元相似度目标的损失值，用于优化模型以增强相似样本之间的相似度。</li>
+</ul>
+<p>举例：
+<div class="language-py highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kn">import</span> <span class="nn">torch</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="c1"># 假设词汇表和必要的配置已经设置</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="n">vocab</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;&lt;pad&gt;&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;&lt;cls&gt;&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;gene1&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;gene2&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="o">...</span><span class="p">}</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="n">ntoken</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">vocab</span><span class="p">)</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="c1"># 初始化模型</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="n">model</span> <span class="o">=</span> <span class="n">TransformerGenerator</span><span class="p">(</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>    <span class="n">ntoken</span><span class="o">=</span><span class="n">ntoken</span><span class="p">,</span>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>    <span class="n">d_model</span><span class="o">=</span><span class="mi">512</span><span class="p">,</span>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>    <span class="n">nhead</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>    <span class="n">d_hid</span><span class="o">=</span><span class="mi">2048</span><span class="p">,</span>
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>    <span class="n">nlayers</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span>
+</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>    <span class="n">nlayers_cls</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>    <span class="n">n_cls</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>    <span class="n">vocab</span><span class="o">=</span><span class="n">vocab</span><span class="p">,</span>
+</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>    <span class="n">dropout</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
+</span><span id="__span-9-18"><a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>    <span class="n">pad_token</span><span class="o">=</span><span class="s1">&#39;&lt;pad&gt;&#39;</span><span class="p">,</span>
+</span><span id="__span-9-19"><a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>    <span class="n">pad_value</span><span class="o">=</span><span class="n">vocab</span><span class="p">[</span><span class="s1">&#39;&lt;pad&gt;&#39;</span><span class="p">],</span>
+</span><span id="__span-9-20"><a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>    <span class="n">pert_pad_id</span><span class="o">=</span><span class="n">vocab</span><span class="p">[</span><span class="s1">&#39;&lt;cls&gt;&#39;</span><span class="p">],</span>
+</span><span id="__span-9-21"><a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>    <span class="n">do_mvc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-9-22"><a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>    <span class="n">domain_spec_batchnorm</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="__span-9-23"><a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a>    <span class="n">cell_emb_style</span><span class="o">=</span><span class="s1">&#39;cls&#39;</span><span class="p">,</span>
+</span><span id="__span-9-24"><a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a>    <span class="n">mvc_decoder_style</span><span class="o">=</span><span class="s1">&#39;inner product&#39;</span><span class="p">,</span>
+</span><span id="__span-9-25"><a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a>    <span class="n">ecs_threshold</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span>
+</span><span id="__span-9-26"><a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a>    <span class="n">explicit_zero_prob</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="__span-9-27"><a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a>    <span class="n">use_fast_transformer</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="__span-9-28"><a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a>    <span class="n">pre_norm</span><span class="o">=</span><span class="kc">True</span>
+</span><span id="__span-9-29"><a id="__codelineno-9-29" name="__codelineno-9-29" href="#__codelineno-9-29"></a><span class="p">)</span>
+</span><span id="__span-9-30"><a id="__codelineno-9-30" name="__codelineno-9-30" href="#__codelineno-9-30"></a>
+</span><span id="__span-9-31"><a id="__codelineno-9-31" name="__codelineno-9-31" href="#__codelineno-9-31"></a><span class="c1"># 准备输入数据</span>
+</span><span id="__span-9-32"><a id="__codelineno-9-32" name="__codelineno-9-32" href="#__codelineno-9-32"></a><span class="n">src</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">ntoken</span><span class="p">,</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>  <span class="c1"># 10个样本，序列长度5</span>
+</span><span id="__span-9-33"><a id="__codelineno-9-33" name="__codelineno-9-33" href="#__codelineno-9-33"></a><span class="n">values</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>  <span class="c1"># 每个基因的表达值</span>
+</span><span id="__span-9-34"><a id="__codelineno-9-34" name="__codelineno-9-34" href="#__codelineno-9-34"></a><span class="n">input_pert_flags</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">long</span><span class="p">)</span>  <span class="c1"># 无扰动</span>
+</span><span id="__span-9-35"><a id="__codelineno-9-35" name="__codelineno-9-35" href="#__codelineno-9-35"></a><span class="n">src_key_padding_mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">src</span> <span class="o">==</span> <span class="n">vocab</span><span class="p">[</span><span class="s1">&#39;&lt;pad&gt;&#39;</span><span class="p">])</span>
+</span><span id="__span-9-36"><a id="__codelineno-9-36" name="__codelineno-9-36" href="#__codelineno-9-36"></a>
+</span><span id="__span-9-37"><a id="__codelineno-9-37" name="__codelineno-9-37" href="#__codelineno-9-37"></a><span class="c1"># 前向传递</span>
+</span><span id="__span-9-38"><a id="__codelineno-9-38" name="__codelineno-9-38" href="#__codelineno-9-38"></a><span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">input_pert_flags</span><span class="p">,</span> <span class="n">src_key_padding_mask</span><span class="p">,</span> <span class="n">CLS</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">MVC</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ECS</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-9-39"><a id="__codelineno-9-39" name="__codelineno-9-39" href="#__codelineno-9-39"></a><span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>  <span class="c1"># 打印输出结果</span>
+</span></code></pre></div></p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">scgpt</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">generation_model</span><span class="o">.</span><span class="n">TransformerGenerator</span><span class="p">(</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>    <span class="n">ntoken</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">d_model</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">nhead</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">d_hid</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">nlayers</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">nlayers_cls</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">n_cls</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> 
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>    <span class="n">vocab</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">dropout</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">pad_token</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;&lt;pad&gt;&#39;</span><span class="p">,</span> <span class="n">pad_value</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">pert_pad_id</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> 
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>    <span class="n">do_mvc</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">domain_spec_batchnorm</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">cell_emb_style</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;cls&#39;</span><span class="p">,</span> 
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>    <span class="n">mvc_decoder_style</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;inner product&#39;</span><span class="p">,</span> <span class="n">ecs_threshold</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">,</span> <span class="n">explicit_zero_prob</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> 
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>    <span class="n">use_fast_transformer</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">fast_transformer_backend</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;flash&#39;</span><span class="p">,</span> <span class="n">pre_norm</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+</span></code></pre></div>
+<h4 id="generate_square_subsequent_mask">.generate_square_subsequent_mask</h4>
+<p>用于生成一个特定大小的方阵，这个方阵在对角线上和对角线以下的位置为0，在对角线以上的位置为负无穷大（-inf）</p>
+<p>e.g., 确保在预测序列中的每个步骤时，模型只能看到先前的序列信息</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">sz</span> <span class="p">(</span><span class="nb">int</span><span class="p">)</span><span class="err">：</span><span class="n">掩码矩阵的大小</span><span class="err">，</span><span class="n">即生成的方阵的行数和列数</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="n">scgpt</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">generation_model</span><span class="o">.</span><span class="n">generate_square_subsequent_mask</span><span class="p">(</span><span class="n">sz</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span><span class="err">→</span> <span class="n">Tensor</span>
+</span></code></pre></div>
+<p>举例：
+<div class="language-py highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kn">import</span> <span class="nn">torch</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="k">def</span> <span class="nf">generate_square_subsequent_mask</span><span class="p">(</span><span class="n">sz</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Generates an upper-triangular matrix of -inf, with zeros on diag.&quot;&quot;&quot;</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>    <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">triu</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">sz</span><span class="p">,</span> <span class="n">sz</span><span class="p">)</span> <span class="o">*</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;-inf&quot;</span><span class="p">),</span> <span class="n">diagonal</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="c1"># 生成一个大小为5的序列掩码</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="n">mask</span> <span class="o">=</span> <span class="n">generate_square_subsequent_mask</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="nb">print</span><span class="p">(</span><span class="n">mask</span>
+</span></code></pre></div></p>
+<p>Output:</p>
+<pre>
+tensor([[0., -inf, -inf, -inf, -inf],
+        [0., 0., -inf, -inf, -inf],
+        [0., 0., 0., -inf, -inf],
+        [0., 0., 0., 0., -inf],
+        [0., 0., 0., 0., 0.]])
+</pre>
+
+<h3 id="scgptmodelgrad_reverse-module">scgpt.model.grad_reverse module</h3>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>
+</span></code></pre></div>
+<h3 id="scgptmodelmodel-module">scgpt.model.model module</h3>
+<h4 id="adversarialdiscriminator">.AdversarialDiscriminator</h4>
+<p>假设我们有一个数据集，其中包含不同批次生产的生物样本的基因表达数据。我们想要使用 AdversarialDiscriminator 来训练一个模型，以消除批次效应，使得数据在进行后续分析如聚类或分类时更加准确</p>
+<p>输入：</p>
+<ul>
+<li>类型：Tensor</li>
+<li>形状：[batch_size, emb_size]</li>
+<li>描述：输入数据为一个张量，它代表一批数据，其中每个数据项都有 emb_size 个特征。这个形状表明每次处理的是一个批量的数据，batch_size 指定了每个批次中的数据项数量，而 emb_size 对应 d_model，即每项数据的维度或特征数量。</li>
+</ul>
+<p>输出：</p>
+<ul>
+<li>类型：Tensor</li>
+<li>形状：[batch_size, n_cls]</li>
+<li>描述：输出也是一个张量，其形状为 [batch_size, n_cls]。这表示对于输入的每个数据项，模型将输出一个向量，该向量的维度由 n_cls 确定。在默认设置中，n_cls 为1，这常用于二分类问题（比如，判断输入是否属于某个类别）。每个输出的元素都对应于输入数据的一个预测类别概率或得分</li>
+</ul>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">d_model</span><span class="p">:</span> <span class="n">每一层的维度</span><span class="err">，</span><span class="n">默认为</span> <span class="mi">3</span><span class="err">。</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="n">n_cls</span><span class="p">:</span> <span class="n">输出层的类别数</span><span class="err">，</span><span class="n">默认为</span> <span class="mi">1</span><span class="err">，</span><span class="n">通常用于二分类问题</span><span class="err">。</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="n">activation</span><span class="p">:</span> <span class="n">激活函数</span><span class="err">，</span><span class="n">默认为</span> <span class="n">LeakyReLU</span><span class="err">。</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="n">reverse_grad</span><span class="p">:</span> <span class="n">是否反转梯度</span><span class="err">，</span><span class="n">默认为</span> <span class="kc">False</span><span class="err">，</span><span class="n">在对抗训练中用于训练生成器</span><span class="err">。</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="n">如果将</span> <span class="n">reverse_grad</span> <span class="n">设置为</span> <span class="kc">True</span><span class="err">，</span><span class="n">则该类会在某些层应用梯度反转技术</span><span class="err">，</span><span class="n">这有助于模型学习到不受批次特性影响的特征</span><span class="err">，</span><span class="n">从而改进模型在不同批次数据上的表现</span><span class="err">。</span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="k">class</span> <span class="err">.</span><span class="nc">AdversarialDiscriminator</span><span class="p">(</span>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>    <span class="n">d_model</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> 
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>    <span class="n">n_cls</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> 
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>    <span class="n">nlayers</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> 
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>    <span class="n">activation</span><span class="p">:</span> <span class="n">callable</span> <span class="o">=</span> <span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">modules</span><span class="o">.</span><span class="n">activation</span><span class="o">.</span><span class="n">LeakyReLU</span><span class="s1">&#39;&gt;, </span>
+</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>    <span class="n">reverse_grad</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+</span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>    <span class="p">)</span>
+</span></code></pre></div>
+<p>举例：
+<div class="language-py highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kn">import</span> <span class="nn">torch</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="kn">from</span> <span class="nn">torch.utils.data</span> <span class="kn">import</span> <span class="n">DataLoader</span><span class="p">,</span> <span class="n">TensorDataset</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="c1"># 假设的数据和批次标签</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="n">data_tensor</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># 100个样本，每个样本3个特征</span>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="n">batch_labels</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="mi">100</span><span class="p">,))</span>  <span class="c1"># 假设有两个批次0和1</span>
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="c1"># 创建 DataLoader</span>
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="n">dataset</span> <span class="o">=</span> <span class="n">TensorDataset</span><span class="p">(</span><span class="n">data_tensor</span><span class="p">,</span> <span class="n">batch_labels</span><span class="p">)</span>
+</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="n">dataloader</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>
+</span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="c1"># 实例化模型</span>
+</span><span id="__span-15-14"><a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="n">model</span> <span class="o">=</span> <span class="n">AdversarialDiscriminator</span><span class="p">(</span><span class="n">d_model</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">n_cls</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="n">nn</span><span class="o">.</span><span class="n">LeakyReLU</span><span class="p">,</span> <span class="n">reverse_grad</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-15-15"><a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a>
+</span><span id="__span-15-16"><a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a>
+</span><span id="__span-15-17"><a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a><span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+</span><span id="__span-15-18"><a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a><span class="n">criterion</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">()</span>
+</span><span id="__span-15-19"><a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a>
+</span><span id="__span-15-20"><a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a><span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>  <span class="c1"># 训练10个周期</span>
+</span><span id="__span-15-21"><a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a>    <span class="k">for</span> <span class="n">data</span><span class="p">,</span> <span class="n">target</span> <span class="ow">in</span> <span class="n">dataloader</span><span class="p">:</span>
+</span><span id="__span-15-22"><a id="__codelineno-15-22" name="__codelineno-15-22" href="#__codelineno-15-22"></a>        <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+</span><span id="__span-15-23"><a id="__codelineno-15-23" name="__codelineno-15-23" href="#__codelineno-15-23"></a>        <span class="n">outputs</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</span><span id="__span-15-24"><a id="__codelineno-15-24" name="__codelineno-15-24" href="#__codelineno-15-24"></a>        <span class="n">loss</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
+</span><span id="__span-15-25"><a id="__codelineno-15-25" name="__codelineno-15-25" href="#__codelineno-15-25"></a>        <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+</span><span id="__span-15-26"><a id="__codelineno-15-26" name="__codelineno-15-26" href="#__codelineno-15-26"></a>        <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+</span><span id="__span-15-27"><a id="__codelineno-15-27" name="__codelineno-15-27" href="#__codelineno-15-27"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Epoch </span><span class="si">{</span><span class="n">epoch</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">, Loss: </span><span class="si">{</span><span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-15-28"><a id="__codelineno-15-28" name="__codelineno-15-28" href="#__codelineno-15-28"></a>
+</span><span id="__span-15-29"><a id="__codelineno-15-29" name="__codelineno-15-29" href="#__codelineno-15-29"></a>
+</span><span id="__span-15-30"><a id="__codelineno-15-30" name="__codelineno-15-30" href="#__codelineno-15-30"></a><span class="c1"># 假设测试数据如下</span>
+</span><span id="__span-15-31"><a id="__codelineno-15-31" name="__codelineno-15-31" href="#__codelineno-15-31"></a><span class="n">test_data</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</span><span id="__span-15-32"><a id="__codelineno-15-32" name="__codelineno-15-32" href="#__codelineno-15-32"></a><span class="n">test_labels</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="mi">20</span><span class="p">,))</span>
+</span><span id="__span-15-33"><a id="__codelineno-15-33" name="__codelineno-15-33" href="#__codelineno-15-33"></a>
+</span><span id="__span-15-34"><a id="__codelineno-15-34" name="__codelineno-15-34" href="#__codelineno-15-34"></a><span class="c1"># 评估模型</span>
+</span><span id="__span-15-35"><a id="__codelineno-15-35" name="__codelineno-15-35" href="#__codelineno-15-35"></a><span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+</span><span id="__span-15-36"><a id="__codelineno-15-36" name="__codelineno-15-36" href="#__codelineno-15-36"></a><span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+</span><span id="__span-15-37"><a id="__codelineno-15-37" name="__codelineno-15-37" href="#__codelineno-15-37"></a>    <span class="n">test_outputs</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">test_data</span><span class="p">)</span>
+</span><span id="__span-15-38"><a id="__codelineno-15-38" name="__codelineno-15-38" href="#__codelineno-15-38"></a>    <span class="n">predicted</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">test_outputs</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-15-39"><a id="__codelineno-15-39" name="__codelineno-15-39" href="#__codelineno-15-39"></a>    <span class="n">accuracy</span> <span class="o">=</span> <span class="p">(</span><span class="n">predicted</span> <span class="o">==</span> <span class="n">test_labels</span><span class="p">)</span><span class="o">.</span><span class="n">float</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</span><span id="__span-15-40"><a id="__codelineno-15-40" name="__codelineno-15-40" href="#__codelineno-15-40"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Accuracy: </span><span class="si">{</span><span class="n">accuracy</span><span class="o">.</span><span class="n">item</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span></code></pre></div></p>
+<h4 id="batchlabelencoder">.BatchLabelEncoder</h4>
+<p>将离散的生物学数据（如基因、蛋白质或其他生物标志物的索引）转换为连续的嵌入向量，以便在神经网络或其他机器学习模型中使用。这种转换可以捕捉到生物学数据中的隐含特征，使得模型能够更好地进行分类、预测或其他分析任务</p>
+<p>输入：</p>
+<ul>
+<li>形状（Shape）：(batch_size, sequence_length)</li>
+<li>batch_size：批次的大小，即一次处理的样本数量。</li>
+<li>sequence_length：每个样本中的特征数量。</li>
+<li>内容：每个元素是一个整数，代表生物学数据的索引。例如，如果我们有一个包含 100 个基因的词汇表，那么索引的取值范围是 0 到 99。</li>
+</ul>
+<p>输出：</p>
+<ul>
+<li>形状（Shape）：(batch_size, sequence_length, embedding_dim)</li>
+<li>batch_size：批次的大小，与输入相同。</li>
+<li>sequence_length：每个样本中的特征数量，与输入相同。</li>
+<li>embedding_dim：嵌入向量的维度。</li>
+<li>内容：每个元素是一个浮点数，代表嵌入向量的一个维度的值。这个值是经过嵌入和层归一化处理的结果，表示输入索引对应的特征向量。</li>
+</ul>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="k">class</span> <span class="err">.</span><span class="nc">BatchLabelEncoder</span><span class="p">(</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>    <span class="n">num_embeddings</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> 
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>    <span class="n">embedding_dim</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> 
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>    <span class="n">padding_idx</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span>
+</span></code></pre></div>
+<p>举例：</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kn">import</span> <span class="nn">torch</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="kn">from</span> <span class="nn">torch</span> <span class="kn">import</span> <span class="n">nn</span><span class="p">,</span> <span class="n">Tensor</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="c1"># 初始化模型</span>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="n">num_embeddings</span> <span class="o">=</span> <span class="mi">5</span>  <span class="c1"># 基因词汇表大小</span>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="n">embedding_dim</span> <span class="o">=</span> <span class="mi">3</span>   <span class="c1"># 嵌入向量维度</span>
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="n">model</span> <span class="o">=</span> <span class="n">BatchLabelEncoder</span><span class="p">(</span><span class="n">num_embeddings</span><span class="p">,</span> <span class="n">embedding_dim</span><span class="p">)</span>
+</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>
+</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="c1"># 输入数据</span>
+</span><span id="__span-17-11"><a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="c1"># 假设我们有 3 个样本，每个样本包含 4 个基因的索引</span>
+</span><span id="__span-17-12"><a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a><span class="n">input_data</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span>
+</span><span id="__span-17-13"><a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a>    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+</span><span id="__span-17-14"><a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a>    <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+</span><span id="__span-17-15"><a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a>    <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+</span><span id="__span-17-16"><a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a><span class="p">])</span>
+</span><span id="__span-17-17"><a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a>
+</span><span id="__span-17-18"><a id="__codelineno-17-18" name="__codelineno-17-18" href="#__codelineno-17-18"></a><span class="c1"># 进行前向传播</span>
+</span><span id="__span-17-19"><a id="__codelineno-17-19" name="__codelineno-17-19" href="#__codelineno-17-19"></a><span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">input_data</span><span class="p">)</span>
+</span><span id="__span-17-20"><a id="__codelineno-17-20" name="__codelineno-17-20" href="#__codelineno-17-20"></a><span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+</span></code></pre></div>
+<pre>
+示例输出:
+    •   输出的形状为 (3, 4, 3)，即批次大小为 3，每个样本的序列长度为 4，嵌入向量维度为 3。
+    •   每个元素是一个浮点数，代表经过嵌入和层归一化处理后的基因索引的特征向量。
+
+tensor([
+    [[ 0.1, -0.2,  0.3],
+     [ 0.0,  0.2,  0.1],
+     [-0.1,  0.1,  0.2],
+     [ 0.3, -0.3,  0.0]],
+
+    [[ 0.3, -0.3,  0.0],
+     [-0.1,  0.1,  0.2],
+     [ 0.0,  0.2,  0.1],
+     [ 0.1, -0.2,  0.3]],
+
+    [[ 0.2,  0.2,  0.2],
+     [ 0.2,  0.2,  0.2],
+     [ 0.2,  0.2,  0.2],
+     [ 0.2,  0.2,  0.2]]
+])
+</pre>
+
+<h4 id="categoryvalueencoder">.CategoryValueEncoder</h4>
+<p>输入：</p>
+<ul>
+<li>形状（Shape）：(batch_size, seq_len)</li>
+<li>batch_size：批次的大小，即一次处理的样本数量。</li>
+<li>seq_len：每个样本中的特征数量（序列长度）。</li>
+<li>内容：每个元素是一个整数，代表生物学数据的索引。</li>
+</ul>
+<p>输出：</p>
+<ul>
+<li>形状（Shape）：(batch_size, seq_len, embedding_dim)</li>
+<li>batch_size：批次的大小，与输入相同。</li>
+<li>seq_len：每个样本中的特征数量，与输入相同。</li>
+<li>embedding_dim：嵌入向量的维度。</li>
+<li>内容：每个元素是一个浮点数，代表嵌入向量的一个维度的值。这个值是经过嵌入和层归一化处理的结果。</li>
+</ul>
+<p><div class="language-py highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="k">class</span> <span class="err">.</span><span class="nc">CategoryValueEncoder</span><span class="p">(</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>    <span class="n">num_embeddings</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> 
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>    <span class="n">embedding_dim</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> 
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>    <span class="n">padding_idx</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span>
+</span></code></pre></div>
+举例：</p>
+<p>假设我们有一个基因表达数据集，每个样本用基因的索引表示，我们希望将这些索引转换为嵌入向量</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="kn">import</span> <span class="nn">torch</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="kn">from</span> <span class="nn">torch</span> <span class="kn">import</span> <span class="n">nn</span><span class="p">,</span> <span class="n">Tensor</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="c1"># 初始化模型</span>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="n">num_embeddings</span> <span class="o">=</span> <span class="mi">5</span>  <span class="c1"># 基因词汇表大小</span>
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="n">embedding_dim</span> <span class="o">=</span> <span class="mi">3</span>   <span class="c1"># 嵌入向量维度</span>
+</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="n">model</span> <span class="o">=</span> <span class="n">CategoryValueEncoder</span><span class="p">(</span><span class="n">num_embeddings</span><span class="p">,</span> <span class="n">embedding_dim</span><span class="p">)</span>
+</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>
+</span><span id="__span-19-10"><a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="c1"># 输入数据</span>
+</span><span id="__span-19-11"><a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a><span class="c1"># 假设我们有 3 个样本，每个样本包含 4 个基因的索引</span>
+</span><span id="__span-19-12"><a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a><span class="n">input_data</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span>
+</span><span id="__span-19-13"><a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a>    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+</span><span id="__span-19-14"><a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a>    <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+</span><span id="__span-19-15"><a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a>    <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+</span><span id="__span-19-16"><a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a><span class="p">])</span>
+</span><span id="__span-19-17"><a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a>
+</span><span id="__span-19-18"><a id="__codelineno-19-18" name="__codelineno-19-18" href="#__codelineno-19-18"></a><span class="c1"># 进行前向传播</span>
+</span><span id="__span-19-19"><a id="__codelineno-19-19" name="__codelineno-19-19" href="#__codelineno-19-19"></a><span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">input_data</span><span class="p">)</span>
+</span><span id="__span-19-20"><a id="__codelineno-19-20" name="__codelineno-19-20" href="#__codelineno-19-20"></a><span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+</span></code></pre></div>
+<p><em>与BatchLabelEncoder代码十分相似</em></p>
+<h4 id="clsdecoder_1">.ClsDecoder</h4>
+<p>ClsDecoder 类是一个用于分类任务的解码器，常用于神经网络模型的最后一层，将特征向量转换为类别预测。在生物信息学领域，这种解码器可以用于将嵌入向量或特征表示转换为具体的生物学分类结果，如基因表达数据的分类、蛋白质功能预测等</p>
+<p>输入:</p>
+<ul>
+<li>形状（Shape）：(batch_size, embsize)</li>
+<li>batch_size：批次的大小，即一次处理的样本数量。</li>
+<li>embsize：嵌入向量或特征向量的维度，等同于 d_model。</li>
+<li>内容：每个元素是一个浮点数，代表样本的特征向量。</li>
+</ul>
+<p>输出:</p>
+<ul>
+<li>形状（Shape）：(batch_size, n_cls)</li>
+<li>batch_size：批次的大小，与输入相同。</li>
+<li>n_cls：分类任务中的类别数。</li>
+<li>内容：每个元素是一个浮点数，表示该样本属于每个类别的分数。</li>
+</ul>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="k">class</span> <span class="err">.</span><span class="nc">ClsDecoder</span><span class="p">(</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>    <span class="n">d_model</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> 
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>    <span class="n">n_cls</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> 
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>    <span class="n">nlayers</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> 
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>    <span class="n">activation</span><span class="p">:</span> <span class="n">callable</span> <span class="o">=</span> <span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">modules</span><span class="o">.</span><span class="n">activation</span><span class="o">.</span><span class="n">ReLU</span><span class="s1">&#39;&gt;)</span>
+</span></code></pre></div>
+<p>举例：</p>
+<p>假设我们有一个基因表达数据集，每个样本用特征向量表示，并且我们希望将这些特征向量转换为类别预测</p>
+<p><div class="language-py highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="kn">import</span> <span class="nn">torch</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="kn">from</span> <span class="nn">torch</span> <span class="kn">import</span> <span class="n">nn</span><span class="p">,</span> <span class="n">Tensor</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="c1"># 初始化模型</span>
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="n">d_model</span> <span class="o">=</span> <span class="mi">4</span>   <span class="c1"># 输入特征向量的维度</span>
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="n">n_cls</span> <span class="o">=</span> <span class="mi">3</span>     <span class="c1"># 分类任务中的类别数</span>
+</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a><span class="n">model</span> <span class="o">=</span> <span class="n">ClsDecoder</span><span class="p">(</span><span class="n">d_model</span><span class="p">,</span> <span class="n">n_cls</span><span class="p">)</span>
+</span><span id="__span-21-9"><a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a>
+</span><span id="__span-21-10"><a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a><span class="c1"># 输入数据</span>
+</span><span id="__span-21-11"><a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a><span class="c1"># 假设我们有 2 个样本，每个样本的特征向量维度为 4：</span>
+</span><span id="__span-21-12"><a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a><span class="n">input_data</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span>
+</span><span id="__span-21-13"><a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a>    <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">],</span>
+</span><span id="__span-21-14"><a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a>    <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">]</span>
+</span><span id="__span-21-15"><a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a><span class="p">])</span>
+</span><span id="__span-21-16"><a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a>
+</span><span id="__span-21-17"><a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a><span class="c1"># 进行前向传播</span>
+</span><span id="__span-21-18"><a id="__codelineno-21-18" name="__codelineno-21-18" href="#__codelineno-21-18"></a><span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">input_data</span><span class="p">)</span>
+</span><span id="__span-21-19"><a id="__codelineno-21-19" name="__codelineno-21-19" href="#__codelineno-21-19"></a><span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+</span></code></pre></div>
+输出：</p>
+<pre>
+    •   输出的形状为 (2, 3)，即批次大小为 2，每个样本的类别数为 3。
+    •   每个元素是一个浮点数，表示该样本属于每个类别的分数。
+tensor([
+    [0.25, -0.10, 0.35],
+    [0.45,  0.20, 0.55]
+])
+</pre>
+
+<h4 id="continuousvalueencoder">.ContinuousValueEncoder</h4>
+<p>ContinuousValueEncoder 类是一个用于将连续数值编码为向量的神经网络投影层，在生物信息学领域中可以用于将连续的生物学数据（如基因表达水平、蛋白质浓度等）转换为神经网络可以处理的特征向量。</p>
+<p>输入:</p>
+<ul>
+<li>形状（Shape）：(batch_size, seq_len)</li>
+<li>batch_size：批次的大小，即一次处理的样本数量。</li>
+<li>seq_len：每个样本中的特征数量（序列长度）。</li>
+<li>内容：每个元素是一个浮点数，代表连续的生物学数据（如基因表达水平）。</li>
+</ul>
+<p>输出:</p>
+<ul>
+<li>形状（Shape）：(batch_size, seq_len, d_model)</li>
+<li>batch_size：批次的大小，与输入相同。</li>
+<li>seq_len：每个样本中的特征数量，与输入相同。</li>
+<li>d_model：编码向量的维度。</li>
+<li>内容：每个元素是一个浮点数，表示每个输入连续数值对应的特征向量。</li>
+</ul>
+<p><div class="language-py highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="n">d_model</span><span class="err">：</span><span class="n">编码向量的维度</span><span class="err">。</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="n">dropout</span><span class="err">：</span><span class="n">dropout</span> <span class="n">层的概率</span><span class="err">，</span><span class="n">用于防止过拟合</span><span class="err">。</span>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="n">max_value</span><span class="err">：</span><span class="n">连续数值的最大值</span><span class="err">，</span><span class="n">用于数值剪裁</span><span class="err">。</span>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="k">class</span> <span class="err">.</span><span class="nc">ContinuousValueEncoder</span><span class="p">(</span>
+</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a>    <span class="n">d_model</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> 
+</span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a>    <span class="n">dropout</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span> 
+</span><span id="__span-22-9"><a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a>    <span class="n">max_value</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">512</span>
+</span><span id="__span-22-10"><a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a>    <span class="p">)</span>
+</span></code></pre></div>
+举例:</p>
+<p>假设我们有一个基因表达数据集，每个样本用连续数值表示，我们希望将这些数值转换为特征向量。</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="kn">import</span> <span class="nn">torch</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="kn">from</span> <span class="nn">torch</span> <span class="kn">import</span> <span class="n">nn</span><span class="p">,</span> <span class="n">Tensor</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="c1"># 初始化模型</span>
+</span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="n">d_model</span> <span class="o">=</span> <span class="mi">4</span>   <span class="c1"># 编码向量的维度</span>
+</span><span id="__span-23-7"><a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="n">model</span> <span class="o">=</span> <span class="n">ContinuousValueEncoder</span><span class="p">(</span><span class="n">d_model</span><span class="p">)</span>
+</span><span id="__span-23-8"><a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a>
+</span><span id="__span-23-9"><a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a><span class="c1"># 输入数据</span>
+</span><span id="__span-23-10"><a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a><span class="c1"># 假设我们有 2 个样本，每个样本包含 3 个基因的表达水平</span>
+</span><span id="__span-23-11"><a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a><span class="n">input_data</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span>
+</span><span id="__span-23-12"><a id="__codelineno-23-12" name="__codelineno-23-12" href="#__codelineno-23-12"></a>    <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">3.3</span><span class="p">],</span>
+</span><span id="__span-23-13"><a id="__codelineno-23-13" name="__codelineno-23-13" href="#__codelineno-23-13"></a>    <span class="p">[</span><span class="mf">4.0</span><span class="p">,</span> <span class="mf">5.1</span><span class="p">,</span> <span class="mf">6.2</span><span class="p">]</span>
+</span><span id="__span-23-14"><a id="__codelineno-23-14" name="__codelineno-23-14" href="#__codelineno-23-14"></a><span class="p">])</span>
+</span><span id="__span-23-15"><a id="__codelineno-23-15" name="__codelineno-23-15" href="#__codelineno-23-15"></a>
+</span><span id="__span-23-16"><a id="__codelineno-23-16" name="__codelineno-23-16" href="#__codelineno-23-16"></a><span class="c1"># 进行前向传播</span>
+</span><span id="__span-23-17"><a id="__codelineno-23-17" name="__codelineno-23-17" href="#__codelineno-23-17"></a><span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">input_data</span><span class="p">)</span>
+</span><span id="__span-23-18"><a id="__codelineno-23-18" name="__codelineno-23-18" href="#__codelineno-23-18"></a><span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+</span></code></pre></div>
+<p>输出：</p>
+<pre>
+    输出的形状为 (2, 3, 4)，即批次大小为 2，每个样本的序列长度为 3，编码向量维度为 4。
+    每个元素是一个浮点数，表示每个输入连续数值对应的特征向量。
+
+tensor([
+    [[ 0.5, -0.1,  0.3,  0.2],
+     [ 0.7,  0.1,  0.4, -0.1],
+     [ 0.8, -0.2,  0.2,  0.5]],
+
+    [[ 0.4,  0.3, -0.3,  0.1],
+     [ 0.6, -0.4,  0.5,  0.2],
+     [ 0.9,  0.2, -0.1,  0.3]]
+])
+
+</pre>
+
+<h4 id="exprdecoder">.ExprDecoder</h4>
+<p>ExprDecoder 类是一个用于解码表达值的神经网络模块，可能用于基因表达数据或其他连续值预测任务。这个解码器支持两种功能：基础预测和显式的零概率预测，这在处理稀疏数据（如基因表达数据）时非常有用</p>
+<p>输入:</p>
+<ul>
+<li>形状（Shape）：(batch_size, seq_len, d_model)</li>
+<li>batch_size：批次的大小，即一次处理的样本数量。</li>
+<li>seq_len：每个样本中的特征数量（序列长度）。</li>
+<li>d_model：输入特征向量的维度。</li>
+<li>内容：每个元素是一个浮点数，代表特征向量。</li>
+</ul>
+<p>输出:</p>
+<ul>
+<li>形状（Shape）：<ul>
+<li>如果 explicit_zero_prob 为 False：<ul>
+<li>{'pred': (batch_size, seq_len)}</li>
+</ul>
+</li>
+<li>如果 explicit_zero_prob 为 True：<ul>
+<li>{'pred': (batch_size, seq_len), 'zero_probs': (batch_size, seq_len)}</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>内容：每个元素是一个浮点数，表示每个输入特征向量对应的预测值和零概率。</li>
+</ul>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="n">d_model</span><span class="err">：</span><span class="n">输入特征向量的维度</span><span class="err">。</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="n">explicit_zero_prob</span><span class="err">：</span><span class="n">是否计算显式的零概率</span><span class="err">。</span>
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="n">use_batch_labels</span><span class="err">：</span><span class="n">是否使用批次标签</span><span class="err">，</span><span class="n">影响输入的维度</span><span class="err">。</span>
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>
+</span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="k">class</span> <span class="err">.</span><span class="nc">ExprDecoder</span><span class="p">(</span>
+</span><span id="__span-24-6"><a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a>    <span class="n">d_model</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> 
+</span><span id="__span-24-7"><a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a>    <span class="n">explicit_zero_prob</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> 
+</span><span id="__span-24-8"><a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a>    <span class="n">use_batch_labels</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+</span></code></pre></div>
+<p>举例:</p>
+<p>假设我们有一个基因表达数据集，每个样本用特征向量表示，我们希望将这些特征向量转换为基因表达值预测，并且在某些情况下需要显式计算零概率。</p>
+<p><div class="language-py highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="kn">import</span> <span class="nn">torch</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="kn">from</span> <span class="nn">torch</span> <span class="kn">import</span> <span class="n">nn</span><span class="p">,</span> <span class="n">Tensor</span>
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span>
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>
+</span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="c1"># 初始化模型</span>
+</span><span id="__span-25-6"><a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="n">d_model</span> <span class="o">=</span> <span class="mi">4</span>   <span class="c1"># 输入特征向量的维度</span>
+</span><span id="__span-25-7"><a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="n">model</span> <span class="o">=</span> <span class="n">ExprDecoder</span><span class="p">(</span><span class="n">d_model</span><span class="p">,</span> <span class="n">explicit_zero_prob</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-25-8"><a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a>
+</span><span id="__span-25-9"><a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a><span class="c1"># 输入数据</span>
+</span><span id="__span-25-10"><a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a><span class="c1"># 假设我们有 2 个样本，每个样本包含 3 个特征向量，维度为 4</span>
+</span><span id="__span-25-11"><a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a><span class="n">input_data</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span>
+</span><span id="__span-25-12"><a id="__codelineno-25-12" name="__codelineno-25-12" href="#__codelineno-25-12"></a>    <span class="p">[[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.8</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.6</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.7</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.2</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">]],</span>
+</span><span id="__span-25-13"><a id="__codelineno-25-13" name="__codelineno-25-13" href="#__codelineno-25-13"></a>    <span class="p">[[</span><span class="mf">0.9</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.4</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">]]</span>
+</span><span id="__span-25-14"><a id="__codelineno-25-14" name="__codelineno-25-14" href="#__codelineno-25-14"></a><span class="p">])</span>
+</span><span id="__span-25-15"><a id="__codelineno-25-15" name="__codelineno-25-15" href="#__codelineno-25-15"></a>
+</span><span id="__span-25-16"><a id="__codelineno-25-16" name="__codelineno-25-16" href="#__codelineno-25-16"></a><span class="c1"># 进行前向传播</span>
+</span><span id="__span-25-17"><a id="__codelineno-25-17" name="__codelineno-25-17" href="#__codelineno-25-17"></a><span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">input_data</span><span class="p">)</span>
+</span><span id="__span-25-18"><a id="__codelineno-25-18" name="__codelineno-25-18" href="#__codelineno-25-18"></a><span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+</span></code></pre></div>
+输出：</p>
+<pre>
+输出的 pred 形状为 (2, 3)，表示每个样本和每个特征向量的预测值。
+输出的 zero_probs 形状为 (2, 3)，表示每个样本和每个特征向量的零概率。
+
+{
+    'pred': tensor([
+        [0.35, 0.45, 0.30],
+        [0.40, 0.50, 0.35]
+    ]),
+    'zero_probs': tensor([
+        [0.20, 0.15, 0.25],
+        [0.10, 0.05, 0.30]
+    ])
+}
+
+</pre>
+
+<h4 id="fasttransformerencoderwrapper">.FastTransformerEncoderWrapper</h4>
+<p>FastTransformerEncoderWrapper 类是一个封装器，用于构建和使用快速 Transformer 编码器（Fast Transformer Encoder）。这种编码器可以在生物信息学领域中应用，例如处理基因序列、蛋白质序列或其他高维度数据的建模任务。</p>
+<p>输入:</p>
+<ul>
+<li>形状（Shape）：<ul>
+<li>src：形状为 (N, seq_len, embsize) 的张量。<ul>
+<li>N：批次大小。</li>
+<li>seq_len：序列长度。</li>
+<li>embsize：嵌入向量的维度。</li>
+</ul>
+</li>
+<li>src_key_padding_mask：形状为 (N, seq_len) 的布尔张量。</li>
+</ul>
+</li>
+<li>每个元素为布尔值，表示对应位置是否是填充标记。</li>
+</ul>
+<p>输出:</p>
+<ul>
+<li>形状（Shape）：输出张量的形状为 (N, seq_len, embsize)，与输入形状相同。</li>
+<li>内容：每个元素是一个浮点数，表示经过快速 Transformer 编码器处理后的特征表示。</li>
+</ul>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="n">d_model</span><span class="err">：</span><span class="n">输入嵌入的维度</span><span class="err">。</span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="n">nhead</span><span class="err">：</span><span class="n">多头注意力机制中的头数</span><span class="err">。</span>
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="n">d_hid</span><span class="err">：</span><span class="n">前馈神经网络中的隐藏层维度</span><span class="err">。</span>
+</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="n">nlayers</span><span class="err">：</span><span class="n">编码器的层数</span><span class="err">。</span>
+</span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="n">dropout</span><span class="err">：</span><span class="n">dropout</span> <span class="n">的概率</span><span class="err">，</span><span class="n">用于防止过拟合</span><span class="err">。</span>
+</span><span id="__span-26-6"><a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a>
+</span><span id="__span-26-7"><a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a><span class="k">class</span> <span class="err">.</span><span class="nc">FastTransformerEncoderWrapper</span><span class="p">(</span>
+</span><span id="__span-26-8"><a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a>    <span class="n">d_model</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> 
+</span><span id="__span-26-9"><a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a>    <span class="n">nhead</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> 
+</span><span id="__span-26-10"><a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a>    <span class="n">d_hid</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> 
+</span><span id="__span-26-11"><a id="__codelineno-26-11" name="__codelineno-26-11" href="#__codelineno-26-11"></a>    <span class="n">nlayers</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> 
+</span><span id="__span-26-12"><a id="__codelineno-26-12" name="__codelineno-26-12" href="#__codelineno-26-12"></a>    <span class="n">dropout</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">)</span>
+</span></code></pre></div>
+<p>举例：</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="c1"># 初始化模型</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="n">d_model</span> <span class="o">=</span> <span class="mi">4</span>   <span class="c1"># 输入嵌入的维度</span>
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="n">nhead</span> <span class="o">=</span> <span class="mi">2</span>     <span class="c1"># 多头注意力机制中的头数</span>
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="n">d_hid</span> <span class="o">=</span> <span class="mi">8</span>     <span class="c1"># 前馈神经网络中的隐藏层维度</span>
+</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="n">nlayers</span> <span class="o">=</span> <span class="mi">2</span>   <span class="c1"># 编码器的层数</span>
+</span><span id="__span-27-6"><a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="n">dropout</span> <span class="o">=</span> <span class="mf">0.1</span> <span class="c1"># dropout 概率</span>
+</span><span id="__span-27-7"><a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a>
+</span><span id="__span-27-8"><a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a><span class="n">model</span> <span class="o">=</span> <span class="n">FastTransformerEncoderWrapper</span><span class="p">(</span><span class="n">d_model</span><span class="p">,</span> <span class="n">nhead</span><span class="p">,</span> <span class="n">d_hid</span><span class="p">,</span> <span class="n">nlayers</span><span class="p">,</span> <span class="n">dropout</span><span class="p">)</span>
+</span><span id="__span-27-9"><a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a>
+</span><span id="__span-27-10"><a id="__codelineno-27-10" name="__codelineno-27-10" href="#__codelineno-27-10"></a><span class="c1"># 输入数据</span>
+</span><span id="__span-27-11"><a id="__codelineno-27-11" name="__codelineno-27-11" href="#__codelineno-27-11"></a><span class="c1"># 假设我们有 2 个样本，每个样本包含 3 个特征向量，维度为 4：</span>
+</span><span id="__span-27-12"><a id="__codelineno-27-12" name="__codelineno-27-12" href="#__codelineno-27-12"></a><span class="n">input_data</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span>
+</span><span id="__span-27-13"><a id="__codelineno-27-13" name="__codelineno-27-13" href="#__codelineno-27-13"></a>    <span class="p">[[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.8</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.6</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.7</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.2</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">]],</span>
+</span><span id="__span-27-14"><a id="__codelineno-27-14" name="__codelineno-27-14" href="#__codelineno-27-14"></a>    <span class="p">[[</span><span class="mf">0.9</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.4</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">]]</span>
+</span><span id="__span-27-15"><a id="__codelineno-27-15" name="__codelineno-27-15" href="#__codelineno-27-15"></a><span class="p">])</span>
+</span><span id="__span-27-16"><a id="__codelineno-27-16" name="__codelineno-27-16" href="#__codelineno-27-16"></a><span class="n">padding_mask</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span>
+</span><span id="__span-27-17"><a id="__codelineno-27-17" name="__codelineno-27-17" href="#__codelineno-27-17"></a>    <span class="p">[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">],</span>
+</span><span id="__span-27-18"><a id="__codelineno-27-18" name="__codelineno-27-18" href="#__codelineno-27-18"></a>    <span class="p">[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">]</span>
+</span><span id="__span-27-19"><a id="__codelineno-27-19" name="__codelineno-27-19" href="#__codelineno-27-19"></a><span class="p">])</span>
+</span><span id="__span-27-20"><a id="__codelineno-27-20" name="__codelineno-27-20" href="#__codelineno-27-20"></a>
+</span><span id="__span-27-21"><a id="__codelineno-27-21" name="__codelineno-27-21" href="#__codelineno-27-21"></a><span class="c1"># 进行前向传播</span>
+</span><span id="__span-27-22"><a id="__codelineno-27-22" name="__codelineno-27-22" href="#__codelineno-27-22"></a><span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">input_data</span><span class="p">,</span> <span class="n">padding_mask</span><span class="p">)</span>
+</span><span id="__span-27-23"><a id="__codelineno-27-23" name="__codelineno-27-23" href="#__codelineno-27-23"></a><span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+</span></code></pre></div>
+<p>结果：</p>
+<pre>
+输出的形状为 (2, 3, 4)，即批次大小为 2，每个样本的序列长度为 3，嵌入维度为 4。
+每个元素是一个浮点数，表示经过快速 Transformer 编码器处理后的特征表示。
+
+tensor([
+    [[ 0.1,  0.2, -0.1,  0.3],
+     [ 0.4, -0.2,  0.5, -0.3],
+     [ 0.2,  0.1,  0.4,  0.1]],
+
+    [[ 0.3, -0.1,  0.2, -0.2],
+     [ 0.2,  0.4, -0.1,  0.5],
+     [ 0.1,  0.3, -0.2,  0.4]]
+])
+
+</pre>
+
+<h4 id="flashtransformerencoderlayer">.FlashTransformerEncoderLayer</h4>
+<p>FlashTransformerEncoderLayer 类是一个改进的 Transformer 编码器层，<strong>支持 FlashAttention</strong>，可以在生物信息学领域中应用，例如处理基因序列、蛋白质序列或其他高维度数据的建模任务。这个类继承自 nn.Module，并且修改了标准的 torch.nn.TransformerEncoderLayer 以支持 FlashAttention。</p>
+<p>输入:</p>
+<ul>
+<li>形状（Shape）：<ul>
+<li>src：形状为 (batch_size, seq_len, embsize) 的张量（假设 batch_first=True）。<ul>
+<li>batch_size：批次大小。</li>
+<li>seq_len：序列长度。</li>
+<li>embsize：特征维度（d_model）。</li>
+</ul>
+</li>
+<li>src_mask：可选，输入序列的掩码。</li>
+<li>src_key_padding_mask：可选，形状为 (batch_size, seq_len) 的布尔张量。</li>
+</ul>
+</li>
+</ul>
+<p>输出:</p>
+<ul>
+<li>形状（Shape）：输出张量的形状为 (batch_size, seq_len, embsize)，与输入形状相同。</li>
+<li>内容：每个元素是一个浮点数，表示经过编码器层处理后的特征表示</li>
+</ul>
+<p><div class="language-py highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="n">d_model</span><span class="err">：</span><span class="n">输入特征的维度</span><span class="err">。</span>
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="n">nhead</span><span class="err">：</span><span class="n">多头注意力机制中的头数</span><span class="err">。</span>
+</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="n">dim_feedforward</span><span class="err">：</span><span class="n">前馈神经网络的维度</span><span class="err">，</span><span class="n">默认为</span> <span class="mi">2048</span><span class="err">。</span>
+</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="n">dropout</span><span class="err">：</span><span class="n">dropout</span> <span class="n">的概率</span><span class="err">，</span><span class="n">默认为</span> <span class="mf">0.1</span><span class="err">。</span>
+</span><span id="__span-28-5"><a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a><span class="n">activation</span><span class="err">：</span><span class="n">中间层的激活函数</span><span class="err">，</span><span class="n">默认为</span> <span class="n">ReLU</span><span class="err">，</span><span class="n">可以选择</span> <span class="n">ReLU</span> <span class="n">或</span> <span class="n">GELU</span><span class="err">。</span>
+</span><span id="__span-28-6"><a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a><span class="n">layer_norm_eps</span><span class="err">：</span><span class="n">层归一化的</span> <span class="n">eps</span> <span class="n">值</span><span class="err">，</span><span class="n">默认为</span> <span class="mf">1e-5</span><span class="err">。</span>
+</span><span id="__span-28-7"><a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a><span class="n">batch_first</span><span class="err">：</span><span class="n">如果为</span> <span class="kc">True</span><span class="err">，</span><span class="n">则输入和输出张量的形状为</span> <span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">seq</span><span class="p">,</span> <span class="n">feature</span><span class="p">)</span><span class="err">，</span><span class="n">默认为</span> <span class="kc">True</span><span class="err">。</span>
+</span><span id="__span-28-8"><a id="__codelineno-28-8" name="__codelineno-28-8" href="#__codelineno-28-8"></a><span class="n">norm_scheme</span><span class="err">：</span><span class="n">归一化方案</span><span class="err">，</span><span class="s2">&quot;pre&quot;</span> <span class="n">或</span> <span class="s2">&quot;post&quot;</span><span class="err">。</span>
+</span><span id="__span-28-9"><a id="__codelineno-28-9" name="__codelineno-28-9" href="#__codelineno-28-9"></a>
+</span><span id="__span-28-10"><a id="__codelineno-28-10" name="__codelineno-28-10" href="#__codelineno-28-10"></a><span class="k">class</span> <span class="err">.</span><span class="nc">FlashTransformerEncoderLayer</span><span class="p">(</span>
+</span><span id="__span-28-11"><a id="__codelineno-28-11" name="__codelineno-28-11" href="#__codelineno-28-11"></a>    <span class="n">d_model</span><span class="p">,</span> <span class="n">nhead</span><span class="p">,</span> <span class="n">dim_feedforward</span><span class="o">=</span><span class="mi">2048</span><span class="p">,</span> 
+</span><span id="__span-28-12"><a id="__codelineno-28-12" name="__codelineno-28-12" href="#__codelineno-28-12"></a>    <span class="n">dropout</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span> <span class="n">layer_norm_eps</span><span class="o">=</span><span class="mf">1e-05</span><span class="p">,</span> 
+</span><span id="__span-28-13"><a id="__codelineno-28-13" name="__codelineno-28-13" href="#__codelineno-28-13"></a>    <span class="n">batch_first</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">norm_scheme</span><span class="o">=</span><span class="s1">&#39;post&#39;</span><span class="p">)</span>
+</span></code></pre></div>
+举例：</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="c1"># 初始化模型</span>
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="n">d_model</span> <span class="o">=</span> <span class="mi">4</span>   <span class="c1"># 输入特征的维度</span>
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="n">nhead</span> <span class="o">=</span> <span class="mi">2</span>     <span class="c1"># 多头注意力机制中的头数</span>
+</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="n">dim_feedforward</span> <span class="o">=</span> <span class="mi">8</span>  <span class="c1"># 前馈神经网络的维度</span>
+</span><span id="__span-29-5"><a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a><span class="n">dropout</span> <span class="o">=</span> <span class="mf">0.1</span> <span class="c1"># dropout 概率</span>
+</span><span id="__span-29-6"><a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a>
+</span><span id="__span-29-7"><a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a><span class="n">model</span> <span class="o">=</span> <span class="n">FlashTransformerEncoderLayer</span><span class="p">(</span><span class="n">d_model</span><span class="p">,</span> <span class="n">nhead</span><span class="p">,</span> <span class="n">dim_feedforward</span><span class="p">,</span> <span class="n">dropout</span><span class="p">)</span>
+</span><span id="__span-29-8"><a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a>
+</span><span id="__span-29-9"><a id="__codelineno-29-9" name="__codelineno-29-9" href="#__codelineno-29-9"></a><span class="c1"># 输入数据</span>
+</span><span id="__span-29-10"><a id="__codelineno-29-10" name="__codelineno-29-10" href="#__codelineno-29-10"></a><span class="n">input_data</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span>
+</span><span id="__span-29-11"><a id="__codelineno-29-11" name="__codelineno-29-11" href="#__codelineno-29-11"></a>    <span class="p">[[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.8</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.6</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.7</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.2</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">]],</span>
+</span><span id="__span-29-12"><a id="__codelineno-29-12" name="__codelineno-29-12" href="#__codelineno-29-12"></a>    <span class="p">[[</span><span class="mf">0.9</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.4</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">]]</span>
+</span><span id="__span-29-13"><a id="__codelineno-29-13" name="__codelineno-29-13" href="#__codelineno-29-13"></a><span class="p">])</span>
+</span><span id="__span-29-14"><a id="__codelineno-29-14" name="__codelineno-29-14" href="#__codelineno-29-14"></a><span class="n">padding_mask</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span>
+</span><span id="__span-29-15"><a id="__codelineno-29-15" name="__codelineno-29-15" href="#__codelineno-29-15"></a>    <span class="p">[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">],</span>
+</span><span id="__span-29-16"><a id="__codelineno-29-16" name="__codelineno-29-16" href="#__codelineno-29-16"></a>    <span class="p">[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">]</span>
+</span><span id="__span-29-17"><a id="__codelineno-29-17" name="__codelineno-29-17" href="#__codelineno-29-17"></a><span class="p">])</span>
+</span><span id="__span-29-18"><a id="__codelineno-29-18" name="__codelineno-29-18" href="#__codelineno-29-18"></a>
+</span><span id="__span-29-19"><a id="__codelineno-29-19" name="__codelineno-29-19" href="#__codelineno-29-19"></a><span class="c1"># 进行前向传播</span>
+</span><span id="__span-29-20"><a id="__codelineno-29-20" name="__codelineno-29-20" href="#__codelineno-29-20"></a><span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">input_data</span><span class="p">,</span> <span class="n">src_key_padding_mask</span><span class="o">=</span><span class="n">padding_mask</span><span class="p">)</span>
+</span><span id="__span-29-21"><a id="__codelineno-29-21" name="__codelineno-29-21" href="#__codelineno-29-21"></a><span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+</span></code></pre></div>
+<p>输出：</p>
+<pre>
+输出的形状为 (2, 3, 4)，即批次大小为 2，每个样本的序列长度为 3，特征维度为 4。
+每个元素是一个浮点数，表示经过编码器层处理后的特征表示。
+tensor([
+    [[ 0.1,  0.2, -0.1,  0.3],
+     [ 0.4, -0.2,  0.5, -0.3],
+     [ 0.2,  0.1,  0.4,  0.1]],
+
+    [[ 0.3, -0.1,  0.2, -0.2],
+     [ 0.2,  0.4, -0.1,  0.5],
+     [ 0.1,  0.3, -0.2,  0.4]]
+])
+
+</pre>
+
+<h4 id="geneencoder_1">.GeneEncoder</h4>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="k">class</span> <span class="err">.</span><span class="nc">GeneEncoder</span><span class="p">(</span>
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>    <span class="n">num_embeddings</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> 
+</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>    <span class="n">embedding_dim</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> 
+</span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a>    <span class="n">padding_idx</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span>
+</span></code></pre></div>
+<h4 id="mvcdecoder">.MVCDecoder</h4>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="k">class</span> <span class="err">.</span><span class="nc">MVCDecoder</span><span class="p">(</span>
+</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>    <span class="n">d_model</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">arch_style</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;inner product&#39;</span><span class="p">,</span> <span class="n">query_activation</span><span class="p">:</span> <span class="o">~</span><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">modules</span><span class="o">.</span><span class="n">module</span><span class="o">.</span><span class="n">Module</span> <span class="o">=</span> <span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">modules</span><span class="o">.</span><span class="n">activation</span><span class="o">.</span><span class="n">Sigmoid</span><span class="s1">&#39;&gt;, </span>
+</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>    <span class="n">hidden_activation</span><span class="p">:</span> <span class="o">~</span><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">modules</span><span class="o">.</span><span class="n">module</span><span class="o">.</span><span class="n">Module</span> <span class="o">=</span> <span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">modules</span><span class="o">.</span><span class="n">activation</span><span class="o">.</span><span class="n">PReLU</span><span class="s1">&#39;&gt;, explicit_zero_prob: bool = False, use_batch_labels: bool = False)</span>
+</span></code></pre></div>
+<h4 id="positionalencoding_1">.PositionalEncoding</h4>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="k">class</span> <span class="err">.</span><span class="nc">PositionalEncoding</span><span class="p">(</span>
+</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>    <span class="n">d_model</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> 
+</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a>    <span class="n">dropout</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span> 
+</span><span id="__span-32-4"><a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a>    <span class="n">max_len</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5000</span><span class="p">)</span>
+</span></code></pre></div>
+<h4 id="similarity_1">Similarity</h4>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="k">class</span> <span class="nc">Similarity</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
+</span></code></pre></div>
+<h4 id="transformermode">.TransformerMode</h4>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="k">class</span> <span class="nc">model</span><span class="o">.</span><span class="n">TransformerModel</span><span class="p">(</span>
+</span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a>    <span class="n">ntoken</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">d_model</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">nhead</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">d_hid</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">nlayers</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">nlayers_cls</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">n_cls</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">vocab</span><span class="p">:</span> <span class="n">Any</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dropout</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">pad_token</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;&lt;pad&gt;&#39;</span><span class="p">,</span> <span class="n">pad_value</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">do_mvc</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">do_dab</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">use_batch_labels</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">num_batch_labels</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">domain_spec_batchnorm</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">input_emb_style</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;continuous&#39;</span><span class="p">,</span> <span class="n">n_input_bins</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">cell_emb_style</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;cls&#39;</span><span class="p">,</span> <span class="n">mvc_decoder_style</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;inner product&#39;</span><span class="p">,</span> <span class="n">ecs_threshold</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">,</span> <span class="n">explicit_zero_prob</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">use_fast_transformer</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">fast_transformer_backend</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;flash&#39;</span><span class="p">,</span> <span class="n">pre_norm</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+</span></code></pre></div>
+<h4 id="generate_square_subsequent_mask_1">generate_square_subsequent_mask</h4>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="k">class</span> <span class="err">.</span><span class="nc">generate_square_subsequent_mask</span><span class="p">(</span><span class="n">sz</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span><span class="err">→</span> <span class="n">Tensor</span>
+</span></code></pre></div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.path", "content.code.copy", "content.code.annotate", "content.code.select"], "search": "../../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.51198bba.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>

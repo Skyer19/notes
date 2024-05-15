@@ -11,24 +11,24 @@
       
       
       
-        <link rel="prev" href="../../transformer_GRN_Inference/">
+        <link rel="prev" href="../scgpt.loss/">
       
       
-        <link rel="next" href="../../../Finance/1-%E5%9F%BA%E6%9C%AC%E9%87%91%E8%9E%8D%E7%9F%A5%E8%AF%86/">
+        <link rel="next" href="../scgpt.trainer/">
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.6">
     
     
       
-        <title>scGPT pipline - My notes</title>
+        <title>scgpt.preprocess - My notes</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.ded33207.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ded33207.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a0c5b2b5.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.a0c5b2b5.min.css">
       
       
 
@@ -44,9 +44,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -58,6 +58,8 @@
   
     
     
+      
+    
     
     
     
@@ -65,15 +67,12 @@
   
     
     
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
-      
-        
-        <a href="#scgpt" class="md-skip">
-          Skip to content
-        </a>
       
     </div>
     <div data-md-component="announce">
@@ -85,7 +84,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="My notes" class="md-header__button md-logo" aria-label="My notes" data-md-component="logo">
+    <a href="../../../.." title="My notes" class="md-header__button md-logo" aria-label="My notes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -104,12 +103,32 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              scGPT pipline
+              scgpt.preprocess
             
           </span>
         </div>
       </div>
     </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+            </label>
+          
+        
+      </form>
     
     
     
@@ -167,7 +186,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../.." class="md-tabs__link">
+    <a href="../../../.." class="md-tabs__link">
       Home
     </a>
   </li>
@@ -187,7 +206,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../courses/pdl/l1/" class="md-tabs__link">
+      <a href="../../../../Courses/pdl/l1/" class="md-tabs__link">
         Courses
       </a>
     </li>
@@ -205,7 +224,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../Python/Python%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/" class="md-tabs__link">
+      <a href="../../../../Python/Python%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/" class="md-tabs__link">
         Python
       </a>
     </li>
@@ -221,7 +240,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../Linux/%E7%BB%88%E7%AB%AF%E5%91%BD%E4%BB%A4/" class="md-tabs__link">
+      <a href="../../../../Linux/%E7%BB%88%E7%AB%AF%E5%91%BD%E4%BB%A4/" class="md-tabs__link">
         Linux
       </a>
     </li>
@@ -239,7 +258,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E9%A2%86%E5%9F%9F%E7%9A%84%E4%BB%BB%E5%8A%A1/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../../%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/" class="md-tabs__link md-tabs__link--active">
         Project
       </a>
     </li>
@@ -255,7 +274,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../Finance/1-%E5%9F%BA%E6%9C%AC%E9%87%91%E8%9E%8D%E7%9F%A5%E8%AF%86/" class="md-tabs__link">
+      <a href="../../../../Finance/1-%E5%9F%BA%E6%9C%AC%E9%87%91%E8%9E%8D%E7%9F%A5%E8%AF%86/" class="md-tabs__link">
         Finance
       </a>
     </li>
@@ -271,7 +290,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../Quant/%E9%87%8F%E5%8C%96%E5%B7%A5%E4%BD%9C%E4%BB%8B%E7%BB%8D/" class="md-tabs__link">
+      <a href="../../../../Quant/%E9%87%8F%E5%8C%96%E5%B7%A5%E4%BD%9C%E4%BB%8B%E7%BB%8D/" class="md-tabs__link">
         Quant
       </a>
     </li>
@@ -287,7 +306,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../French/1/" class="md-tabs__link">
+      <a href="../../../../French/1/" class="md-tabs__link">
         French
       </a>
     </li>
@@ -315,7 +334,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="My notes" class="md-nav__button md-logo" aria-label="My notes" data-md-component="logo">
+    <a href="../../../.." title="My notes" class="md-nav__button md-logo" aria-label="My notes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -334,7 +353,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../../../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -405,7 +424,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../courses/pdl/l1/" class="md-nav__link">
+      <a href="../../../../Courses/pdl/l1/" class="md-nav__link">
         Lecture 1
       </a>
     </li>
@@ -419,7 +438,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../courses/pdl/l2/" class="md-nav__link">
+      <a href="../../../../Courses/pdl/l2/" class="md-nav__link">
         Lecture 2
       </a>
     </li>
@@ -469,22 +488,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../courses/nlp/l1/" class="md-nav__link">
-        Lecture 1
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../courses/nlp/l2/" class="md-nav__link">
-        Lecture 2
+      <a href="../../../../Courses/nlp/transformer/" class="md-nav__link">
+        Transformer
       </a>
     </li>
   
@@ -539,7 +544,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Python/Python%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/" class="md-nav__link">
+      <a href="../../../../Python/Python%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/" class="md-nav__link">
         Python常用指令
       </a>
     </li>
@@ -553,8 +558,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Python/wandb%E4%BD%BF%E7%94%A8/" class="md-nav__link">
+      <a href="../../../../Python/wandb%E4%BD%BF%E7%94%A8/" class="md-nav__link">
         wandb使用
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Python/dataFrame%E4%BD%BF%E7%94%A8/" class="md-nav__link">
+        DataFrame
       </a>
     </li>
   
@@ -602,7 +621,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Linux/%E7%BB%88%E7%AB%AF%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+      <a href="../../../../Linux/%E7%BB%88%E7%AB%AF%E5%91%BD%E4%BB%A4/" class="md-nav__link">
         终端命令
       </a>
     </li>
@@ -616,7 +635,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Linux/%E6%96%87%E4%BB%B6%28%E7%9B%AE%E5%BD%95%29%E6%93%8D%E4%BD%9C/" class="md-nav__link">
+      <a href="../../../../Linux/%E6%96%87%E4%BB%B6%28%E7%9B%AE%E5%BD%95%29%E6%93%8D%E4%BD%9C/" class="md-nav__link">
         文件(目录)操作
       </a>
     </li>
@@ -630,7 +649,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Linux/screen%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+      <a href="../../../../Linux/screen%E5%91%BD%E4%BB%A4/" class="md-nav__link">
         screen命令
       </a>
     </li>
@@ -644,7 +663,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Linux/tmux%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+      <a href="../../../../Linux/tmux%E5%91%BD%E4%BB%A4/" class="md-nav__link">
         tmux命令
       </a>
     </li>
@@ -658,7 +677,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Linux/pip%E4%BD%BF%E7%94%A8/" class="md-nav__link">
+      <a href="../../../../Linux/pip%E4%BD%BF%E7%94%A8/" class="md-nav__link">
         pip使用
       </a>
     </li>
@@ -672,7 +691,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Linux/conda%E4%BD%BF%E7%94%A8/" class="md-nav__link">
+      <a href="../../../../Linux/conda%E4%BD%BF%E7%94%A8/" class="md-nav__link">
         conda使用
       </a>
     </li>
@@ -723,7 +742,21 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E9%A2%86%E5%9F%9F%E7%9A%84%E4%BB%BB%E5%8A%A1/" class="md-nav__link">
+      <a href="../../../%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/" class="md-nav__link">
+        名词解释
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E9%A2%86%E5%9F%9F%E7%9A%84%E4%BB%BB%E5%8A%A1/" class="md-nav__link">
         生物信息学领域的任务
       </a>
     </li>
@@ -737,7 +770,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../H5AD%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F/" class="md-nav__link">
+      <a href="../../../H5AD%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F/" class="md-nav__link">
         H5AD文件
       </a>
     </li>
@@ -758,17 +791,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
       
       
       
-        <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
           基因调控网络
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_5_3">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_4">
           <span class="md-nav__icon md-icon"></span>
           基因调控网络
         </label>
@@ -780,8 +813,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../GRN/" class="md-nav__link">
-        基因调控网络
+      <a href="../../../GRN/GRN/" class="md-nav__link">
+        GRN
       </a>
     </li>
   
@@ -794,8 +827,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../courses/nlp/transformer/" class="md-nav__link">
-        Transformer
+      <a href="../../../GRN/GRN_code/" class="md-nav__link">
+        GRN Code
       </a>
     </li>
   
@@ -808,8 +841,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../transformer_GRN_Inference/" class="md-nav__link">
-        Transformer GRN Inference
+      <a href="../../../GRN/transformer_GRN_Inference/" class="md-nav__link">
+        GRN Inference - Transformer
       </a>
     </li>
   
@@ -838,21 +871,210 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" checked>
       
       
       
-        <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
           scGPT
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="true">
-        <label class="md-nav__title" for="__nav_5_4">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_5_5">
           <span class="md-nav__icon md-icon"></span>
           scGPT
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scGPT_pipeline/" class="md-nav__link">
+        Pipeline
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5_2" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_5_2" id="__nav_5_5_2_label" tabindex="0">
+          scGPT code Package
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_5_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_5_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          scGPT code Package
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5_2_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_5_2_1" id="__nav_5_5_2_1_label" tabindex="0">
+          Modules
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_5_5_2_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_5_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Modules
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Modules/scGPT_code_scgpt.model_package/" class="md-nav__link">
+        scgpt.model package
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Modules/scGPT_code_scgpt.scbank_package/" class="md-nav__link">
+        scgpt.scbank package
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Modules/scGPT_code_scgpt.tasks_package/" class="md-nav__link">
+        scgpt.tasks package
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Modules/scGPT_code_scgpt.tokenizer_package/" class="md-nav__link">
+        scgpt.tokenizer package
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Modules/scGPT_code_scgpt.utils_package/" class="md-nav__link">
+        scgpt.utils package
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scgpt.data_collator/" class="md-nav__link">
+        scgpt.data_collator
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scgpt.data_sampler/" class="md-nav__link">
+        scgpt.data_sampler
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scgpt.loss/" class="md-nav__link">
+        scgpt.loss
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -867,66 +1089,31 @@
       
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          scGPT pipline
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
-        scGPT pipline
+        scgpt.preprocess
       </a>
       
-        
+    </li>
+  
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+            
+          
+            
+              
   
   
   
+    <li class="md-nav__item">
+      <a href="../scgpt.trainer/" class="md-nav__link">
+        scgpt.trainer
+      </a>
+    </li>
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#scgpt" class="md-nav__link">
-    scGPT的结构
-  </a>
-  
-    <nav class="md-nav" aria-label="scGPT的结构">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#a" class="md-nav__link">
-    图a: 预训练和微调
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#b" class="md-nav__link">
-    图b: 输入嵌入和模型架构
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#c" class="md-nav__link">
-    图c: 掩码注意力变换器
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -980,7 +1167,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Finance/1-%E5%9F%BA%E6%9C%AC%E9%87%91%E8%9E%8D%E7%9F%A5%E8%AF%86/" class="md-nav__link">
+      <a href="../../../../Finance/1-%E5%9F%BA%E6%9C%AC%E9%87%91%E8%9E%8D%E7%9F%A5%E8%AF%86/" class="md-nav__link">
         基本金融知识
       </a>
     </li>
@@ -994,7 +1181,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Finance/2-%E9%87%91%E8%9E%8D%E5%B7%A5%E5%85%B7/" class="md-nav__link">
+      <a href="../../../../Finance/2-%E9%87%91%E8%9E%8D%E5%B7%A5%E5%85%B7/" class="md-nav__link">
         金融工具
       </a>
     </li>
@@ -1008,7 +1195,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Finance/4-%E9%87%91%E8%9E%8D%E6%9C%BA%E6%9E%84/" class="md-nav__link">
+      <a href="../../../../Finance/4-%E9%87%91%E8%9E%8D%E6%9C%BA%E6%9E%84/" class="md-nav__link">
         金融机构
       </a>
     </li>
@@ -1022,7 +1209,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Finance/3-%E9%87%91%E8%9E%8D%E5%88%86%E6%9E%90/" class="md-nav__link">
+      <a href="../../../../Finance/3-%E9%87%91%E8%9E%8D%E5%88%86%E6%9E%90/" class="md-nav__link">
         金融分析
       </a>
     </li>
@@ -1071,7 +1258,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Quant/%E9%87%8F%E5%8C%96%E5%B7%A5%E4%BD%9C%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
+      <a href="../../../../Quant/%E9%87%8F%E5%8C%96%E5%B7%A5%E4%BD%9C%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
         量化工作介绍
       </a>
     </li>
@@ -1085,7 +1272,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Quant/%E9%87%8F%E5%8C%96%E6%8A%80%E8%83%BD/" class="md-nav__link">
+      <a href="../../../../Quant/%E9%87%8F%E5%8C%96%E6%8A%80%E8%83%BD/" class="md-nav__link">
         量化技能
       </a>
     </li>
@@ -1134,7 +1321,21 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../French/1/" class="md-nav__link">
+      <a href="../../../../French/1/" class="md-nav__link">
+        French 1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../French/2/" class="md-nav__link">
         French 1
       </a>
     </li>
@@ -1166,48 +1367,6 @@
   
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#scgpt" class="md-nav__link">
-    scGPT的结构
-  </a>
-  
-    <nav class="md-nav" aria-label="scGPT的结构">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#a" class="md-nav__link">
-    图a: 预训练和微调
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#b" class="md-nav__link">
-    图b: 输入嵌入和模型架构
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#c" class="md-nav__link">
-    图c: 掩码注意力变换器
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1221,43 +1380,9 @@
                   
 
 
-  <h1>scGPT pipline</h1>
+  <h1>scgpt.preprocess</h1>
 
-<h2 id="scgpt">scGPT的结构</h2>
-<p><img alt="这是图片" src="../../img/scGPT_pipline.jpg" width="900" /></p>
-<p>这个图示描述了 scGPT（单细胞基因表达转换模型）的结构和工作流程.</p>
-<h3 id="a">图a: 预训练和微调</h3>
-<p><strong>预训练阶段(Pretraining)</strong>：
-<img alt="这是图片" src="../../img/scGPT_pipline_pretraining.jpg" width="600" /></p>
-<ul>
-<li><strong>目标</strong>：利用大型细胞图谱数据对 scGPT 进行初步训练，以学习细胞和基因的一般性表示。</li>
-<li>
-<p><strong>方法</strong>：使用掩码注意力变换器(a specially designed attention mask)和生成训练技术(generative training pipeline)。这种方法允许模型通过自监督学习( self-supervised)来优化细胞和基因的表示 (optimize cell and gene representations)，即模型学习预测缺失的基因表达数据。</p>
-<ul>
-<li><strong>详细方法</strong>：针对基因表达数据的非序列性质进行处理，使其适应于自然语言生成（NLG）框架中的序列预测 <a href="../scGPT-%E5%9F%BA%E5%9B%A0%E8%A1%A8%E8%BE%BE%E9%80%82%E5%BA%94%E5%BA%8F%E5%88%97%E5%8C%96%E9%A2%84%E6%B5%8B/">详细解释</a></li>
-</ul>
-</li>
-<li>
-<p><strong>输出</strong>：模型在这一阶段能够基于细胞状态(cell states)或基因表达提示(gene expression cues)来生成细胞的基因表达(gene expression of cells).</p>
-</li>
-</ul>
-<p><strong>微调阶段(Fine-tuning)</strong>：
-<img alt="这是图片" src="../../img/scGPT_pipline_finetune.jpg" width="600" /></p>
-<ul>
-<li><strong>目标</strong>：将预训练的模型适应新的、更小的数据集和具体的生物学任务(e.g., single-cell research, including scRNA-seq integration with batch correction, cell type annotation, multi-omic integration, perturbation prediction and gene regulatory network (GRN) inference.)。</li>
-<li><strong>过程</strong>：在新数据集上继续训练模型，调整模型权重以更好地反映特定数据集的特征和任务要求。</li>
-</ul>
-<h3 id="b">图b: 输入嵌入和模型架构</h3>
-<p><img alt="这是图片" src="../../img/scGPT_embedding_structure.jpg" width="400" /></p>
-<ul>
-<li><strong>输入嵌入</strong>：展示了如何处理不同类型的基因表达数据（已知表达和未知表达）。不同的嵌入层用于不同类型的数据，以优化模型的输入处理。</li>
-<li><strong>结构</strong>：图示显示了多层注意力机制如何被用来处理嵌入后的输入，通过连续的注意力和前馈层逐步构建最终输出。</li>
-</ul>
-<h3 id="c">图c: 掩码注意力变换器</h3>
-<p><img alt="这是图片" src="../../img/scGPT_masks_strucutre.jpg" width="400" /></p>
-<ul>
-<li><strong>详细架构</strong>：描绘了注意力模型的内部工作，包括掩码多头注意力、归一化和前馈层。这种结构帮助模型在接收到部分信息（如部分基因表达数据）的情况下预测缺失数据。</li>
-</ul>
+
 
 
 
@@ -1299,10 +1424,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.path", "content.code.copy", "content.code.annotate", "content.code.select"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.path", "content.code.copy", "content.code.annotate", "content.code.select"], "search": "../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.51198bba.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.51198bba.min.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       

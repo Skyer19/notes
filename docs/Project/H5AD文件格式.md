@@ -147,6 +147,48 @@ F8A1      3.671453e+00     9.613371         -0.455848
 [18896 rows x 9 columns]
 </pre>
 
+```
+# 查找clusters
+unique_clusters = adata.obs['donor_id'].unique()
+
+print(unique_clusters)
+num_clusters = len(unique_clusters)
+print(f"Total {num_clusters} of the cluster labels.")
+
+cluster_sizes = adata.obs['donor_id'].value_counts()
+print(cluster_sizes)
+```
+
+<pre>
+Example output:
+['H21.33.008', 'H21.33.014', 'H20.33.015', 'H21.33.011', 'H21.33.040', 
+'H20.33.040', 'H20.33.025', 'H21.33.022', 'H21.33.029', 'H20.33.033']
+Categories (10, object): ['H20.33.015', 'H20.33.025', 'H20.33.033', 
+'H20.33.040', ..., 'H21.33.014', 'H21.33.022', 'H21.33.029', 'H21.33.040']
+Total 10 of the cluster labels.
+donor_id
+H21.33.022    929
+H21.33.008    764
+H20.33.025    761
+H20.33.040    535
+H21.33.011    478
+H21.33.040    398
+H20.33.015    382
+H21.33.014    246
+H21.33.029    201
+H20.33.033    199
+Name: count, dtype: int64
+</pre>
+
+
+```py
+# 查看变量的数据类型
+print(adata.obs.dtypes)
+
+print(adata.var.dtypes)
+```
+
+
 
 ### adata的.X属性
 
@@ -296,5 +338,32 @@ print(filtered_adata)
 filtered_adata.write('filtered_data.h5ad')
 ```
 
+## 数据预处理
 
+**检查数据是否为稀疏矩阵，并获取数据的最小值**
 
+```py
+import numpy as np
+from scipy.sparse import issparse
+
+# 检查数据是否为稀疏矩阵，并获取数据的最小值
+if issparse(adata.X):
+    min_value = adata.X.data.min()
+else:
+    min_value = adata.X.min()
+
+print("Minimum value in the data:", min_value)
+```
+
+**如果源数据就包含了负数，需要进行数据清洗。一种简单的方法是将所有负数置为0:**
+
+```py
+from scipy.sparse import issparse
+
+# 如果数据是稀疏矩阵
+if issparse(adata.X):
+    adata.X.data = np.maximum(adata.X.data, 0)  # 将负数置为0
+else:
+    adata.X = np.maximum(adata.X, 0)  # 将负数置为0
+
+```

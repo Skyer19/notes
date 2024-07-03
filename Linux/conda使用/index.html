@@ -1023,7 +1023,14 @@
       
         <li class="md-nav__item">
   <a href="#conda_4" class="md-nav__link">
-    删除 Conda 环境
+    安装Conda环境
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conda_5" class="md-nav__link">
+    删除Conda环境
   </a>
   
 </li>
@@ -2006,7 +2013,14 @@
       
         <li class="md-nav__item">
   <a href="#conda_4" class="md-nav__link">
-    删除 Conda 环境
+    安装Conda环境
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conda_5" class="md-nav__link">
+    删除Conda环境
   </a>
   
 </li>
@@ -2059,8 +2073,11 @@
 </span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1"># 激活第二个 Conda 实例</span>
 </span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="nb">source</span><span class="w"> </span><span class="nv">$HOME</span>/miniconda3-second/bin/activate
 </span></code></pre></div>
-<h2 id="conda_4">删除 Conda 环境</h2>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>conda<span class="w"> </span>remove<span class="w"> </span>--name<span class="w"> </span>your_env_name<span class="w"> </span>--all
+<h2 id="conda_4">安装Conda环境</h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>your_env_name<span class="w"> </span><span class="nv">python</span><span class="o">=</span>x.x
+</span></code></pre></div>
+<h2 id="conda_5">删除Conda环境</h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>conda<span class="w"> </span>remove<span class="w"> </span>--name<span class="w"> </span>your_env_name<span class="w"> </span>--all
 </span></code></pre></div>
 <p>其中，<code>your_env_name</code> 是想要删除的环境的名称。</p>
 <ul>
@@ -2068,7 +2085,7 @@
 <li><code>--all</code> 选项告诉 Conda 删除环境中的所有包。</li>
 </ul>
 <p>例如，如果要删除名为 <code>myenv</code> 的环境及其中的所有包，你可以运行以下命令：</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>conda<span class="w"> </span>remove<span class="w"> </span>--name<span class="w"> </span>myenv<span class="w"> </span>--all
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>conda<span class="w"> </span>remove<span class="w"> </span>--name<span class="w"> </span>myenv<span class="w"> </span>--all
 </span></code></pre></div>
 <p>这会彻底删除名为 <code>myenv</code> 的 Conda 环境及其中的所有内容。</p>
 

@@ -10,9 +10,10 @@ conda env export > environment.yml
 conda env create -f environment.yml -n new_env_name
 ```
 
-## 安装/使用多个 Conda 实例
+## 安装/使用多个Conda实例
 
-### 安装
+### 安装多个Conda实例
+
 #### 下载另一个 Miniconda 安装脚本
 ```bash
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O Miniconda3-second.sh
@@ -37,7 +38,7 @@ $HOME/miniconda3/bin/conda init
 $HOME/miniconda3-second/bin/conda init
 ```
 
-### 切换和使用不同的 Conda 实例
+### 使用多个Conda实例
 ```bash
 # 激活第一个 Conda 实例
 source $HOME/miniconda3/bin/activate

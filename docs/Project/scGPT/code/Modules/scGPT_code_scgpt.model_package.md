@@ -906,19 +906,89 @@ tensor([
 
 #### .GeneEncoder
 
+同scgpt.model.generation_model.GeneEncoder
+
 ```py
 class .GeneEncoder(
     num_embeddings: int, 
     embedding_dim: int, 
     padding_idx: int | None = None)
 ```
+
 #### .MVCDecoder
+
+MVCDecoder 类是一个用于细胞嵌入的掩码值预测解码器。在生物信息学领域，特别是在单细胞 RNA 测序（scRNA-seq）数据分析中，这个解码器可以用于从细胞嵌入向量预测基因表达值。
+
+输入:
+
+- 形状（Shape）：
+    - cell_emb：形状为 (batch, embsize=d_model) 的张量。
+    - gene_embs：形状为 (batch, seq_len, embsize=d_model) 的张量。
+- 内容：
+    - cell_emb：每个元素是一个浮点数，表示细胞嵌入向量。
+    - gene_embs：每个元素是一个浮点数，表示基因嵌入向量。
+
+输出:
+
+- 形状（Shape）：
+    - 如果 explicit_zero_prob 为 False：
+        - {'pred': (batch, seq_len)}
+    - 如果 explicit_zero_prob 为 True：
+    - {'pred': (batch, seq_len), 'zero_probs': (batch, seq_len)}
+- 内容：
+    - pred：每个元素是一个浮点数，表示预测的基因表达值。
+    - zero_probs：每个元素是一个浮点数，表示预测的零概率（如果启用
+
+
 ```py
+d_model：基因嵌入的维度。
+arch_style：解码器的架构风格，有以下几种选择：
+"inner product"
+"inner product, detach"
+"concat query"
+"sum query"
+query_activation：用于查询向量的激活函数，默认是 nn.Sigmoid。
+hidden_activation：用于隐藏层的激活函数，默认是 nn.PReLU。
+explicit_zero_prob：是否显式计算零概率。
+use_batch_labels：是否使用批次标签。
+
 class .MVCDecoder(
     d_model: int, arch_style: str = 'inner product', query_activation: ~torch.nn.modules.module.Module = <class 'torch.nn.modules.activation.Sigmoid'>, 
     hidden_activation: ~torch.nn.modules.module.Module = <class 'torch.nn.modules.activation.PReLU'>, explicit_zero_prob: bool = False, use_batch_labels: bool = False)
 ```
+
+```py
+# 初始化模型
+d_model = 4   # 基因嵌入的维度
+arch_style = "inner product"  # 解码器的架构风格
+model = MVCDecoder(d_model, arch_style)
+
+# 输入数据
+cell_emb = torch.tensor([[0.5, 1.2, -0.8, 0.3], [1.1, -0.7, 0.6, 0.2]])  # shape (2, 4)
+gene_embs = torch.tensor([
+    [[0.9, 0.1, -1.0, 0.4], [0.8, -0.2, 1.1, -0.6], [0.5, -1.2, 0.4, 1.0]],
+    [[0.6, -0.5, 0.7, -0.1], [1.2, 0.8, -1.3, 0.7], [0.3, 0.4, -0.8, 1.1]]
+])  # shape (2, 3, 4)
+
+# 进行前向传播
+output = model(cell_emb, gene_embs)
+print(output)
+```
+
+<pre>>
+输出的 pred 形状为 (2, 3)，表示每个样本和每个基因嵌入向量的预测值
+{
+    'pred': tensor([
+        [0.35, 0.45, 0.30],
+        [0.40, 0.50, 0.35]
+    ])
+}
+</pre>
+
 #### .PositionalEncoding
+
+同scgpt.model.generation_model.PositionalEncoding
+
 ```py
 class .PositionalEncoding(
     d_model: int, 
@@ -926,16 +996,90 @@ class .PositionalEncoding(
     max_len: int = 5000)
 ```
 #### Similarity
+同scgpt.model.generation_model.Similarity
+
 ```py
 class Similarity(temp)
 ```
-#### .TransformerMode
-```py
+#### .TransformerModel
+
+TransformerModel 类是一个基于 Transformer 的模型，设计用于处理和分析生物信息学领域的数据，特别是单细胞 RNA 测序（scRNA-seq）数据。该模型集成了多种功能模块，用于不同的任务，如基因表达预测、分类、对比学习等。
+
+```
+
+ntoken：词汇表的大小。
+d_model：嵌入向量的维度。
+nhead：多头注意力机制中的头数。
+d_hid：前馈神经网络中的隐藏层维度。
+nlayers：Transformer 编码器的层数。
+nlayers_cls：分类解码器的层数，默认为 3。
+n_cls：分类任务中的类别数，默认为 1。
+vocab：词汇表对象，用于查找 padding token 的索引。
+dropout：dropout 的概率，默认为 0.5。
+pad_token：填充标记，默认为 <pad>。
+pad_value：填充值，默认为 0。
+do_mvc：是否启用 MVC 解码器。
+do_dab：是否启用 DAB 模块。
+use_batch_labels：是否使用批标签。
+num_batch_labels：批标签的数量。
+domain_spec_batchnorm：是否使用特定域的 batchnorm。
+input_emb_style：输入嵌入风格，默认为 "continuous"。
+n_input_bins：输入 bin 的数量（如果使用分类输入嵌入风格）。
+cell_emb_style：细胞嵌入风格，默认为 "cls"。
+mvc_decoder_style：MVC 解码器风格，默认为 "inner product"。
+ecs_threshold：ECS 任务的阈值。
+explicit_zero_prob：是否显式计算零概率。
+use_fast_transformer：是否使用快速 Transformer。
+fast_transformer_backend：快速 Transformer 的后端，默认为 "flash"。
+pre_norm：是否使用 pre-norm 方案。
+
 class model.TransformerModel(
     ntoken: int, d_model: int, nhead: int, d_hid: int, nlayers: int, nlayers_cls: int = 3, n_cls: int = 1, vocab: Any | None = None, dropout: float = 0.5, pad_token: str = '<pad>', pad_value: int = 0, do_mvc: bool = False, do_dab: bool = False, use_batch_labels: bool = False, num_batch_labels: int | None = None, domain_spec_batchnorm: bool | str = False, input_emb_style: str = 'continuous', n_input_bins: int | None = None, cell_emb_style: str = 'cls', mvc_decoder_style: str = 'inner product', ecs_threshold: float = 0.3, explicit_zero_prob: bool = False, use_fast_transformer: bool = False, fast_transformer_backend: str = 'flash', pre_norm: bool = False)
 ```
 
+```py
+# 初始化模型
+ntoken = 10  # 词汇表大小
+d_model = 4  # 嵌入向量的维度
+nhead = 2    # 多头注意力机制中的头数
+d_hid = 8    # 前馈神经网络的维度
+nlayers = 2  # Transformer 编码器的层数
+vocab = {"<pad>": 0}
+
+model = TransformerModel(ntoken, d_model, nhead, d_hid, nlayers, vocab=vocab)
+
+# 输入数据
+# 假设我们有 2 个样本，每个样本包含 3 个基因序列和相应的值，维度为 4
+src = torch.tensor([[1, 2, 3], [4, 5, 6]])  # shape (2, 3)
+values = torch.tensor([[0.5, 0.8, 0.2], [0.6, 0.7, 0.9]])  # shape (2, 3)
+src_key_padding_mask = torch.tensor([[False, False, True], [False, True, False]])  # shape (2, 3)
+
+# 进行前向传播
+output = model(src, values, src_key_padding_mask)
+print(output)
+```
+
+<pre>
+输出的 mlm_output 形状为 (2, 3)，表示每个样本和每个序列元素的预测值。
+输出的 cell_emb 形状为 (2, 4)，表示每个样本的细胞嵌入向量
+
+{
+    'mlm_output': tensor([
+        [0.35, 0.45, 0.30],
+        [0.40, 0.50, 0.35]
+    ]),
+    'cell_emb': tensor([
+        [0.1, 0.2, 0.3, 0.4],
+        [0.5, 0.6, 0.7, 0.8]
+    ])
+}
+
+</pre>
+
 #### generate_square_subsequent_mask
+
+同scgpt.model.generation_model.generate_square_subsequent_mask
+
 ```py
 class .generate_square_subsequent_mask(sz: int)→ Tensor
 ```

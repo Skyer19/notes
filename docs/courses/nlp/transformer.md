@@ -1,9 +1,8 @@
-## Transformer
 **Input Embedding:** Embedding matrix: $[V, D]$. 
 
 Transformers(编码器只运行一次处理整个输入序列,解码器必须为序列中的每个新token重新运行). 
 
-![这是图片](./img/transformer_pipeline.jpg){ width="400" }
+![这是图片](./img/transformer/transformer_pipeline.jpg){ width="400" }
 
 - $V$ (Vocabulary Size)：词汇量大小，即模型能够识别的不同单词或标记（tokens）的数量
 - $D$ (Dimensionality)：嵌入维度，表示每个单词或标记被转换成的向量的大小，这个向量能够捕捉并表达单词的语义特征
@@ -20,7 +19,7 @@ $S$：输入序列的长度（即共有多少个词），$D$：输入词嵌入�
 
 ①将输入序列的每个词向量转换成对应的查询向量，键向量和值向量
 
-![这是图片](./img/transformer_self_attention.jpg){ width="800" }
+![这是图片](./img/transformer/transformer_self_attention.jpg){ width="800" }
 
 $$Q=W∙W^Q,Q∈R^{S×d_h},W∈R^{S×D},W^Q∈R^{D×d_h}$$
 
@@ -48,13 +47,13 @@ $$x̂=\frac{x-μ}{σ}$$
 ### Layer Normalization
 对于单个样本内的特征,计算这些特征的均值和方差,然后对该样本的所有特征进行归一化. 
 
-![这是图片](./img/transformer_layer_normalization.jpg){ width="700" }
+![这是图片](./img/transformer/transformer_layer_normalization.jpg){ width="700" }
 
 **Gamma (γ) 和 Beta (β) 使用向量形式而不是标量**：
  - 是用于对每个隐藏层的加权和进行再和位移的参数。我们不能假设$R^{d}$空间中的每个点都有相同的重要性。因此要对每个点分配不同的权重，以允许模型对每个输入特征的规模（scale）和偏移（shift）进行调整
 
 ### Residual Connections
-![这是图片](./img/transformer_residual_connections.jpg){ width="700" }
+![这是图片](./img/transformer/transformer_residual_connections.jpg){ width="700" }
 
 
 ### Position-wise Feedforward Network: 
@@ -84,7 +83,7 @@ $$PE_(pos,2i+1)=cos⁡(pos/10000^{2i/d})$$
 ### Masked Multi-head Self-attention
 Masked MHA is a strategy to tell the model, during training, not to look at future tokens.
 use mask matrix，每一行代表一个时间步. 
-![这是图片](./img/transformer_decoder_masked_MHA.jpg){ width="700" }
+![这是图片](./img/transformer/transformer_decoder_masked_MHA.jpg){ width="700" }
 
 ### Teacher forcing
 Teacher forcing指模型在预测下一个单词时会被强制使用真实的前一个单词。这可以帮助加速训练并提高模型的稳定性。
@@ -104,24 +103,24 @@ Teacher forcing指模型在预测下一个单词时会被强制使用真实的�
 ## Encoder
 Embedding + PE layer, followed by a for loop over the encoder layers. 编码器的输出是一个包含了整个输入序列的深层次表示的序列.
 
-![这是图片](./img/transformer_encoder_pipeline.jpg){ width="700" }
+![这是图片](./img/transformer/transformer_encoder_pipeline.jpg){ width="700" }
 
 **工作流程:**
 
-![这是图片](./img/transformer_encoder_exp.jpg){ width="700" }
+![这是图片](./img/transformer/transformer_encoder_exp.jpg){ width="700" }
 
 ## Decoder
 使用自回归生成的方法来预测序列(每个时间步都会通过所有解码层,然后预测出一个token. mask确保模型在每一时间步只能访问到该时间步和它之前的token). 
 
-![这是图片](./img/transformer_decoder_pipeline.jpg){ width="700" }
+![这是图片](./img/transformer/transformer_decoder_pipeline.jpg){ width="700" }
 
 - $Training$: ⼀次性地将整个⽬标序列输⼊到解码器中，并使⽤mask来阻⽌解码器查看未来的token。
 
-![这是图片](./img/transformer_decoder_training.jpg){ width="700" }
+![这是图片](./img/transformer/transformer_decoder_training.jpg){ width="700" }
 
 - $Testing$: 每个时间步都会基于之前所有时间步生成的输出来预测下一个输出。每个时间步都会依次通过所有的Decoder layer。
 
-![这是图片](./img/transformer_decoder_testing.jpg){ width="700" }
+![这是图片](./img/transformer/transformer_decoder_testing.jpg){ width="700" }
 
 **Differences between Encoder and Decoder:**
 
@@ -130,4 +129,4 @@ Embedding + PE layer, followed by a for loop over the encoder layers. 编码器�
 
 **工作流程:**
 
-![这是图片](./img/transformer_decoder_exp.jpg){ width="700" }
+![这是图片](./img/transformer/transformer_decoder_exp.jpg){ width="700" }

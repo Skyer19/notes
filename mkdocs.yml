@@ -168,7 +168,7 @@ nav:
     #     - 'French 1': ./French/1.md
     #     - 'French 1': ./French/2.md
     - 机器学习:
-        - '基础知识': ./MachineLeanring/基础知识.md
+        - '基础知识': ./MachineLeanring/基础知识/基础知识.md
         - Supervised Learning:
           - 'KNN-Instance-based Learning': ./MachineLeanring/SL/KNN.md
         - Unsupervised Learning:

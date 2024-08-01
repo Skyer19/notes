@@ -89,22 +89,22 @@ markdown_extensions:
 
 nav:
     - Home: 'index.md'
-    - Courses:
-      - Principle of Distributed Ledgers:
-        - 'Lecture 1': ./Courses/pdl/l1.md
-        - 'Lecture 2': ./Courses/pdl/l2.md
-      - Natural language processing:
-        - 'Word2Vec': ./Courses/nlp/Word2Vec.md
+    # - Courses:
+    #   - Principle of Distributed Ledgers:
+    #     - 'Lecture 1': ./Courses/pdl/l1.md
+    #     - 'Lecture 2': ./Courses/pdl/l2.md
+    #   - Natural language processing:
+    #     - 'Word2Vec': ./Courses/nlp/Word2Vec.md
 
-        - Pre-training models:
-          - Encoder model:
-            - 'BERT': ./Courses/nlp/Pre-training_models/encoder/BERT.md
-          - Decoder model:
-            - 'Method': ./Courses/nlp/Pre-training_models/decoder/Learning_methods.md
-          - Encoder-Decoder model:
-            - 'Method': ./Courses/nlp/Pre-training_models/encoder-decoder/method.md
-        - 'Transformer': ./Courses/nlp/transformer.md
-        - 'Evaluating LLM': ./Courses/nlp/EvaluatingLLM.md
+    #     - Pre-training models:
+    #       - Encoder model:
+    #         - 'BERT': ./Courses/nlp/Pre-training_models/encoder/BERT.md
+    #       - Decoder model:
+    #         - 'Method': ./Courses/nlp/Pre-training_models/decoder/Learning_methods.md
+    #       - Encoder-Decoder model:
+    #         - 'Method': ./Courses/nlp/Pre-training_models/encoder-decoder/method.md
+    #     - 'Transformer': ./Courses/nlp/transformer.md
+    #     - 'Evaluating LLM': ./Courses/nlp/EvaluatingLLM.md
     - Python:
         - 'Python常用指令': ./Python/Python常用指令.md
         - 'wandb使用': ./Python/wandb使用.md
@@ -164,9 +164,9 @@ nav:
         - '量化工作介绍': ./Quant/量化工作介绍.md
         - '量化技能': ./Quant/量化技能.md
 
-    - French:
-        - 'French 1': ./French/1.md
-        - 'French 1': ./French/2.md
+    # - French:
+    #     - 'French 1': ./French/1.md
+    #     - 'French 1': ./French/2.md
     - 机器学习:
         - 'GRN': ./Project/GRN/GRN.md
     - 自然语言处理:

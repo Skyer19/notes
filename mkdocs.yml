@@ -116,7 +116,8 @@ nav:
         - 'tmux命令': ./Linux/tmux命令.md
         - 'pip使用': ./Linux/pip使用.md
         - 'conda使用': ./Linux/conda使用.md
-        - 'Juyter Notebook': ./Linux/conda使用.md
+        - 'Jupyter Notebook': ./Linux/Jupyter_Notebook.md
+
     - Project:
         - 1.基础知识: 
           - '名词解释': ./Project/基础知识/名词解释.md
@@ -154,9 +155,6 @@ nav:
             - 'scgpt.preprocess': ./Project/scGPT/code/scgpt.preprocess.md
             - 'scgpt.trainer': ./Project/scGPT/code/scgpt.trainer.md
         - 'paperReading': ./Project/paperReading.md
-
-  
-
     - Finance:
         - '基本金融知识': ./Finance/1-基本金融知识.md
         - '金融工具': ./Finance/2-金融工具.md
@@ -169,6 +167,28 @@ nav:
     - French:
         - 'French 1': ./French/1.md
         - 'French 1': ./French/2.md
+    - 机器学习:
+        - 'GRN': ./Project/GRN/GRN.md
+    - 自然语言处理:
+        - 语言模型的发展:
+          - '统计语言模型': ./nlp/统计语言模型.md
+          - 'NNLM模型': ./nlp/NNLM模型.md
+          - 'Word2Vec模型': ./nlp/Word2Vec模型.md
+          - 'ELMo模型': ./nlp/ELMo模型.md
+          - 'BERT': ./nlp/BERT模型.md
+          - 'Transformer': ./nlp/Transformer模型.md
+
+        # - Pre-training models:
+        #   - Encoder model:
+        #     - 'BERT': ./Courses/nlp/Pre-training_models/encoder/BERT.md
+        #   - Decoder model:
+        #     - 'Method': ./Courses/nlp/Pre-training_models/decoder/Learning_methods.md
+        #   - Encoder-Decoder model:
+        #     - 'Method': ./Courses/nlp/Pre-training_models/encoder-decoder/method.md
+        # - 'Transformer': ./Courses/nlp/transformer.md
+   
+        - '大模型的评估方法': ./Courses/nlp/EvaluatingLLM.md
+    
     # - About: 'about.md'
 
 

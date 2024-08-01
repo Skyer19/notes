@@ -47,7 +47,12 @@ source $HOME/miniconda3/bin/activate
 source $HOME/miniconda3-second/bin/activate
 ```
 
-## 删除 Conda 环境
+## 安装Conda环境
+```bash
+conda create -n your_env_name python=x.x
+```
+
+## 删除Conda环境
 
 ```bash
 conda remove --name your_env_name --all

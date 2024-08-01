@@ -20,7 +20,7 @@ python -m ipykernel install --user --name myenv --display-name "Python (myenv)"
 jupyter notebook
 ```
 
-## 删除环境的 Jupyter Kerne
+## 删除环境的Jupyter Kernel
 ### 列出所有 Jupyter 内核
 ```bash
 jupyter kernelspec list
@@ -29,4 +29,8 @@ jupyter kernelspec list
 ### 删除环境对应的内核
 ```bash
 jupyter kernelspec uninstall myenv
+```
+## 使用特定端口连接
+```bash
+jupyter notebook --port 10086
 ```

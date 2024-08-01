@@ -11,17 +11,17 @@
       
       
       
-        <link rel="prev" href="./">
+        <link rel="prev" href="../pip%E4%BD%BF%E7%94%A8/">
       
       
-        <link rel="next" href="../../Project/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/">
+        <link rel="next" href="../Jupyter_Notebook/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.6">
     
     
       
-        <title>Juyter Notebook - My notes</title>
+        <title>conda使用 - My notes</title>
       
     
     
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Juyter Notebook
+              conda使用
             
           </span>
         </div>
@@ -909,20 +909,6 @@
               
   
   
-  
-    <li class="md-nav__item">
-      <a href="./" class="md-nav__link">
-        conda使用
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
     
   
   
@@ -933,12 +919,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Juyter Notebook
+          conda使用
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Juyter Notebook
+        conda使用
       </a>
       
         
@@ -1037,7 +1023,14 @@
       
         <li class="md-nav__item">
   <a href="#conda_4" class="md-nav__link">
-    删除 Conda 环境
+    安装Conda环境
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conda_5" class="md-nav__link">
+    删除Conda环境
   </a>
   
 </li>
@@ -1046,6 +1039,20 @@
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Jupyter_Notebook/" class="md-nav__link">
+        Jupyter Notebook
+      </a>
     </li>
   
 
@@ -2006,7 +2013,14 @@
       
         <li class="md-nav__item">
   <a href="#conda_4" class="md-nav__link">
-    删除 Conda 环境
+    安装Conda环境
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conda_5" class="md-nav__link">
+    删除Conda环境
   </a>
   
 </li>
@@ -2026,7 +2040,7 @@
                   
 
 
-  <h1>Juyter Notebook</h1>
+  <h1>conda使用</h1>
 
 <h2 id="yaml">使用 YAML 文件创建/更新环境</h2>
 <h3 id="yaml_1">导出当前环境到 YAML 文件</h3>
@@ -2059,8 +2073,11 @@
 </span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1"># 激活第二个 Conda 实例</span>
 </span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="nb">source</span><span class="w"> </span><span class="nv">$HOME</span>/miniconda3-second/bin/activate
 </span></code></pre></div>
-<h2 id="conda_4">删除 Conda 环境</h2>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>conda<span class="w"> </span>remove<span class="w"> </span>--name<span class="w"> </span>your_env_name<span class="w"> </span>--all
+<h2 id="conda_4">安装Conda环境</h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>your_env_name<span class="w"> </span><span class="nv">python</span><span class="o">=</span>x.x
+</span></code></pre></div>
+<h2 id="conda_5">删除Conda环境</h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>conda<span class="w"> </span>remove<span class="w"> </span>--name<span class="w"> </span>your_env_name<span class="w"> </span>--all
 </span></code></pre></div>
 <p>其中，<code>your_env_name</code> 是想要删除的环境的名称。</p>
 <ul>
@@ -2068,7 +2085,7 @@
 <li><code>--all</code> 选项告诉 Conda 删除环境中的所有包。</li>
 </ul>
 <p>例如，如果要删除名为 <code>myenv</code> 的环境及其中的所有包，你可以运行以下命令：</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>conda<span class="w"> </span>remove<span class="w"> </span>--name<span class="w"> </span>myenv<span class="w"> </span>--all
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>conda<span class="w"> </span>remove<span class="w"> </span>--name<span class="w"> </span>myenv<span class="w"> </span>--all
 </span></code></pre></div>
 <p>这会彻底删除名为 <code>myenv</code> 的 Conda 环境及其中的所有内容。</p>
 

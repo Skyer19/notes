@@ -1968,28 +1968,34 @@
 
 
 <h1 id="classification-regression">Classification &amp; Regression</h1>
-<p>Classification: 
-    - output:discrete/categorical
-    - Binary/Multi-class/Multi-label</p>
-<p>Regression
-    - output:continuous/real-valued)
-    - Simple/Multiple/Mltivariate(multiple output)</p>
+<p>Classification: </p>
+<div class="language-text highlight"><pre><span></span><code>- output:discrete/categorical
+- Binary/Multi-class/Multi-label
+</code></pre></div>
+<p>Regression</p>
+<div class="language-text highlight"><pre><span></span><code>- output:continuous/real-valued)
+- Simple/Multiple/Mltivariate(multiple output)
+</code></pre></div>
 <h2 id="lazy-vs-eager-learning">Lazy vs Eager learning</h2>
-<p>Lazy learner:
-    - Stores the training examples and postpones generalising beyond these data un#l an explicit request is
-made at test
+<p>Lazy learner:</p>
+<div class="language-text highlight"><pre><span></span><code>- Stores the training examples and postpones generalising beyond these data un#l an explicit request is
+</code></pre></div>
+<p>made at test
     - e.g. KNN</p>
-<p>Eager Learner: 
-    - Constructs a general, explicit descrip(on of the target func(on based on the provided training
-examples.
+<p>Eager Learner: </p>
+<div class="language-text highlight"><pre><span></span><code>- Constructs a general, explicit descrip(on of the target func(on based on the provided training
+</code></pre></div>
+<p>examples.
     - e.g.: Decision Trees</p>
 <h2 id="bias-variance-trade-off">Bias-variance trade-off</h2>
-<p>Bias:
-    - 模型对训练集的拟合程度
-    - 越高-&gt;当前模型不能在当前数据集上有好的效果</p>
-<p>Variance:
-    - 数据扰动对模型的影响
-    - 越高-&gt;当前模型不能在其他数据集上有好的效果</p>
+<p>Bias:</p>
+<div class="language-text highlight"><pre><span></span><code>- 模型对训练集的拟合程度
+- 越高-&gt;当前模型不能在当前数据集上有好的效果
+</code></pre></div>
+<p>Variance:</p>
+<div class="language-text highlight"><pre><span></span><code>- 数据扰动对模型的影响
+- 越高-&gt;当前模型不能在其他数据集上有好的效果
+</code></pre></div>
 <p>Under fit:low variance/high bias 
 Overfit:high variance/low bias</p>
 

@@ -14,14 +14,14 @@
         <link rel="prev" href="../Bias-variance/">
       
       
-        <link rel="next" href="../../SL/KNN/">
+        <link rel="next" href="../../SupervisedLearning/KNN/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.6">
     
     
       
-        <title>评估指标 - My notes</title>
+        <title>模型评估 - My notes</title>
       
     
     
@@ -74,6 +74,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#evaluation-set-up" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -103,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              评估指标
+              模型评估
             
           </span>
         </div>
@@ -1494,9 +1499,127 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          模型评估
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
-        评估指标
+        模型评估
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#evaluation-set-up" class="md-nav__link">
+    Evaluation set-up
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hyperparameter-tuning" class="md-nav__link">
+    Hyperparameter tuning
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cross-validation" class="md-nav__link">
+    Cross-validation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evaluation-metrics" class="md-nav__link">
+    Evaluation metrics
+  </a>
+  
+    <nav class="md-nav" aria-label="Evaluation metrics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    分类任务
+  </a>
+  
+    <nav class="md-nav" aria-label="分类任务">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    两个标签
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    多类别
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    回归任务
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    数据分布不均衡
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    过拟合和不拟合
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    置信区间
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    统计显著性检验
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1545,7 +1668,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../SL/KNN/" class="md-nav__link">
+      <a href="../../SupervisedLearning/KNN/" class="md-nav__link">
         KNN
       </a>
     </li>
@@ -1559,7 +1682,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../SL/DecisionTrees/" class="md-nav__link">
+      <a href="../../SupervisedLearning/DecisionTrees/" class="md-nav__link">
         Decision Tree
       </a>
     </li>
@@ -1955,6 +2078,110 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#evaluation-set-up" class="md-nav__link">
+    Evaluation set-up
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hyperparameter-tuning" class="md-nav__link">
+    Hyperparameter tuning
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cross-validation" class="md-nav__link">
+    Cross-validation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evaluation-metrics" class="md-nav__link">
+    Evaluation metrics
+  </a>
+  
+    <nav class="md-nav" aria-label="Evaluation metrics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    分类任务
+  </a>
+  
+    <nav class="md-nav" aria-label="分类任务">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    两个标签
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    多类别
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    回归任务
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    数据分布不均衡
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    过拟合和不拟合
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    置信区间
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    统计显著性检验
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1968,9 +2195,179 @@
                   
 
 
-  <h1>评估指标</h1>
+  <h1>模型评估</h1>
 
-
+<h2 id="evaluation-set-up">Evaluation set-up</h2>
+<ul>
+<li>机器学习的最终目标是创建可以推广到未知数据的模型和算法</li>
+<li>为了确保评估有意义，基本要求是使用保留的测试数据集（绝对不要使用测试数据集来训练模型）</li>
+</ul>
+<h2 id="hyperparameter-tuning">Hyperparameter tuning</h2>
+<ul>
+<li>
+<p>Naive approach</p>
+<ul>
+<li>在训练数据集上尝试不同的值，根据训练数据集上的准确率选择最佳值，然后在测试数据集上进行评估</li>
+<li>问题：通常效果不是很好</li>
+</ul>
+</li>
+<li>
+<p>Right approach</p>
+<ul>
+<li>将数据集分为 3 部分：训练/验证/测试，常见分割为 60%/20%/20% 和 80%/10%/10%</li>
+<li>在训练数据集上尝试不同的超参数值，根据验证数据集上的准确率选择最佳值，然后在测试数据集上执行最终评估</li>
+<li>优势：您的超参数选择考虑了模型的泛化方式，最终评估仍然仅使用以前未见过的数据。</li>
+</ul>
+</li>
+</ul>
+<p>The final evaluation:
+- use the model trained on the training dataset
+- or combine the training and validation datasets and train a new model (with the same parameters)</p>
+<h2 id="cross-validation">Cross-validation</h2>
+<p>用处：当数据集不大，无法满足有足够多的数据用于训练/验证/测试</p>
+<ul>
+<li>将数据集分成 k 个（通常为 10 个）相等的fold。使用 k-1 个fold进行训练+验证，使用一个fold进行测试。</li>
+<li>迭代 k 次，每次测试数据的不同部分。</li>
+<li>然后可以对所有 k 个保留测试集的性能进行平均  <span class="arithmatex"><span class="MathJax_Preview">error = \frac{1}{N}\sum_{i=1}^{N}e_{i}</span><script type="math/tex">error = \frac{1}{N}\sum_{i=1}^{N}e_{i}</script></span></li>
+</ul>
+<p>算法A：</p>
+<ul>
+<li>在每次迭代中，使用1个折用于测试，1个折用于验证，剩余的k-2个折用于训练。</li>
+<li>当我们使用多个训练集时，我们评估的是算法，而不是特定的模型。</li>
+<li>关键点：每个折中找到一组不同的最优参数。</li>
+</ul>
+<p>算法B：</p>
+<ul>
+<li>在每次交叉验证步骤中，分离1个折用于测试。</li>
+<li>对剩下的k-1个折进行 <strong>内部交叉验证</strong> ，以找到最优的超参数。</li>
+<li>关键点：每个折仍然会有不同的超参数，只是基于更多数据来选择。</li>
+</ul>
+<p>在完成交叉验证后，使用最好表现的超参数重新在数据集上进行训练</p>
+<h2 id="evaluation-metrics">Evaluation metrics</h2>
+<h3 id="_1">分类任务</h3>
+<h4 id="_2">两个标签</h4>
+<p>Eg: We have two classes (class A: positive and class B: negative) Take Class A as example in the formulas.</p>
+<ul>
+<li>Confusion matrix (混淆矩阵)</li>
+</ul>
+<div class="center-table">
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Class A Prediction</th>
+<th>Class B Prediction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Class A Actual</td>
+<td>TP: True Positive</td>
+<td>FN: True Negative</td>
+</tr>
+<tr>
+<td>Class B Actual</td>
+<td>FP: False Positive</td>
+<td>FN: False Negative</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li>准确率：正确分类的示例数除以示例总数；分类错误=1-准确率</li>
+</ul>
+<div class="arithmatex">
+<div class="MathJax_Preview">Accuracy = \frac{TP+TN}{TP+TN+FP+FN}</div>
+<script type="math/tex; mode=display">Accuracy = \frac{TP+TN}{TP+TN+FP+FN}</script>
+</div>
+<ul>
+<li>精度：正确分类的 A 类示例数除以预测的 A 类示例总数</li>
+</ul>
+<div class="arithmatex">
+<div class="MathJax_Preview">Precision = \frac{TP}{TP+FP}</div>
+<script type="math/tex; mode=display">Precision = \frac{TP}{TP+FP}</script>
+</div>
+<ul>
+<li>
+<p>召回率：正确分类的 A 类样本数除以 A 类样本总数</p>
+<ol>
+<li>High recall, low precision: Most of the positive examples are correctly recognised (low FN) but there are many false positives(high FP).</li>
+<li>Low recall, high precision: Miss a lot of positive examples (high FN) but those predict as positive are really positive (low FP).</li>
+</ol>
+</li>
+</ul>
+<div class="arithmatex">
+<div class="MathJax_Preview">Recall = \frac{TP}{TP+FN}</div>
+<script type="math/tex; mode=display">Recall = \frac{TP}{TP+FN}</script>
+</div>
+<div class="arithmatex">
+<div class="MathJax_Preview">F1 = \frac{2 \times precision \times recall}{precision+recall}</div>
+<script type="math/tex; mode=display">F1 = \frac{2 \times precision \times recall}{precision+recall}</script>
+</div>
+<div class="arithmatex">
+<div class="MathJax_Preview">F_{β} = (1+β^{2})\frac{2 \times precision \times recall}{(β^{2} \times precision)+recall}</div>
+<script type="math/tex; mode=display">F_{β} = (1+β^{2})\frac{2 \times precision \times recall}{(β^{2} \times precision)+recall}</script>
+</div>
+<h4 id="_3">多类别</h4>
+<ul>
+<li>
+<p>多类别混淆矩阵</p>
+<ul>
+<li>将一个类别定义为正类，将其他类别定义为负类。</li>
+<li>然后用完全相同的方式计算指标。<ul>
+<li>准确率 = 正确分类的示例数除以示例总数。</li>
+<li>针对每个类别分别计算准确率、召回率和 F1。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Micro - vs macro-averaging</p>
+<ul>
+<li>宏观平均：计算每个类别的指标并计算平均值<ul>
+<li>e.g., Macro-averaged recall = mean(Recall for class 1, Recall for class 2...)</li>
+</ul>
+</li>
+<li>微观平均：在项目级别取平均值<ul>
+<li>e.g., Micro-averaged recall = TP for every class/(TP for every class + FN for every class)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="_4">回归任务</h3>
+<p>Mean squared error (MSE): <span class="arithmatex"><span class="MathJax_Preview">\frac{1}{N}(Y_{i}-\hat{Y_{i}})^{2}</span><script type="math/tex">\frac{1}{N}(Y_{i}-\hat{Y_{i}})^{2}</script></span></p>
+<p>Root mean squared error (RMSE): <span class="arithmatex"><span class="MathJax_Preview">\sqrt{MSE}</span><script type="math/tex">\sqrt{MSE}</script></span></p>
+<h2 id="_5">数据分布不均衡</h2>
+<p>总结：</p>
+<ul>
+<li>准确率可能会产生误导，它只是遵循了大多数类别的表现。</li>
+<li>宏平均召回率也可以帮助检测一个类别是否完全被错误分类，但它并没有给我们提供有关 FP 的信息</li>
+<li>F1 很有用，但也会受到类别不平衡问题的影响。我们不确定低分是由于一个类别被错误分类还是类别不平衡造成的。</li>
+</ul>
+<p>方法：</p>
+<ul>
+<li>对多数类进行下采样。例如，随机选择与少数类相同数量的示例</li>
+<li>或对少数类进行上采样（创建并添加重复项，直到两个类的大小相同）</li>
+</ul>
+<p>将有助于平衡类别，但结果不会反映该模型的泛化能力 --- 实际数据仍然来自不平衡的分布</p>
+<h2 id="_6">过拟合和不拟合</h2>
+<ul>
+<li>过拟合：在训练数据上表现良好，但对其他数据的泛化能力较差。<ul>
+<li>原因：1）模型复杂 2）训练集不具代表性 3）训练时间长</li>
+<li>解决办法：1）使用正确的复杂度（使用验证集来决定）2）更多数据3）提前停止</li>
+</ul>
+</li>
+<li>欠拟合：在训练数据上表现不佳，但对其他数据的泛化能力较差。</li>
+</ul>
+<p>解决神经网络中的过拟合问题：</p>
+<ul>
+<li>网络容量：通过减少神经元/层的数量来降低其容量。 </li>
+<li>提前停止：使用验证数据来选择何时停止 </li>
+<li>正则化：添加一些信息或约束来阻止模型过度拟合。（L1（鼓励特征稀疏，模型将只保留最重要的特征），L2（将权重推向零，权重越大，受到的惩罚越多）：</li>
+</ul>
+<h2 id="_7">置信区间</h2>
+<h2 id="_8">统计显著性检验</h2>
 
 
 

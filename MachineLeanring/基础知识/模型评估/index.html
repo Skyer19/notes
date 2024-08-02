@@ -2220,9 +2220,9 @@
 </ul>
 </li>
 </ul>
-<p>The final evaluation:
-- use the model trained on the training dataset
-- or combine the training and validation datasets and train a new model (with the same parameters)</p>
+<p>最终评估：
+- 使用在训练数据集上训练的模型
+- 或结合训练和验证数据集并训练新模型（具有相同的参数）</p>
 <h2 id="_3">交叉验证</h2>
 <p>用处：当数据集不大，无法满足有足够多的数据用于训练/验证/测试</p>
 <ul>
@@ -2288,21 +2288,24 @@
 <script type="math/tex; mode=display">Precision = \frac{TP}{TP+FP}</script>
 </div>
 <ul>
-<li>
-<p>召回率：正确分类的 A 类样本数除以 A 类样本总数</p>
-<ol>
-<li>High recall, low precision: Most of the positive examples are correctly recognised (low FN) but there are many false positives(high FP).</li>
-<li>Low recall, high precision: Miss a lot of positive examples (high FN) but those predict as positive are really positive (low FP).</li>
-</ol>
-</li>
+<li>召回率：正确分类的 A 类样本数除以 A 类样本总数</li>
 </ul>
 <div class="arithmatex">
 <div class="MathJax_Preview">Recall = \frac{TP}{TP+FN}</div>
 <script type="math/tex; mode=display">Recall = \frac{TP}{TP+FN}</script>
 </div>
+<ol>
+<li>高召回率，低准确：大多数正例被正确识别（低FN），但有很多假阳性（高FP）。</li>
+<li>
+<p>低召回率，高精度：漏掉很多正例（高FN），但那些预测为正例的确实是正例（低FP）。</p>
+</li>
+<li>
+<p>F-measure / F-score:</p>
+</li>
+</ol>
 <div class="arithmatex">
-<div class="MathJax_Preview">F1 = \frac{2 \times precision \times recall}{precision+recall}</div>
-<script type="math/tex; mode=display">F1 = \frac{2 \times precision \times recall}{precision+recall}</script>
+<div class="MathJax_Preview">F_{1} = \frac{2 \times precision \times recall}{precision+recall}</div>
+<script type="math/tex; mode=display">F_{1} = \frac{2 \times precision \times recall}{precision+recall}</script>
 </div>
 <div class="arithmatex">
 <div class="MathJax_Preview">F_{β} = (1+β^{2})\frac{2 \times precision \times recall}{(β^{2} \times precision)+recall}</div>

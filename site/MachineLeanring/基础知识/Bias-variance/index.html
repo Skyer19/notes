@@ -11,17 +11,17 @@
       
       
       
-        <link rel="prev" href="../../../Quant/%E9%87%8F%E5%8C%96%E6%8A%80%E8%83%BD/">
+        <link rel="prev" href="../Normalisation/">
       
       
-        <link rel="next" href="../../SL/KNN/">
+        <link rel="next" href="../%E8%AF%84%E4%BC%B0%E6%8C%87%E6%A0%87/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.6">
     
     
       
-        <title>基础知识 - My notes</title>
+        <title>Bias-variance - My notes</title>
       
     
     
@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#classification-regression" class="md-skip">
+        <a href="#bias-variance-trade-off" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              基础知识
+              Bias-variance
             
           </span>
         </div>
@@ -300,7 +300,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="./" class="md-tabs__link md-tabs__link--active">
+      <a href="../../基础知识/基础知识.md" class="md-tabs__link md-tabs__link--active">
         机器学习
       </a>
     </li>
@@ -1434,6 +1434,62 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../../基础知识/基础知识.md" class="md-nav__link">
+        基础知识
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%88%86%E7%B1%BB%E5%92%8C%E5%9B%9E%E5%BD%92/" class="md-nav__link">
+        分类和回归
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LazyEagerLearning/" class="md-nav__link">
+        Lazy vs Eager learning
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Normalisation/" class="md-nav__link">
+        Normalisation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -1442,16 +1498,14 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          基础知识
+          Bias-variance
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        基础知识
+        Bias-variance
       </a>
       
         
@@ -1460,21 +1514,12 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#lazy-vs-eager-learning" class="md-nav__link">
-    Lazy vs Eager learning
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#bias-variance-trade-off" class="md-nav__link">
@@ -1487,6 +1532,20 @@
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E8%AF%84%E4%BC%B0%E6%8C%87%E6%A0%87/" class="md-nav__link">
+        评估指标
+      </a>
     </li>
   
 
@@ -1535,7 +1594,21 @@
   
     <li class="md-nav__item">
       <a href="../../SL/KNN/" class="md-nav__link">
-        KNN-Instance-based Learning
+        KNN
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SL/DecisionTrees/" class="md-nav__link">
+        Decision Tree
       </a>
     </li>
   
@@ -1929,21 +2002,12 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#lazy-vs-eager-learning" class="md-nav__link">
-    Lazy vs Eager learning
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#bias-variance-trade-off" class="md-nav__link">
@@ -1967,37 +2031,27 @@
                   
 
 
-<h1 id="classification-regression">Classification &amp; Regression</h1>
-<p>Classification: </p>
-<div class="language-text highlight"><pre><span></span><code>- output:discrete/categorical
-- Binary/Multi-class/Multi-label
-</code></pre></div>
-<p>Regression</p>
-<div class="language-text highlight"><pre><span></span><code>- output:continuous/real-valued)
-- Simple/Multiple/Mltivariate(multiple output)
-</code></pre></div>
-<h2 id="lazy-vs-eager-learning">Lazy vs Eager learning</h2>
-<p>Lazy learner:</p>
-<div class="language-text highlight"><pre><span></span><code>- Stores the training examples and postpones generalising beyond these data un#l an explicit request is
-</code></pre></div>
-<p>made at test
-    - e.g. KNN</p>
-<p>Eager Learner: </p>
-<div class="language-text highlight"><pre><span></span><code>- Constructs a general, explicit descrip(on of the target func(on based on the provided training
-</code></pre></div>
-<p>examples.
-    - e.g.: Decision Trees</p>
+  <h1>Bias-variance</h1>
+
 <h2 id="bias-variance-trade-off">Bias-variance trade-off</h2>
+<p><img alt="这是图片" src="../img/1.jpg" width="600" /></p>
 <p>Bias:</p>
-<div class="language-text highlight"><pre><span></span><code>- 模型对训练集的拟合程度
-- 越高-&gt;当前模型不能在当前数据集上有好的效果
-</code></pre></div>
+<ul>
+<li>模型对训练集的拟合程度</li>
+<li><span class="arithmatex"><span class="MathJax_Preview">Bias^{2} = (y -y_{pre})^2</span><script type="math/tex">Bias^{2} = (y -y_{pre})^2</script></span>  ---- 训练集所训练的模型对于训练集数据的输出和真实值之间的差异</li>
+<li>越高 -&gt; 当前模型不能在当前数据集上有好的效果</li>
+</ul>
 <p>Variance:</p>
-<div class="language-text highlight"><pre><span></span><code>- 数据扰动对模型的影响
-- 越高-&gt;当前模型不能在其他数据集上有好的效果
-</code></pre></div>
-<p>Under fit:low variance/high bias 
-Overfit:high variance/low bias</p>
+<ul>
+<li>数据扰动对模型的影响</li>
+<li>表示不同的训练集训练出的模型的输出值之间的差异</li>
+<li>越高 -&gt; 当前模型不能在其他数据集上有好的效果；越低 -&gt; 对数据的你拟合效果好</li>
+</ul>
+<p>Underfit &amp; Overfit：</p>
+<ul>
+<li>Underfit: low variance/high bias </li>
+<li>Overfit: high variance/low bias</li>
+</ul>
 
 
 

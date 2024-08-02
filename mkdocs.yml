@@ -169,7 +169,6 @@ nav:
     #     - 'French 1': ./French/2.md
     - 机器学习:
         - 基础知识:
-          - '基础知识': ./MachineLeanring/基础知识/基础知识.md
           - '分类和回归': ./MachineLeanring/基础知识/分类和回归.md
           - 'Lazy vs Eager learning': ./MachineLeanring/基础知识/LazyEagerLearning.md
           - 'Normalisation': ./MachineLeanring/基础知识/Normalisation.md

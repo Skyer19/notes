@@ -173,10 +173,10 @@ nav:
           - 'Lazy vs Eager learning': ./MachineLeanring/基础知识/LazyEagerLearning.md
           - 'Normalisation': ./MachineLeanring/基础知识/Normalisation.md
           - 'Bias-variance': ./MachineLeanring/基础知识/Bias-variance.md
-          - '评估指标': ./MachineLeanring/基础知识/评估指标.md
+          - '模型评估': ./MachineLeanring/基础知识/模型评估.md
         - Supervised Learning:
-          - 'KNN': ./MachineLeanring/SL/KNN.md
-          - 'Decision Tree': ./MachineLeanring/SL/DecisionTrees.md
+          - 'KNN': ./MachineLeanring/SupervisedLearning/KNN.md
+          - 'Decision Tree': ./MachineLeanring/SupervisedLearning/DecisionTrees.md
         - Unsupervised Learning:
           - Clustering:
             - 概念: 'about.md'

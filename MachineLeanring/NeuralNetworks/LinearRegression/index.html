@@ -11,24 +11,24 @@
       
       
       
-        <link rel="prev" href="../wandb%E4%BD%BF%E7%94%A8/">
+        <link rel="prev" href="../../../about/">
       
       
-        <link rel="next" href="../../Linux/%E7%BB%88%E7%AB%AF%E5%91%BD%E4%BB%A4/">
+        <link rel="next" href="../ActivationFunctions/">
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.6">
     
     
       
-        <title>DataFrame - My notes</title>
+        <title>Linear Regression - My notes</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ded33207.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ded33207.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a0c5b2b5.min.css">
       
       
 
@@ -44,9 +44,9 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -74,11 +74,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#dataframe" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -89,7 +84,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="My notes" class="md-header__button md-logo" aria-label="My notes" data-md-component="logo">
+    <a href="../../.." title="My notes" class="md-header__button md-logo" aria-label="My notes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -108,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              DataFrame
+              Linear Regression
             
           </span>
         </div>
@@ -191,7 +186,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../.." class="md-tabs__link">
+    <a href="../../.." class="md-tabs__link">
       Home
     </a>
   </li>
@@ -200,15 +195,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../Python%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../../Python/Python%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/" class="md-tabs__link">
         Python
       </a>
     </li>
@@ -224,7 +217,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../Linux/%E7%BB%88%E7%AB%AF%E5%91%BD%E4%BB%A4/" class="md-tabs__link">
+      <a href="../../../Linux/%E7%BB%88%E7%AB%AF%E5%91%BD%E4%BB%A4/" class="md-tabs__link">
         Linux
       </a>
     </li>
@@ -245,7 +238,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../Project/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/" class="md-tabs__link">
+      <a href="../../../Project/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/" class="md-tabs__link">
         Project
       </a>
     </li>
@@ -263,7 +256,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../Finance/1-%E5%9F%BA%E6%9C%AC%E9%87%91%E8%9E%8D%E7%9F%A5%E8%AF%86/" class="md-tabs__link">
+      <a href="../../../Finance/1-%E5%9F%BA%E6%9C%AC%E9%87%91%E8%9E%8D%E7%9F%A5%E8%AF%86/" class="md-tabs__link">
         Finance
       </a>
     </li>
@@ -279,7 +272,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../Quant/%E9%87%8F%E5%8C%96%E5%B7%A5%E4%BD%9C%E4%BB%8B%E7%BB%8D/" class="md-tabs__link">
+      <a href="../../../Quant/%E9%87%8F%E5%8C%96%E5%B7%A5%E4%BD%9C%E4%BB%8B%E7%BB%8D/" class="md-tabs__link">
         Quant
       </a>
     </li>
@@ -288,6 +281,8 @@
       
         
   
+  
+    
   
 
 
@@ -300,7 +295,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../MachineLeanring/Basic/%E5%88%86%E7%B1%BB%E5%92%8C%E5%9B%9E%E5%BD%92/" class="md-tabs__link">
+      <a href="../../Basic/%E5%88%86%E7%B1%BB%E5%92%8C%E5%9B%9E%E5%BD%92/" class="md-tabs__link md-tabs__link--active">
         机器学习
       </a>
     </li>
@@ -323,7 +318,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../nlp/%E7%BB%9F%E8%AE%A1%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/" class="md-tabs__link">
+      <a href="../../../nlp/%E7%BB%9F%E8%AE%A1%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/" class="md-tabs__link">
         自然语言处理
       </a>
     </li>
@@ -353,7 +348,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="My notes" class="md-nav__button md-logo" aria-label="My notes" data-md-component="logo">
+    <a href="../../.." title="My notes" class="md-nav__button md-logo" aria-label="My notes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -372,7 +367,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -385,16 +380,14 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
       
       
       
@@ -403,7 +396,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
           Python
@@ -416,7 +409,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Python%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/" class="md-nav__link">
+      <a href="../../../Python/Python%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/" class="md-nav__link">
         Python常用指令
       </a>
     </li>
@@ -430,7 +423,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../wandb%E4%BD%BF%E7%94%A8/" class="md-nav__link">
+      <a href="../../../Python/wandb%E4%BD%BF%E7%94%A8/" class="md-nav__link">
         wandb使用
       </a>
     </li>
@@ -442,82 +435,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          DataFrame
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../Python/dataFrame%E4%BD%BF%E7%94%A8/" class="md-nav__link">
         DataFrame
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#dataframe" class="md-nav__link">
-    创建 DataFrame
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    新添加数据
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    设置索引
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    其他
-  </a>
-  
-    <nav class="md-nav" aria-label="其他">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    检查数据类型
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -564,7 +486,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Linux/%E7%BB%88%E7%AB%AF%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+      <a href="../../../Linux/%E7%BB%88%E7%AB%AF%E5%91%BD%E4%BB%A4/" class="md-nav__link">
         终端命令
       </a>
     </li>
@@ -578,7 +500,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Linux/%E6%96%87%E4%BB%B6%28%E7%9B%AE%E5%BD%95%29%E6%93%8D%E4%BD%9C/" class="md-nav__link">
+      <a href="../../../Linux/%E6%96%87%E4%BB%B6%28%E7%9B%AE%E5%BD%95%29%E6%93%8D%E4%BD%9C/" class="md-nav__link">
         文件(目录)操作
       </a>
     </li>
@@ -592,7 +514,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Linux/screen%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+      <a href="../../../Linux/screen%E5%91%BD%E4%BB%A4/" class="md-nav__link">
         screen命令
       </a>
     </li>
@@ -606,7 +528,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Linux/tmux%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+      <a href="../../../Linux/tmux%E5%91%BD%E4%BB%A4/" class="md-nav__link">
         tmux命令
       </a>
     </li>
@@ -620,7 +542,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Linux/pip%E4%BD%BF%E7%94%A8/" class="md-nav__link">
+      <a href="../../../Linux/pip%E4%BD%BF%E7%94%A8/" class="md-nav__link">
         pip使用
       </a>
     </li>
@@ -634,7 +556,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Linux/conda%E4%BD%BF%E7%94%A8/" class="md-nav__link">
+      <a href="../../../Linux/conda%E4%BD%BF%E7%94%A8/" class="md-nav__link">
         conda使用
       </a>
     </li>
@@ -648,7 +570,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Linux/Jupyter_Notebook/" class="md-nav__link">
+      <a href="../../../Linux/Jupyter_Notebook/" class="md-nav__link">
         Jupyter Notebook
       </a>
     </li>
@@ -726,7 +648,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Project/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/" class="md-nav__link">
+      <a href="../../../Project/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/" class="md-nav__link">
         名词解释
       </a>
     </li>
@@ -740,7 +662,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Project/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E5%9F%BA%E5%9B%A0%E8%A1%A8%E8%BE%BE%E6%95%B0%E6%8D%AE/" class="md-nav__link">
+      <a href="../../../Project/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E5%9F%BA%E5%9B%A0%E8%A1%A8%E8%BE%BE%E6%95%B0%E6%8D%AE/" class="md-nav__link">
         基因表达数据
       </a>
     </li>
@@ -754,7 +676,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Project/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E9%A2%86%E5%9F%9F%E7%9A%84%E4%BB%BB%E5%8A%A1/" class="md-nav__link">
+      <a href="../../../Project/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E9%A2%86%E5%9F%9F%E7%9A%84%E4%BB%BB%E5%8A%A1/" class="md-nav__link">
         生物信息学领域的任务
       </a>
     </li>
@@ -768,7 +690,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Project/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/H5AD%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F/" class="md-nav__link">
+      <a href="../../../Project/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/H5AD%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F/" class="md-nav__link">
         H5AD文件
       </a>
     </li>
@@ -818,7 +740,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Project/GRN/GRN/" class="md-nav__link">
+      <a href="../../../Project/GRN/GRN/" class="md-nav__link">
         GRN
       </a>
     </li>
@@ -832,7 +754,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Project/GRN/GRN_code/" class="md-nav__link">
+      <a href="../../../Project/GRN/GRN_code/" class="md-nav__link">
         GRN Code
       </a>
     </li>
@@ -846,7 +768,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Project/GRN/transformer_GRN_Inference/" class="md-nav__link">
+      <a href="../../../Project/GRN/transformer_GRN_Inference/" class="md-nav__link">
         GRN Inference - Transformer
       </a>
     </li>
@@ -896,7 +818,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Courses/nlp/transformer/" class="md-nav__link">
+      <a href="../../../Courses/nlp/transformer/" class="md-nav__link">
         Transformer
       </a>
     </li>
@@ -910,7 +832,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Project/%E7%9B%B8%E5%85%B3%E6%96%B9%E6%B3%95%E5%92%8C%E6%A8%A1%E5%9E%8B/Gene2Vec/" class="md-nav__link">
+      <a href="../../../Project/%E7%9B%B8%E5%85%B3%E6%96%B9%E6%B3%95%E5%92%8C%E6%A8%A1%E5%9E%8B/Gene2Vec/" class="md-nav__link">
         Gene2Vec
       </a>
     </li>
@@ -924,7 +846,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Project/%E7%9B%B8%E5%85%B3%E6%96%B9%E6%B3%95%E5%92%8C%E6%A8%A1%E5%9E%8B/scBERT/" class="md-nav__link">
+      <a href="../../../Project/%E7%9B%B8%E5%85%B3%E6%96%B9%E6%B3%95%E5%92%8C%E6%A8%A1%E5%9E%8B/scBERT/" class="md-nav__link">
         scBERT
       </a>
     </li>
@@ -938,7 +860,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Project/%E7%9B%B8%E5%85%B3%E6%96%B9%E6%B3%95%E5%92%8C%E6%A8%A1%E5%9E%8B/Flash-Attention_Blocks/" class="md-nav__link">
+      <a href="../../../Project/%E7%9B%B8%E5%85%B3%E6%96%B9%E6%B3%95%E5%92%8C%E6%A8%A1%E5%9E%8B/Flash-Attention_Blocks/" class="md-nav__link">
         Flash-Attention Blocks
       </a>
     </li>
@@ -988,7 +910,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Project/scGPT/scGPT/" class="md-nav__link">
+      <a href="../../../Project/scGPT/scGPT/" class="md-nav__link">
         scGPT
       </a>
     </li>
@@ -1002,7 +924,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Project/scGPT/%E5%8D%95%E7%BB%86%E8%83%9E%E5%A4%9A%E7%BB%84%E5%AD%A6/" class="md-nav__link">
+      <a href="../../../Project/scGPT/%E5%8D%95%E7%BB%86%E8%83%9E%E5%A4%9A%E7%BB%84%E5%AD%A6/" class="md-nav__link">
         单细胞多组学
       </a>
     </li>
@@ -1016,7 +938,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Project/scGPT/%E5%8D%95%E7%BB%86%E8%83%9ERNA%E6%B5%8B%E5%BA%8F/" class="md-nav__link">
+      <a href="../../../Project/scGPT/%E5%8D%95%E7%BB%86%E8%83%9ERNA%E6%B5%8B%E5%BA%8F/" class="md-nav__link">
         单细胞RNA测序
       </a>
     </li>
@@ -1030,7 +952,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Project/scGPT/%E6%A0%B9%E6%8D%AE%E7%BB%86%E8%83%9E%E6%88%96%E5%9F%BA%E5%9B%A0%E8%A1%A8%E8%BE%BE%E6%8F%90%E7%A4%BA%E7%94%9F%E6%88%90%E7%BB%86%E8%83%9E%E7%9A%84%E5%9F%BA%E5%9B%A0%E8%A1%A8%E8%BE%BE%E6%B0%B4%E5%B9%B3/" class="md-nav__link">
+      <a href="../../../Project/scGPT/%E6%A0%B9%E6%8D%AE%E7%BB%86%E8%83%9E%E6%88%96%E5%9F%BA%E5%9B%A0%E8%A1%A8%E8%BE%BE%E6%8F%90%E7%A4%BA%E7%94%9F%E6%88%90%E7%BB%86%E8%83%9E%E7%9A%84%E5%9F%BA%E5%9B%A0%E8%A1%A8%E8%BE%BE%E6%B0%B4%E5%B9%B3/" class="md-nav__link">
         根据细胞或基因表达提示生成细胞的基因表达水平
       </a>
     </li>
@@ -1044,7 +966,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Project/scGPT/%E7%94%9F%E6%88%90%E5%BC%8F%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+      <a href="../../../Project/scGPT/%E7%94%9F%E6%88%90%E5%BC%8F%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
         生成式预训练模型
       </a>
     </li>
@@ -1112,7 +1034,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Project/scGPT/code/Modules/scGPT_code_scgpt.model_package/" class="md-nav__link">
+      <a href="../../../Project/scGPT/code/Modules/scGPT_code_scgpt.model_package/" class="md-nav__link">
         scgpt.model package
       </a>
     </li>
@@ -1126,7 +1048,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Project/scGPT/code/Modules/scGPT_code_scgpt.scbank_package/" class="md-nav__link">
+      <a href="../../../Project/scGPT/code/Modules/scGPT_code_scgpt.scbank_package/" class="md-nav__link">
         scgpt.scbank package
       </a>
     </li>
@@ -1140,7 +1062,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Project/scGPT/code/Modules/scGPT_code_scgpt.tasks_package/" class="md-nav__link">
+      <a href="../../../Project/scGPT/code/Modules/scGPT_code_scgpt.tasks_package/" class="md-nav__link">
         scgpt.tasks package
       </a>
     </li>
@@ -1154,7 +1076,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Project/scGPT/code/Modules/scGPT_code_scgpt.tokenizer_package/" class="md-nav__link">
+      <a href="../../../Project/scGPT/code/Modules/scGPT_code_scgpt.tokenizer_package/" class="md-nav__link">
         scgpt.tokenizer package
       </a>
     </li>
@@ -1168,7 +1090,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Project/scGPT/code/Modules/scGPT_code_scgpt.utils_package/" class="md-nav__link">
+      <a href="../../../Project/scGPT/code/Modules/scGPT_code_scgpt.utils_package/" class="md-nav__link">
         scgpt.utils package
       </a>
     </li>
@@ -1189,7 +1111,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Project/scGPT/code/scgpt.data_collator/" class="md-nav__link">
+      <a href="../../../Project/scGPT/code/scgpt.data_collator/" class="md-nav__link">
         scgpt.data_collator
       </a>
     </li>
@@ -1203,7 +1125,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Project/scGPT/code/scgpt.data_sampler/" class="md-nav__link">
+      <a href="../../../Project/scGPT/code/scgpt.data_sampler/" class="md-nav__link">
         scgpt.data_sampler
       </a>
     </li>
@@ -1217,7 +1139,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Project/scGPT/code/scgpt.loss/" class="md-nav__link">
+      <a href="../../../Project/scGPT/code/scgpt.loss/" class="md-nav__link">
         scgpt.loss
       </a>
     </li>
@@ -1231,7 +1153,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Project/scGPT/code/scgpt.preprocess/" class="md-nav__link">
+      <a href="../../../Project/scGPT/code/scgpt.preprocess/" class="md-nav__link">
         scgpt.preprocess
       </a>
     </li>
@@ -1245,7 +1167,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Project/scGPT/code/scgpt.trainer/" class="md-nav__link">
+      <a href="../../../Project/scGPT/code/scgpt.trainer/" class="md-nav__link">
         scgpt.trainer
       </a>
     </li>
@@ -1273,7 +1195,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Project/paperReading/" class="md-nav__link">
+      <a href="../../../Project/paperReading/" class="md-nav__link">
         paperReading
       </a>
     </li>
@@ -1322,7 +1244,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Finance/1-%E5%9F%BA%E6%9C%AC%E9%87%91%E8%9E%8D%E7%9F%A5%E8%AF%86/" class="md-nav__link">
+      <a href="../../../Finance/1-%E5%9F%BA%E6%9C%AC%E9%87%91%E8%9E%8D%E7%9F%A5%E8%AF%86/" class="md-nav__link">
         基本金融知识
       </a>
     </li>
@@ -1336,7 +1258,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Finance/2-%E9%87%91%E8%9E%8D%E5%B7%A5%E5%85%B7/" class="md-nav__link">
+      <a href="../../../Finance/2-%E9%87%91%E8%9E%8D%E5%B7%A5%E5%85%B7/" class="md-nav__link">
         金融工具
       </a>
     </li>
@@ -1350,7 +1272,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Finance/4-%E9%87%91%E8%9E%8D%E6%9C%BA%E6%9E%84/" class="md-nav__link">
+      <a href="../../../Finance/4-%E9%87%91%E8%9E%8D%E6%9C%BA%E6%9E%84/" class="md-nav__link">
         金融机构
       </a>
     </li>
@@ -1364,7 +1286,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Finance/3-%E9%87%91%E8%9E%8D%E5%88%86%E6%9E%90/" class="md-nav__link">
+      <a href="../../../Finance/3-%E9%87%91%E8%9E%8D%E5%88%86%E6%9E%90/" class="md-nav__link">
         金融分析
       </a>
     </li>
@@ -1413,7 +1335,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Quant/%E9%87%8F%E5%8C%96%E5%B7%A5%E4%BD%9C%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
+      <a href="../../../Quant/%E9%87%8F%E5%8C%96%E5%B7%A5%E4%BD%9C%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
         量化工作介绍
       </a>
     </li>
@@ -1427,7 +1349,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Quant/%E9%87%8F%E5%8C%96%E6%8A%80%E8%83%BD/" class="md-nav__link">
+      <a href="../../../Quant/%E9%87%8F%E5%8C%96%E6%8A%80%E8%83%BD/" class="md-nav__link">
         量化技能
       </a>
     </li>
@@ -1447,14 +1369,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
       
       
       
@@ -1463,7 +1387,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_7">
           <span class="md-nav__icon md-icon"></span>
           机器学习
@@ -1505,7 +1429,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../MachineLeanring/Basic/%E5%88%86%E7%B1%BB%E5%92%8C%E5%9B%9E%E5%BD%92/" class="md-nav__link">
+      <a href="../../Basic/%E5%88%86%E7%B1%BB%E5%92%8C%E5%9B%9E%E5%BD%92/" class="md-nav__link">
         分类和回归
       </a>
     </li>
@@ -1519,7 +1443,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../MachineLeanring/Basic/LazyEagerLearning/" class="md-nav__link">
+      <a href="../../Basic/LazyEagerLearning/" class="md-nav__link">
         Lazy vs Eager learning
       </a>
     </li>
@@ -1533,7 +1457,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../MachineLeanring/Basic/Normalisation/" class="md-nav__link">
+      <a href="../../Basic/Normalisation/" class="md-nav__link">
         Normalisation
       </a>
     </li>
@@ -1547,7 +1471,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../MachineLeanring/Basic/Bias-variance/" class="md-nav__link">
+      <a href="../../Basic/Bias-variance/" class="md-nav__link">
         Bias-variance
       </a>
     </li>
@@ -1561,7 +1485,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../MachineLeanring/Basic/ModelEvaluation/" class="md-nav__link">
+      <a href="../../Basic/ModelEvaluation/" class="md-nav__link">
         模型评估
       </a>
     </li>
@@ -1611,7 +1535,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../MachineLeanring/SupervisedLearning/KNN/" class="md-nav__link">
+      <a href="../../SupervisedLearning/KNN/" class="md-nav__link">
         KNN
       </a>
     </li>
@@ -1625,7 +1549,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../MachineLeanring/SupervisedLearning/DecisionTrees/" class="md-nav__link">
+      <a href="../../SupervisedLearning/DecisionTrees/" class="md-nav__link">
         Decision Tree
       </a>
     </li>
@@ -1702,7 +1626,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../about/" class="md-nav__link">
+      <a href="../../../about/" class="md-nav__link">
         概念
       </a>
     </li>
@@ -1716,7 +1640,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../about/" class="md-nav__link">
+      <a href="../../../about/" class="md-nav__link">
         K-means
       </a>
     </li>
@@ -1764,7 +1688,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../about/" class="md-nav__link">
+      <a href="../../../about/" class="md-nav__link">
         概念
       </a>
     </li>
@@ -1778,7 +1702,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../about/" class="md-nav__link">
+      <a href="../../../about/" class="md-nav__link">
         Non-parametric approaches
       </a>
     </li>
@@ -1792,7 +1716,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../about/" class="md-nav__link">
+      <a href="../../../about/" class="md-nav__link">
         Parametric approaches
       </a>
     </li>
@@ -1806,7 +1730,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../about/" class="md-nav__link">
+      <a href="../../../about/" class="md-nav__link">
         GMM-EM
       </a>
     </li>
@@ -1832,16 +1756,18 @@
               
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_4" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_4" checked>
       
       
       
@@ -1850,7 +1776,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_7_4">
           <span class="md-nav__icon md-icon"></span>
           神经网络
@@ -1861,11 +1787,19 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../MachineLeanring/NeuralNetworks/LinearRegression/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Linear Regression
       </a>
+      
     </li>
   
 
@@ -1877,7 +1811,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../MachineLeanring/NeuralNetworks/LogisticRegression.md" class="md-nav__link">
+      <a href="../LogisticRegression.md" class="md-nav__link">
         Logistic Regression
       </a>
     </li>
@@ -1891,7 +1825,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../MachineLeanring/NeuralNetworks/ActivationFunctions/" class="md-nav__link">
+      <a href="../ActivationFunctions/" class="md-nav__link">
         Activation functions
       </a>
     </li>
@@ -1976,7 +1910,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../nlp/%E7%BB%9F%E8%AE%A1%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+      <a href="../../../nlp/%E7%BB%9F%E8%AE%A1%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
         统计语言模型
       </a>
     </li>
@@ -1990,7 +1924,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../nlp/NNLM%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+      <a href="../../../nlp/NNLM%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
         NNLM模型
       </a>
     </li>
@@ -2004,7 +1938,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../nlp/Word2Vec%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+      <a href="../../../nlp/Word2Vec%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
         Word2Vec模型
       </a>
     </li>
@@ -2018,7 +1952,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../nlp/ELMo%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+      <a href="../../../nlp/ELMo%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
         ELMo模型
       </a>
     </li>
@@ -2032,7 +1966,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../nlp/BERT%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+      <a href="../../../nlp/BERT%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
         BERT
       </a>
     </li>
@@ -2046,7 +1980,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../nlp/Transformer%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+      <a href="../../../nlp/Transformer%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
         Transformer
       </a>
     </li>
@@ -2067,7 +2001,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Courses/nlp/EvaluatingLLM/" class="md-nav__link">
+      <a href="../../../Courses/nlp/EvaluatingLLM/" class="md-nav__link">
         大模型的评估方法
       </a>
     </li>
@@ -2099,55 +2033,6 @@
   
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#dataframe" class="md-nav__link">
-    创建 DataFrame
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    新添加数据
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    设置索引
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    其他
-  </a>
-  
-    <nav class="md-nav" aria-label="其他">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    检查数据类型
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -2161,92 +2046,9 @@
                   
 
 
-  <h1>DataFrame</h1>
+  <h1>Linear Regression</h1>
 
-<p>在Python中，通常使用<code>pandas</code>库来创建和操作DataFrame对象。</p>
-<h2 id="dataframe">创建 DataFrame</h2>
-<ul>
-<li><strong>从列表或数组创建</strong>：你可以使用列表或NumPy数组来创建一个DataFrame。</li>
-</ul>
-<p><div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="mi">23</span><span class="p">],</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="mi">27</span><span class="p">],</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;Charlie&quot;</span><span class="p">,</span> <span class="mi">22</span><span class="p">]</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="p">]</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="c1"># 创建DataFrame</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;ID&quot;</span><span class="p">,</span> <span class="s2">&quot;Name&quot;</span><span class="p">,</span> <span class="s2">&quot;Age&quot;</span><span class="p">])</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-</span></code></pre></div>
-Ouput:</p>
-<pre>
-   ID     Name  Age
-0   1    Alice   23
-1   2      Bob   27
-2   3  Charlie   22
-</pre>
 
-<ul>
-<li><strong>从字典创建</strong>：你也可以使用字典来创建DataFrame，其中字典的键将成为列名，值应为列表或数组。</li>
-</ul>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="s2">&quot;ID&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="s2">&quot;Charlie&quot;</span><span class="p">],</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="s2">&quot;Age&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">23</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">22</span><span class="p">]</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">}</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-</span></code></pre></div>
-<h2 id="_1">新添加数据</h2>
-<div class="language-py highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">df_CD</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Gene&#39;</span><span class="p">,</span> <span class="s1">&#39;Similarity&#39;</span><span class="p">,</span> <span class="s1">&#39;Gene1&#39;</span><span class="p">])</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># 遍历CD_genes列表中的每个基因</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">CD_genes</span><span class="p">:</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="n">df</span> <span class="o">=</span> <span class="n">embed</span><span class="o">.</span><span class="n">compute_similarities</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">CD_genes</span><span class="p">)</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Gene1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;----------&quot;</span><span class="p">)</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>    <span class="n">df_CD</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df_CD</span><span class="p">,</span> <span class="n">df</span><span class="p">],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</span></code></pre></div>
-<ol>
-<li><strong>从CSV或Excel文件创建</strong>：如果你的数据存储在文件中，<code>pandas</code>可以直接读取CSV或Excel文件来创建DataFrame。</li>
-</ol>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># 读取CSV文件</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;path/to/your/data.csv&quot;</span><span class="p">)</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># 读取Excel文件</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;path/to/your/data.xlsx&quot;</span><span class="p">)</span>
-</span></code></pre></div>
-<p>确保你的文件路径是正确的，并且文件格式与内容符合<code>pandas</code>的读取要求。</p>
-<h2 id="_2">设置索引</h2>
-<p>你可以在创建DataFrame时指定某一列作为索引：</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">data</span><span class="p">])</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-</span></code></pre></div>
-<p>或者在DataFrame创建后设置：</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;ID&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-</span></code></pre></div>
-<h2 id="_3">其他</h2>
-<h3 id="_4">检查数据类型</h3>
-<ul>
-<li>检查所有列的数据类型
-<div class="language-py highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># 假设你已经有一个DataFrame对象，名为df</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">dtypes</span><span class="p">)</span>
-</span></code></pre></div></li>
-<li>检查指定列的数据类型
-<div class="language-py highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># 假设你想查看名为&#39;column_name&#39;的列的数据类型</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">column_type</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;column_name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dtype</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">column_type</span><span class="p">)</span>
-</span></code></pre></div></li>
-</ul>
 
 
 
@@ -2288,10 +2090,10 @@ Ouput:</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.path", "content.code.copy", "content.code.annotate", "content.code.select"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.path", "content.code.copy", "content.code.annotate", "content.code.select"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.51198bba.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.51198bba.min.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       

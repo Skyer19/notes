@@ -32,5 +32,9 @@ jupyter kernelspec uninstall myenv
 ```
 ## 使用特定端口连接
 ```bash
-jupyter notebook --port 10086
+ssh ssh -L 10088:localhost:10088 user@123.123.123.123
+```
+
+```bash
+jupyter notebook --port 10088
 ```

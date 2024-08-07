@@ -33,7 +33,7 @@ jupyter kernelspec uninstall myenv
 
 ## 使用特定端口连接
 ```bash
-ssh ssh -L 10088:localhost:10088 user@123.123.123.123
+ssh -L 10088:localhost:10088 user@123.123.123.123
 ```
 
 ```bash

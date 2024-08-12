@@ -14,14 +14,14 @@
         <link rel="prev" href="../../../about/">
       
       
-        <link rel="next" href="../ActivationFunctions/">
+        <link rel="next" href="../LogisticRegression/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.6">
     
     
       
-        <title>Linear Regression - My notes</title>
+        <title>线性回归 - My notes</title>
       
     
     
@@ -74,6 +74,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -103,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Linear Regression
+              线性回归
             
           </span>
         </div>
@@ -1626,7 +1631,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../about/" class="md-nav__link">
+      <a href="../../UnSupervisedLearning/Clustering/Concept/" class="md-nav__link">
         概念
       </a>
     </li>
@@ -1640,7 +1645,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../about/" class="md-nav__link">
+      <a href="../../UnSupervisedLearning/Clustering/K-means/" class="md-nav__link">
         K-means
       </a>
     </li>
@@ -1796,9 +1801,59 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          线性回归
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
-        Linear Regression
+        线性回归
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    定义
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    损失函数
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    更新参数
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    梯度下降
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1811,7 +1866,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LogisticRegression.md" class="md-nav__link">
+      <a href="../LogisticRegression/" class="md-nav__link">
         Logistic Regression
       </a>
     </li>
@@ -1825,8 +1880,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../ActivationFunctions/" class="md-nav__link">
-        Activation functions
+      <a href="../ActivationFunction/" class="md-nav__link">
+        激活函数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LossFunction/" class="md-nav__link">
+        损失函数
       </a>
     </li>
   
@@ -2033,6 +2102,42 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    定义
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    损失函数
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    更新参数
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    梯度下降
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2046,9 +2151,40 @@
                   
 
 
-  <h1>Linear Regression</h1>
+  <h1>线性回归</h1>
 
-
+<h2 id="_1">定义</h2>
+<div class="arithmatex">
+<div class="MathJax_Preview">y=\alpha x+b</div>
+<script type="math/tex; mode=display">y=\alpha x+b</script>
+</div>
+<h2 id="_2">损失函数</h2>
+<p>Sum of Sqaures: <span class="arithmatex"><span class="MathJax_Preview">E=\frac{1}{2}\sum^{N}_{i=1}(\hat{y}^{i}-y^{i})^2</span><script type="math/tex">E=\frac{1}{2}\sum^{N}_{i=1}(\hat{y}^{i}-y^{i})^2</script></span></p>
+<h2 id="_3">更新参数</h2>
+<div class="arithmatex">
+<div class="MathJax_Preview">\frac{dE}{da}=\sum^{N}_{i=1}(\hat{y}^{i}-y^{i})x^{i}</div>
+<script type="math/tex; mode=display">\frac{dE}{da}=\sum^{N}_{i=1}(\hat{y}^{i}-y^{i})x^{i}</script>
+</div>
+<div class="arithmatex">
+<div class="MathJax_Preview">\frac{dE}{db}=\sum^{N}_{i=1}(\hat{y}^{i}-y^{i})</div>
+<script type="math/tex; mode=display">\frac{dE}{db}=\sum^{N}_{i=1}(\hat{y}^{i}-y^{i})</script>
+</div>
+<h2 id="_4">梯度下降</h2>
+<p>Gradient Decent:</p>
+<ul>
+<li><span class="arithmatex"><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span></li>
+</ul>
+<div class="arithmatex">
+<div class="MathJax_Preview">\alpha:= \alpha:-\alpha\frac{dE}{d\alpha}}</div>
+<script type="math/tex; mode=display">\alpha:= \alpha:-\alpha\frac{dE}{d\alpha}}</script>
+</div>
+<ul>
+<li><span class="arithmatex"><span class="MathJax_Preview">b</span><script type="math/tex">b</script></span></li>
+</ul>
+<div class="arithmatex">
+<div class="MathJax_Preview">b:= b:-b\frac{dE}{db}}</div>
+<script type="math/tex; mode=display">b:= b:-b\frac{dE}{db}}</script>
+</div>
 
 
 

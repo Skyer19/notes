@@ -179,17 +179,18 @@ nav:
           - 'Decision Tree': ./MachineLeanring/SupervisedLearning/DecisionTrees.md
         - Unsupervised Learning(无监督学习):
           - Clustering:
-            - 概念: 'about.md'
-            - K-means: 'about.md'
+            - 概念: ./MachineLeanring/UnSupervisedLearning/Clustering/Concept.md
+            - K-means: ./MachineLeanring/UnSupervisedLearning/Clustering/K-means.md
           - Probability Density Estimation:
             - 概念: 'about.md'
             - Non-parametric approaches: 'about.md'
             - Parametric approaches: 'about.md'
             - GMM-EM: 'about.md'
         - 神经网络:
-            - Linear Regression: './MachineLeanring/NeuralNetworks/LinearRegression.md'
+            - 线性回归: './MachineLeanring/NeuralNetworks/LinearRegression.md'
             - Logistic Regression: './MachineLeanring/NeuralNetworks/LogisticRegression.md'   
-            - Activation functions: './MachineLeanring/NeuralNetworks/ActivationFunctions.md'   
+            - 激活函数: './MachineLeanring/NeuralNetworks/ActivationFunction.md'   
+            - 损失函数: './MachineLeanring/NeuralNetworks/LossFunction.md'   
 
     - 自然语言处理:
         - 语言模型的发展:

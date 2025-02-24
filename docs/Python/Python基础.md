@@ -64,7 +64,7 @@ dict1["gender"] = "Female"  # 添加新键值对
 dict1["age"] = 26  # 修改已有键的值
 
 # 删除元素
-dict1.pop("city")  # 删除指定键
+dict1.pop("age")  # 删除指定键
 del dict1["age"]  # 另一种删除方式
 dict1.clear()  # 清空字典
 

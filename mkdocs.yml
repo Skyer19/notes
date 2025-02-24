@@ -106,6 +106,7 @@ nav:
     #     - 'Transformer': ./Courses/nlp/transformer.md
     #     - 'Evaluating LLM': ./Courses/nlp/EvaluatingLLM.md
     - Python:
+        - 'Python基础': ./Python/Python基础.md
         - 'Python常用指令': ./Python/Python常用指令.md
         - 'wandb使用': ./Python/wandb使用.md
         - 'DataFrame': ./Python/dataFrame使用.md

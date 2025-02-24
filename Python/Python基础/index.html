@@ -642,6 +642,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#zip" class="md-nav__link">
+    <span class="md-ellipsis">
+      zip()
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3201,6 +3210,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#zip" class="md-nav__link">
+    <span class="md-ellipsis">
+      zip()
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3586,7 +3604,7 @@
 </span><span id="__span-8-73"><a id="__codelineno-8-73" name="__codelineno-8-73" href="#__codelineno-8-73"></a><span class="nb">print</span><span class="p">(</span><span class="n">s1</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># 反转字符串，输出 &#39;!dlroW ,olleH&#39;</span>
 </span></code></pre></div>
 <h2 id="_8">切片操作</h2>
-<p><div class="language-py highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="err">```</span><span class="n">python</span>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="err">```</span><span class="n">python</span>
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="c1"># 字符串、列表、元组的切片操作</span>
 </span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
 </span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="c1"># 定义字符串、列表和元组</span>
@@ -3627,7 +3645,45 @@
 </span><span id="__span-9-39"><a id="__codelineno-9-39" name="__codelineno-9-39" href="#__codelineno-9-39"></a><span class="k">del</span> <span class="n">lst</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span>  <span class="c1"># 删除索引 3 到 5 的元素</span>
 </span><span id="__span-9-40"><a id="__codelineno-9-40" name="__codelineno-9-40" href="#__codelineno-9-40"></a><span class="nb">print</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>  <span class="c1"># 输出 [0, 1, 100, 7, 8, 9]</span>
 </span></code></pre></div>
-```</p>
+<h2 id="zip">zip()</h2>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># zip() 用于将多个可迭代对象（列表、元组等）组合成一个迭代器，每次返回一个包含对应元素的元组</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="c1"># 定义两个列表</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="s2">&quot;Charlie&quot;</span><span class="p">]</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="n">ages</span> <span class="o">=</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">35</span><span class="p">]</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="c1"># 使用 zip() 组合列表</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="n">zipped</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">ages</span><span class="p">)</span>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="c1"># 转换为列表</span>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">zipped</span><span class="p">))</span>  <span class="c1"># 输出 [(&#39;Alice&#39;, 25), (&#39;Bob&#39;, 30), (&#39;Charlie&#39;, 35)]</span>
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="c1"># 使用 for 循环遍历</span>
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">ages</span><span class="p">):</span>
+</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s2"> years old.&quot;</span><span class="p">)</span>
+</span><span id="__span-10-16"><a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>
+</span><span id="__span-10-17"><a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="c1"># 当列表长度不同时，zip 只会匹配较短的部分</span>
+</span><span id="__span-10-18"><a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;Bob&quot;</span><span class="p">]</span>
+</span><span id="__span-10-19"><a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a><span class="n">ages</span> <span class="o">=</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">35</span><span class="p">]</span>
+</span><span id="__span-10-20"><a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a><span class="n">cities</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;New York&quot;</span><span class="p">,</span> <span class="s2">&quot;Los Angeles&quot;</span><span class="p">]</span>
+</span><span id="__span-10-21"><a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a>
+</span><span id="__span-10-22"><a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a><span class="n">zipped</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">ages</span><span class="p">,</span> <span class="n">cities</span><span class="p">)</span>
+</span><span id="__span-10-23"><a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a><span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">zipped</span><span class="p">))</span>  <span class="c1"># 输出 [(&#39;Alice&#39;, 25, &#39;New York&#39;), (&#39;Bob&#39;, 30, &#39;Los Angeles&#39;)]</span>
+</span><span id="__span-10-24"><a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a>
+</span><span id="__span-10-25"><a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a><span class="c1"># 使用 zip() 解压数据（* 运算符）</span>
+</span><span id="__span-10-26"><a id="__codelineno-10-26" name="__codelineno-10-26" href="#__codelineno-10-26"></a><span class="n">zipped_data</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="mi">25</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;Charlie&quot;</span><span class="p">,</span> <span class="mi">35</span><span class="p">)]</span>
+</span><span id="__span-10-27"><a id="__codelineno-10-27" name="__codelineno-10-27" href="#__codelineno-10-27"></a><span class="n">names</span><span class="p">,</span> <span class="n">ages</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">zipped_data</span><span class="p">)</span>
+</span><span id="__span-10-28"><a id="__codelineno-10-28" name="__codelineno-10-28" href="#__codelineno-10-28"></a>
+</span><span id="__span-10-29"><a id="__codelineno-10-29" name="__codelineno-10-29" href="#__codelineno-10-29"></a><span class="nb">print</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>  <span class="c1"># 输出 (&#39;Alice&#39;, &#39;Bob&#39;, &#39;Charlie&#39;)</span>
+</span><span id="__span-10-30"><a id="__codelineno-10-30" name="__codelineno-10-30" href="#__codelineno-10-30"></a><span class="nb">print</span><span class="p">(</span><span class="n">ages</span><span class="p">)</span>   <span class="c1"># 输出 (25, 30, 35)</span>
+</span><span id="__span-10-31"><a id="__codelineno-10-31" name="__codelineno-10-31" href="#__codelineno-10-31"></a>
+</span><span id="__span-10-32"><a id="__codelineno-10-32" name="__codelineno-10-32" href="#__codelineno-10-32"></a><span class="c1"># 将多个列表合并为字典</span>
+</span><span id="__span-10-33"><a id="__codelineno-10-33" name="__codelineno-10-33" href="#__codelineno-10-33"></a><span class="n">keys</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="p">,</span> <span class="s2">&quot;city&quot;</span><span class="p">]</span>
+</span><span id="__span-10-34"><a id="__codelineno-10-34" name="__codelineno-10-34" href="#__codelineno-10-34"></a><span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="s2">&quot;New York&quot;</span><span class="p">]</span>
+</span><span id="__span-10-35"><a id="__codelineno-10-35" name="__codelineno-10-35" href="#__codelineno-10-35"></a>
+</span><span id="__span-10-36"><a id="__codelineno-10-36" name="__codelineno-10-36" href="#__codelineno-10-36"></a><span class="n">person_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">keys</span><span class="p">,</span> <span class="n">values</span><span class="p">))</span>
+</span><span id="__span-10-37"><a id="__codelineno-10-37" name="__codelineno-10-37" href="#__codelineno-10-37"></a><span class="nb">print</span><span class="p">(</span><span class="n">person_dict</span><span class="p">)</span>  <span class="c1"># 输出 {&#39;name&#39;: &#39;Alice&#39;, &#39;age&#39;: 25, &#39;city&#39;: &#39;New York&#39;}</span>
+</span></code></pre></div>
 
 
 

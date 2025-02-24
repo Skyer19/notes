@@ -98,7 +98,7 @@ print("name" in dict1)  # 检查 "name" 是否在字典中
 # 创建集合
 set1 = {1, 2, 3, 4, 5}  # 直接定义
 set2 = set([3, 4, 5, 6, 7])  # 使用 set() 创建
-empty_set = set()  # 创建空集合（不能用 {}，它表示空字典）
+empty_set = set()  # 创建空集合
 
 # 增加元素
 set1.add(6)  # 添加单个元素
@@ -129,4 +129,119 @@ print(set1.isdisjoint(set2))  # 判断两个集合是否无交集
 # 遍历集合
 for item in set1:
     print(item)
+```
+
+## 元组（Tuple） 
+一种 不可变（immutable） 的序列
+
+```py
+# 创建元组
+t1 = (1, 2, 3)  # 定义元组
+t2 = tuple([4, 5, 6])  # 使用 tuple() 将列表转换为元组
+t3 = (7,)  # 只有一个元素的元组，必须加逗号，否则只是整数
+t4 = ()  # 空元组
+t5 = (1, "hello", 3.14)  # 元组可以存储不同类型的元素
+
+# 访问元组元素
+t = (10, 20, 30, 40, 50)
+print(t[0])  # 获取索引 0 处的元素，输出 10
+print(t[-1])  # 获取最后一个元素，输出 50
+print(t[1:4])  # 切片获取索引 1 到 3 的元素，输出 (20, 30, 40)
+
+# 遍历元组
+for item in t:
+    print(item)  # 逐个打印元组元素
+
+for i, value in enumerate(t):  # 使用 enumerate 获取索引和值
+    print(f"索引 {i}: {value}")
+
+# 元组不可变，但可包含可变对象
+t = (1, 2, 3)
+# t[0] = 100  # 会报错，元组中的元素不可更改
+
+t_list = ([1, 2, 3], [4, 5, 6])  # 元组可以包含可变对象（如列表）
+t_list[0].append(99)  # 修改元组中的列表
+print(t_list)  # 输出 ([1, 2, 3, 99], [4, 5, 6])
+
+# 合并和复制元组
+t1 = (1, 2, 3)
+t2 = (4, 5, 6)
+t3 = t1 + t2  # 合并元组
+print(t3)  # 输出 (1, 2, 3, 4, 5, 6)
+
+t4 = t1 * 3  # 复制元组
+print(t4)  # 输出 (1, 2, 3, 1, 2, 3, 1, 2, 3)
+
+# 查找元素
+t = (1, 2, 3, 4, 5, 3, 6)
+print(t.index(3))  # 查找 3 的索引（返回第一个匹配项），输出 2
+print(t.count(3))  # 统计 3 出现的次数，输出 2
+
+# 元组解包
+t = (10, 20, 30)
+a, b, c = t  # 直接解包
+print(a, b, c)  # 输出 10 20 30
+
+# 使用 * 进行部分解包
+t2 = (1, 2, 3, 4, 5)
+a, *middle, c = t2  # 变量 *middle 存储中间部分
+print(a, middle, c)  # 输出 1 [2, 3, 4] 5
+
+# 元组比较
+print((1, 2, 3) == (1, 2, 3))  # True
+print((1, 2, 3) < (1, 2, 4))  # True，按元素逐个比较
+print((1, 3) > (1, 2, 5))  # True，因为 3 > 2
+
+
+```
+
+使用 enumerate() 函数在 for 循环中 同时返回索引和值
+
+```py
+
+# 定义一个列表
+items = ["apple", "banana", "cherry"]
+
+# 遍历列表，同时获取索引和值
+for index, value in enumerate(items):
+    print(f"索引: {index}, 值: {value}")
+
+# 输出:
+# 索引: 0, 值: apple
+# 索引: 1, 值: banana
+# 索引: 2, 值: cherry
+
+
+# 在元组上使用 enumerate()
+t = ("red", "green", "blue")
+
+# 遍历元组，同时获取索引和值
+for index, value in enumerate(t):
+    print(f"索引: {index}, 颜色: {value}")
+
+# 指定起始索引
+items = ["a", "b", "c"]
+
+# enumerate() 指定 start 参数，使索引从 1 开始
+for index, value in enumerate(items, start=1):
+    print(f"索引: {index}, 值: {value}")
+
+# 输出:
+# 索引: 1, 值: a
+# 索引: 2, 值: b
+# 索引: 3, 值: c
+
+
+# 在字典上使用 enumerate()
+data = {"name": "Alice", "age": 25, "city": "New York"}
+
+# 遍历字典，同时获取索引、键和值
+for index, (key, value) in enumerate(data.items()):
+    print(f"索引: {index}, 键: {key}, 值: {value}")
+
+# 输出:
+# 索引: 0, 键: name, 值: Alice
+# 索引: 1, 键: age, 值: 25
+# 索引: 2, 键: city, 值: New York
+
 ```

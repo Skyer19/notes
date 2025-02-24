@@ -318,3 +318,129 @@ print(next(gen))  # 输出 4
 for val in my_generator(10, 13):
     print(val)  # 输出 10, 11, 12
 ```
+
+
+## 字符串
+
+```py
+
+# 字符串基本操作
+
+# 创建字符串
+s1 = "Hello, World!"
+s2 = 'Python is great'
+s3 = """多行字符串
+可以这样写"""
+s4 = '''也可以用单引号'''
+
+# 访问字符串
+print(s1[0])   # 访问索引 0 处的字符，输出 'H'
+print(s1[-1])  # 访问最后一个字符，输出 '!'
+print(s1[:5])  # 切片，获取前 5 个字符，输出 'Hello'
+
+# 遍历字符串
+for char in s1:
+    print(char)  # 逐个打印字符串中的字符
+
+# 字符串拼接
+s5 = s1 + " " + s2  # 使用 + 连接字符串
+print(s5)  # 输出 'Hello, World! Python is great'
+
+# 字符串重复
+print("Hello " * 3)  # 输出 'Hello Hello Hello '
+
+# 字符串长度
+print(len(s1))  # 输出 13
+
+# 查找和替换
+print(s1.find("World"))  # 查找 "World" 的索引位置，输出 7
+print(s1.replace("World", "Python"))  # 替换 "World" 为 "Python"
+
+# 字符串大小写转换
+print(s1.upper())  # 转换为大写
+print(s1.lower())  # 转换为小写
+print(s1.capitalize())  # 首字母大写
+print(s1.title())  # 每个单词首字母大写
+print(s1.swapcase())  # 大小写互换
+
+# 去除空格
+s6 = "  hello world  "
+print(s6.strip())  # 去掉前后空格
+print(s6.lstrip())  # 去掉左侧空格
+print(s6.rstrip())  # 去掉右侧空格
+
+# 拆分和合并
+s7 = "apple,banana,orange"
+print(s7.split(","))  # 以 ',' 分割字符串，返回 ['apple', 'banana', 'orange']
+
+words = ["Python", "is", "fun"]
+print(" ".join(words))  # 以空格连接列表中的字符串，输出 'Python is fun'
+
+# 判断字符串是否以特定字符开头或结尾
+print(s1.startswith("Hello"))  # 判断是否以 "Hello" 开头，返回 True
+print(s1.endswith("!"))  # 判断是否以 "!" 结尾，返回 True
+
+# 判断字符串是否为数字或字母
+print("123".isdigit())  # 判断是否全为数字，返回 True
+print("abc".isalpha())  # 判断是否全为字母，返回 True
+print("abc123".isalnum())  # 判断是否全为字母或数字，返回 True
+
+# 统计字符出现次数
+print(s1.count("o"))  # 统计 "o" 在 s1 中出现的次数，输出 2
+
+# 格式化字符串
+name = "Alice"
+age = 25
+print(f"My name is {name} and I am {age} years old.")  # 使用 f-string 格式化
+print("My name is {} and I am {} years old.".format(name, age))  # 使用 format() 格式化
+print("My name is %s and I am %d years old." % (name, age))  # 使用 % 进行格式化
+
+# 反转字符串
+print(s1[::-1])  # 反转字符串，输出 '!dlroW ,olleH'
+
+```
+
+## 切片操作
+```py
+```python
+# 字符串、列表、元组的切片操作
+
+# 定义字符串、列表和元组
+s = "Hello, World!"
+lst = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+tup = (10, 20, 30, 40, 50, 60)
+
+# 基本切片（[start:end:step]）
+print(s[0:5])   # 输出 'Hello'，索引 0 到 4（不包括 5）
+print(lst[2:6]) # 输出 [2, 3, 4, 5]，索引 2 到 5（不包括 6）
+print(tup[1:4]) # 输出 (20, 30, 40)，索引 1 到 3（不包括 4）
+
+# 省略 start 或 end
+print(s[:5])   # 输出 'Hello'，从索引 0 到 4
+print(lst[4:]) # 输出 [4, 5, 6, 7, 8, 9]，从索引 4 到末尾
+print(tup[:])  # 输出 (10, 20, 30, 40, 50, 60)，整个元组
+
+# 使用步长（step）
+print(s[::2])   # 输出 'Hlo ol!'，每隔 2 个字符取一个
+print(lst[1:8:2]) # 输出 [1, 3, 5, 7]，从索引 1 到 7，步长 2
+print(tup[::-1]) # 输出 (60, 50, 40, 30, 20, 10)，反转元组
+
+# 负索引切片
+print(s[-6:-1])  # 输出 'World'，从倒数第 6 到倒数第 2
+print(lst[-4:])  # 输出 [6, 7, 8, 9]，从倒数第 4 到末尾
+print(tup[:-3])  # 输出 (10, 20, 30)，从索引 0 到倒数第 3（不包括）
+
+# 反向切片
+print(s[::-1])  # 输出 '!dlroW ,olleH'，反转字符串
+print(lst[::-2]) # 输出 [9, 7, 5, 3, 1]，步长 -2 逆序获取
+print(tup[-1:-4:-1]) # 输出 (60, 50, 40)，倒数第 1 到倒数第 4 逆向切片
+
+# 替换部分列表元素
+lst[2:5] = [100, 200, 300]  # 修改索引 2 到 4 的值
+print(lst)  # 输出 [0, 1, 100, 200, 300, 5, 6, 7, 8, 9]
+
+# 删除部分列表元素
+del lst[3:6]  # 删除索引 3 到 5 的元素
+print(lst)  # 输出 [0, 1, 100, 7, 8, 9]
+```
+```

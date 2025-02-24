@@ -192,6 +192,10 @@ print((1, 2, 3) == (1, 2, 3))  # True
 print((1, 2, 3) < (1, 2, 4))  # True，按元素逐个比较
 print((1, 3) > (1, 2, 5))  # True，因为 3 > 2
 
+# 查找
+vowels = set("aeiou")
+if 'a' in vowels:
+    pass
 
 ```
 
@@ -401,7 +405,6 @@ print(s1[::-1])  # 反转字符串，输出 '!dlroW ,olleH'
 ```
 
 ## 切片操作
-```py
 ```python
 # 字符串、列表、元组的切片操作
 
@@ -483,5 +486,88 @@ values = ["Alice", 25, "New York"]
 
 person_dict = dict(zip(keys, values))
 print(person_dict)  # 输出 {'name': 'Alice', 'age': 25, 'city': 'New York'}
+```
 
+## 其他
+
+```py
+score += 1 if c == '0' else -1
+
+# 该语句是 Python 中的 **三元运算符（Ternary Operator）**
+# 它的作用是根据条件 `c == '0'` 来决定 `score` 的变化
+
+# 解释：
+# 如果 `c` 等于 `'0'`，则 `score += 1`
+# 否则（`c` 不是 `'0'`），`score -= 1`
+
+# 示例：
+score = 0
+c = '0'
+score += 1 if c == '0' else -1  # c == '0'，所以 score 加 1
+print(score)  # 输出 1
+
+c = '1'
+score += 1 if c == '0' else -1  # c 不是 '0'，所以 score 减 1
+print(score)  # 输出 0
+
+# 这种写法等价于：
+if c == '0':
+    score += 1
+else:
+    score -= 1
+```
+
+## 哈希 (Hash)
+```py
+# Python 中的哈希（Hash）和 collections 模块
+
+# 1. 使用 hash() 计算哈希值
+print(hash("hello"))  # 计算字符串 "hello" 的哈希值
+print(hash(123))      # 计算整数 123 的哈希值
+print(hash((1, 2, 3)))  # 计算元组 (1, 2, 3) 的哈希值
+
+# 2. set() 作为哈希集合
+# 集合（Set）是基于哈希的无序、不重复的数据结构
+s = {1, 2, 3, 4, 5}
+s.add(6)  # 添加元素
+s.remove(3)  # 删除元素
+print(s)  # 输出 {1, 2, 4, 5, 6}
+
+# 3. dict() 作为哈希映射
+# 字典（Dictionary）是基于哈希表的键值存储
+d = {"name": "Alice", "age": 25, "city": "New York"}
+print(d["name"])  # 访问键 "name" 对应的值
+d["age"] = 26  # 更新键 "age" 的值
+d["gender"] = "Female"  # 添加新键值对
+del d["city"]  # 删除键 "city"
+print(d)  # 输出 {'name': 'Alice', 'age': 26, 'gender': 'Female'}
+
+# 4. collections 模块
+
+from collections import Counter, defaultdict, OrderedDict, deque
+
+# 4.1 Counter 统计元素出现次数
+counter = Counter("banana")  # 统计字符串中字符的个数
+print(counter)  # 输出 Counter({'a': 3, 'n': 2, 'b': 1})
+
+# 4.2 defaultdict 具有默认值的字典
+dd = defaultdict(int)  # 默认值为 0
+dd["apple"] += 1  # 不需要提前初始化
+print(dd["apple"])  # 输出 1
+print(dd["banana"])  # 输出 0（因为默认值是 int()，即 0）
+
+# 4.3 OrderedDict 记录插入顺序的字典（Python 3.7+ 以后普通 dict 也保持顺序）
+od = OrderedDict()
+od["apple"] = 1
+od["banana"] = 2
+od["cherry"] = 3
+print(od)  # 输出 OrderedDict([('apple', 1), ('banana', 2), ('cherry', 3)])
+
+# 4.4 deque 高效双端队列（比 list 快）
+dq = deque([1, 2, 3])
+dq.append(4)  # 右侧追加
+dq.appendleft(0)  # 左侧追加
+dq.pop()  # 移除右侧元素
+dq.popleft()  # 移除左侧元素
+print(dq)  # 输出 deque([1, 2, 3])
 ```

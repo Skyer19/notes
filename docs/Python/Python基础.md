@@ -443,4 +443,45 @@ print(lst)  # 输出 [0, 1, 100, 200, 300, 5, 6, 7, 8, 9]
 del lst[3:6]  # 删除索引 3 到 5 的元素
 print(lst)  # 输出 [0, 1, 100, 7, 8, 9]
 ```
+
+## zip()
+```py
+# zip() 用于将多个可迭代对象（列表、元组等）组合成一个迭代器，每次返回一个包含对应元素的元组
+
+# 定义两个列表
+names = ["Alice", "Bob", "Charlie"]
+ages = [25, 30, 35]
+
+# 使用 zip() 组合列表
+zipped = zip(names, ages)
+
+# 转换为列表
+print(list(zipped))  # 输出 [('Alice', 25), ('Bob', 30), ('Charlie', 35)]
+
+# 使用 for 循环遍历
+for name, age in zip(names, ages):
+    print(f"{name} is {age} years old.")
+
+# 当列表长度不同时，zip 只会匹配较短的部分
+names = ["Alice", "Bob"]
+ages = [25, 30, 35]
+cities = ["New York", "Los Angeles"]
+
+zipped = zip(names, ages, cities)
+print(list(zipped))  # 输出 [('Alice', 25, 'New York'), ('Bob', 30, 'Los Angeles')]
+
+# 使用 zip() 解压数据（* 运算符）
+zipped_data = [("Alice", 25), ("Bob", 30), ("Charlie", 35)]
+names, ages = zip(*zipped_data)
+
+print(names)  # 输出 ('Alice', 'Bob', 'Charlie')
+print(ages)   # 输出 (25, 30, 35)
+
+# 将多个列表合并为字典
+keys = ["name", "age", "city"]
+values = ["Alice", 25, "New York"]
+
+person_dict = dict(zip(keys, values))
+print(person_dict)  # 输出 {'name': 'Alice', 'age': 25, 'city': 'New York'}
+
 ```

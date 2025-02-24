@@ -624,6 +624,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      字符串
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      切片操作
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3165,6 +3183,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      字符串
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      切片操作
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3474,6 +3510,124 @@
 </span><span id="__span-7-66"><a id="__codelineno-7-66" name="__codelineno-7-66" href="#__codelineno-7-66"></a><span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">my_generator</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">13</span><span class="p">):</span>
 </span><span id="__span-7-67"><a id="__codelineno-7-67" name="__codelineno-7-67" href="#__codelineno-7-67"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>  <span class="c1"># 输出 10, 11, 12</span>
 </span></code></pre></div>
+<h2 id="_7">字符串</h2>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># 字符串基本操作</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="c1"># 创建字符串</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="n">s1</span> <span class="o">=</span> <span class="s2">&quot;Hello, World!&quot;</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="n">s2</span> <span class="o">=</span> <span class="s1">&#39;Python is great&#39;</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="n">s3</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;多行字符串</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="s2">可以这样写&quot;&quot;&quot;</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="n">s4</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;也可以用单引号&#39;&#39;&#39;</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="c1"># 访问字符串</span>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="nb">print</span><span class="p">(</span><span class="n">s1</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>   <span class="c1"># 访问索引 0 处的字符，输出 &#39;H&#39;</span>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="nb">print</span><span class="p">(</span><span class="n">s1</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># 访问最后一个字符，输出 &#39;!&#39;</span>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="nb">print</span><span class="p">(</span><span class="n">s1</span><span class="p">[:</span><span class="mi">5</span><span class="p">])</span>  <span class="c1"># 切片，获取前 5 个字符，输出 &#39;Hello&#39;</span>
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="c1"># 遍历字符串</span>
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">s1</span><span class="p">:</span>
+</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>  <span class="c1"># 逐个打印字符串中的字符</span>
+</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>
+</span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="c1"># 字符串拼接</span>
+</span><span id="__span-8-20"><a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a><span class="n">s5</span> <span class="o">=</span> <span class="n">s1</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="n">s2</span>  <span class="c1"># 使用 + 连接字符串</span>
+</span><span id="__span-8-21"><a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a><span class="nb">print</span><span class="p">(</span><span class="n">s5</span><span class="p">)</span>  <span class="c1"># 输出 &#39;Hello, World! Python is great&#39;</span>
+</span><span id="__span-8-22"><a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a>
+</span><span id="__span-8-23"><a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a><span class="c1"># 字符串重复</span>
+</span><span id="__span-8-24"><a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello &quot;</span> <span class="o">*</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># 输出 &#39;Hello Hello Hello &#39;</span>
+</span><span id="__span-8-25"><a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a>
+</span><span id="__span-8-26"><a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a><span class="c1"># 字符串长度</span>
+</span><span id="__span-8-27"><a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s1</span><span class="p">))</span>  <span class="c1"># 输出 13</span>
+</span><span id="__span-8-28"><a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a>
+</span><span id="__span-8-29"><a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a><span class="c1"># 查找和替换</span>
+</span><span id="__span-8-30"><a id="__codelineno-8-30" name="__codelineno-8-30" href="#__codelineno-8-30"></a><span class="nb">print</span><span class="p">(</span><span class="n">s1</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;World&quot;</span><span class="p">))</span>  <span class="c1"># 查找 &quot;World&quot; 的索引位置，输出 7</span>
+</span><span id="__span-8-31"><a id="__codelineno-8-31" name="__codelineno-8-31" href="#__codelineno-8-31"></a><span class="nb">print</span><span class="p">(</span><span class="n">s1</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;World&quot;</span><span class="p">,</span> <span class="s2">&quot;Python&quot;</span><span class="p">))</span>  <span class="c1"># 替换 &quot;World&quot; 为 &quot;Python&quot;</span>
+</span><span id="__span-8-32"><a id="__codelineno-8-32" name="__codelineno-8-32" href="#__codelineno-8-32"></a>
+</span><span id="__span-8-33"><a id="__codelineno-8-33" name="__codelineno-8-33" href="#__codelineno-8-33"></a><span class="c1"># 字符串大小写转换</span>
+</span><span id="__span-8-34"><a id="__codelineno-8-34" name="__codelineno-8-34" href="#__codelineno-8-34"></a><span class="nb">print</span><span class="p">(</span><span class="n">s1</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>  <span class="c1"># 转换为大写</span>
+</span><span id="__span-8-35"><a id="__codelineno-8-35" name="__codelineno-8-35" href="#__codelineno-8-35"></a><span class="nb">print</span><span class="p">(</span><span class="n">s1</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>  <span class="c1"># 转换为小写</span>
+</span><span id="__span-8-36"><a id="__codelineno-8-36" name="__codelineno-8-36" href="#__codelineno-8-36"></a><span class="nb">print</span><span class="p">(</span><span class="n">s1</span><span class="o">.</span><span class="n">capitalize</span><span class="p">())</span>  <span class="c1"># 首字母大写</span>
+</span><span id="__span-8-37"><a id="__codelineno-8-37" name="__codelineno-8-37" href="#__codelineno-8-37"></a><span class="nb">print</span><span class="p">(</span><span class="n">s1</span><span class="o">.</span><span class="n">title</span><span class="p">())</span>  <span class="c1"># 每个单词首字母大写</span>
+</span><span id="__span-8-38"><a id="__codelineno-8-38" name="__codelineno-8-38" href="#__codelineno-8-38"></a><span class="nb">print</span><span class="p">(</span><span class="n">s1</span><span class="o">.</span><span class="n">swapcase</span><span class="p">())</span>  <span class="c1"># 大小写互换</span>
+</span><span id="__span-8-39"><a id="__codelineno-8-39" name="__codelineno-8-39" href="#__codelineno-8-39"></a>
+</span><span id="__span-8-40"><a id="__codelineno-8-40" name="__codelineno-8-40" href="#__codelineno-8-40"></a><span class="c1"># 去除空格</span>
+</span><span id="__span-8-41"><a id="__codelineno-8-41" name="__codelineno-8-41" href="#__codelineno-8-41"></a><span class="n">s6</span> <span class="o">=</span> <span class="s2">&quot;  hello world  &quot;</span>
+</span><span id="__span-8-42"><a id="__codelineno-8-42" name="__codelineno-8-42" href="#__codelineno-8-42"></a><span class="nb">print</span><span class="p">(</span><span class="n">s6</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>  <span class="c1"># 去掉前后空格</span>
+</span><span id="__span-8-43"><a id="__codelineno-8-43" name="__codelineno-8-43" href="#__codelineno-8-43"></a><span class="nb">print</span><span class="p">(</span><span class="n">s6</span><span class="o">.</span><span class="n">lstrip</span><span class="p">())</span>  <span class="c1"># 去掉左侧空格</span>
+</span><span id="__span-8-44"><a id="__codelineno-8-44" name="__codelineno-8-44" href="#__codelineno-8-44"></a><span class="nb">print</span><span class="p">(</span><span class="n">s6</span><span class="o">.</span><span class="n">rstrip</span><span class="p">())</span>  <span class="c1"># 去掉右侧空格</span>
+</span><span id="__span-8-45"><a id="__codelineno-8-45" name="__codelineno-8-45" href="#__codelineno-8-45"></a>
+</span><span id="__span-8-46"><a id="__codelineno-8-46" name="__codelineno-8-46" href="#__codelineno-8-46"></a><span class="c1"># 拆分和合并</span>
+</span><span id="__span-8-47"><a id="__codelineno-8-47" name="__codelineno-8-47" href="#__codelineno-8-47"></a><span class="n">s7</span> <span class="o">=</span> <span class="s2">&quot;apple,banana,orange&quot;</span>
+</span><span id="__span-8-48"><a id="__codelineno-8-48" name="__codelineno-8-48" href="#__codelineno-8-48"></a><span class="nb">print</span><span class="p">(</span><span class="n">s7</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">))</span>  <span class="c1"># 以 &#39;,&#39; 分割字符串，返回 [&#39;apple&#39;, &#39;banana&#39;, &#39;orange&#39;]</span>
+</span><span id="__span-8-49"><a id="__codelineno-8-49" name="__codelineno-8-49" href="#__codelineno-8-49"></a>
+</span><span id="__span-8-50"><a id="__codelineno-8-50" name="__codelineno-8-50" href="#__codelineno-8-50"></a><span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Python&quot;</span><span class="p">,</span> <span class="s2">&quot;is&quot;</span><span class="p">,</span> <span class="s2">&quot;fun&quot;</span><span class="p">]</span>
+</span><span id="__span-8-51"><a id="__codelineno-8-51" name="__codelineno-8-51" href="#__codelineno-8-51"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">words</span><span class="p">))</span>  <span class="c1"># 以空格连接列表中的字符串，输出 &#39;Python is fun&#39;</span>
+</span><span id="__span-8-52"><a id="__codelineno-8-52" name="__codelineno-8-52" href="#__codelineno-8-52"></a>
+</span><span id="__span-8-53"><a id="__codelineno-8-53" name="__codelineno-8-53" href="#__codelineno-8-53"></a><span class="c1"># 判断字符串是否以特定字符开头或结尾</span>
+</span><span id="__span-8-54"><a id="__codelineno-8-54" name="__codelineno-8-54" href="#__codelineno-8-54"></a><span class="nb">print</span><span class="p">(</span><span class="n">s1</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">))</span>  <span class="c1"># 判断是否以 &quot;Hello&quot; 开头，返回 True</span>
+</span><span id="__span-8-55"><a id="__codelineno-8-55" name="__codelineno-8-55" href="#__codelineno-8-55"></a><span class="nb">print</span><span class="p">(</span><span class="n">s1</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;!&quot;</span><span class="p">))</span>  <span class="c1"># 判断是否以 &quot;!&quot; 结尾，返回 True</span>
+</span><span id="__span-8-56"><a id="__codelineno-8-56" name="__codelineno-8-56" href="#__codelineno-8-56"></a>
+</span><span id="__span-8-57"><a id="__codelineno-8-57" name="__codelineno-8-57" href="#__codelineno-8-57"></a><span class="c1"># 判断字符串是否为数字或字母</span>
+</span><span id="__span-8-58"><a id="__codelineno-8-58" name="__codelineno-8-58" href="#__codelineno-8-58"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;123&quot;</span><span class="o">.</span><span class="n">isdigit</span><span class="p">())</span>  <span class="c1"># 判断是否全为数字，返回 True</span>
+</span><span id="__span-8-59"><a id="__codelineno-8-59" name="__codelineno-8-59" href="#__codelineno-8-59"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;abc&quot;</span><span class="o">.</span><span class="n">isalpha</span><span class="p">())</span>  <span class="c1"># 判断是否全为字母，返回 True</span>
+</span><span id="__span-8-60"><a id="__codelineno-8-60" name="__codelineno-8-60" href="#__codelineno-8-60"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;abc123&quot;</span><span class="o">.</span><span class="n">isalnum</span><span class="p">())</span>  <span class="c1"># 判断是否全为字母或数字，返回 True</span>
+</span><span id="__span-8-61"><a id="__codelineno-8-61" name="__codelineno-8-61" href="#__codelineno-8-61"></a>
+</span><span id="__span-8-62"><a id="__codelineno-8-62" name="__codelineno-8-62" href="#__codelineno-8-62"></a><span class="c1"># 统计字符出现次数</span>
+</span><span id="__span-8-63"><a id="__codelineno-8-63" name="__codelineno-8-63" href="#__codelineno-8-63"></a><span class="nb">print</span><span class="p">(</span><span class="n">s1</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;o&quot;</span><span class="p">))</span>  <span class="c1"># 统计 &quot;o&quot; 在 s1 中出现的次数，输出 2</span>
+</span><span id="__span-8-64"><a id="__codelineno-8-64" name="__codelineno-8-64" href="#__codelineno-8-64"></a>
+</span><span id="__span-8-65"><a id="__codelineno-8-65" name="__codelineno-8-65" href="#__codelineno-8-65"></a><span class="c1"># 格式化字符串</span>
+</span><span id="__span-8-66"><a id="__codelineno-8-66" name="__codelineno-8-66" href="#__codelineno-8-66"></a><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Alice&quot;</span>
+</span><span id="__span-8-67"><a id="__codelineno-8-67" name="__codelineno-8-67" href="#__codelineno-8-67"></a><span class="n">age</span> <span class="o">=</span> <span class="mi">25</span>
+</span><span id="__span-8-68"><a id="__codelineno-8-68" name="__codelineno-8-68" href="#__codelineno-8-68"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;My name is </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> and I am </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s2"> years old.&quot;</span><span class="p">)</span>  <span class="c1"># 使用 f-string 格式化</span>
+</span><span id="__span-8-69"><a id="__codelineno-8-69" name="__codelineno-8-69" href="#__codelineno-8-69"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;My name is </span><span class="si">{}</span><span class="s2"> and I am </span><span class="si">{}</span><span class="s2"> years old.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">))</span>  <span class="c1"># 使用 format() 格式化</span>
+</span><span id="__span-8-70"><a id="__codelineno-8-70" name="__codelineno-8-70" href="#__codelineno-8-70"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;My name is </span><span class="si">%s</span><span class="s2"> and I am </span><span class="si">%d</span><span class="s2"> years old.&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">))</span>  <span class="c1"># 使用 % 进行格式化</span>
+</span><span id="__span-8-71"><a id="__codelineno-8-71" name="__codelineno-8-71" href="#__codelineno-8-71"></a>
+</span><span id="__span-8-72"><a id="__codelineno-8-72" name="__codelineno-8-72" href="#__codelineno-8-72"></a><span class="c1"># 反转字符串</span>
+</span><span id="__span-8-73"><a id="__codelineno-8-73" name="__codelineno-8-73" href="#__codelineno-8-73"></a><span class="nb">print</span><span class="p">(</span><span class="n">s1</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># 反转字符串，输出 &#39;!dlroW ,olleH&#39;</span>
+</span></code></pre></div>
+<h2 id="_8">切片操作</h2>
+<p><div class="language-py highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="err">```</span><span class="n">python</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="c1"># 字符串、列表、元组的切片操作</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="c1"># 定义字符串、列表和元组</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;Hello, World!&quot;</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="n">tup</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="c1"># 基本切片（[start:end:step]）</span>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">])</span>   <span class="c1"># 输出 &#39;Hello&#39;，索引 0 到 4（不包括 5）</span>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="nb">print</span><span class="p">(</span><span class="n">lst</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">6</span><span class="p">])</span> <span class="c1"># 输出 [2, 3, 4, 5]，索引 2 到 5（不包括 6）</span>
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="nb">print</span><span class="p">(</span><span class="n">tup</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">])</span> <span class="c1"># 输出 (20, 30, 40)，索引 1 到 3（不包括 4）</span>
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>
+</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="c1"># 省略 start 或 end</span>
+</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[:</span><span class="mi">5</span><span class="p">])</span>   <span class="c1"># 输出 &#39;Hello&#39;，从索引 0 到 4</span>
+</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="nb">print</span><span class="p">(</span><span class="n">lst</span><span class="p">[</span><span class="mi">4</span><span class="p">:])</span> <span class="c1"># 输出 [4, 5, 6, 7, 8, 9]，从索引 4 到末尾</span>
+</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="nb">print</span><span class="p">(</span><span class="n">tup</span><span class="p">[:])</span>  <span class="c1"># 输出 (10, 20, 30, 40, 50, 60)，整个元组</span>
+</span><span id="__span-9-18"><a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>
+</span><span id="__span-9-19"><a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a><span class="c1"># 使用步长（step）</span>
+</span><span id="__span-9-20"><a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[::</span><span class="mi">2</span><span class="p">])</span>   <span class="c1"># 输出 &#39;Hlo ol!&#39;，每隔 2 个字符取一个</span>
+</span><span id="__span-9-21"><a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a><span class="nb">print</span><span class="p">(</span><span class="n">lst</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">8</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># 输出 [1, 3, 5, 7]，从索引 1 到 7，步长 2</span>
+</span><span id="__span-9-22"><a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a><span class="nb">print</span><span class="p">(</span><span class="n">tup</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># 输出 (60, 50, 40, 30, 20, 10)，反转元组</span>
+</span><span id="__span-9-23"><a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a>
+</span><span id="__span-9-24"><a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a><span class="c1"># 负索引切片</span>
+</span><span id="__span-9-25"><a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="o">-</span><span class="mi">6</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># 输出 &#39;World&#39;，从倒数第 6 到倒数第 2</span>
+</span><span id="__span-9-26"><a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a><span class="nb">print</span><span class="p">(</span><span class="n">lst</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">:])</span>  <span class="c1"># 输出 [6, 7, 8, 9]，从倒数第 4 到末尾</span>
+</span><span id="__span-9-27"><a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a><span class="nb">print</span><span class="p">(</span><span class="n">tup</span><span class="p">[:</span><span class="o">-</span><span class="mi">3</span><span class="p">])</span>  <span class="c1"># 输出 (10, 20, 30)，从索引 0 到倒数第 3（不包括）</span>
+</span><span id="__span-9-28"><a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a>
+</span><span id="__span-9-29"><a id="__codelineno-9-29" name="__codelineno-9-29" href="#__codelineno-9-29"></a><span class="c1"># 反向切片</span>
+</span><span id="__span-9-30"><a id="__codelineno-9-30" name="__codelineno-9-30" href="#__codelineno-9-30"></a><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># 输出 &#39;!dlroW ,olleH&#39;，反转字符串</span>
+</span><span id="__span-9-31"><a id="__codelineno-9-31" name="__codelineno-9-31" href="#__codelineno-9-31"></a><span class="nb">print</span><span class="p">(</span><span class="n">lst</span><span class="p">[::</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># 输出 [9, 7, 5, 3, 1]，步长 -2 逆序获取</span>
+</span><span id="__span-9-32"><a id="__codelineno-9-32" name="__codelineno-9-32" href="#__codelineno-9-32"></a><span class="nb">print</span><span class="p">(</span><span class="n">tup</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">4</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># 输出 (60, 50, 40)，倒数第 1 到倒数第 4 逆向切片</span>
+</span><span id="__span-9-33"><a id="__codelineno-9-33" name="__codelineno-9-33" href="#__codelineno-9-33"></a>
+</span><span id="__span-9-34"><a id="__codelineno-9-34" name="__codelineno-9-34" href="#__codelineno-9-34"></a><span class="c1"># 替换部分列表元素</span>
+</span><span id="__span-9-35"><a id="__codelineno-9-35" name="__codelineno-9-35" href="#__codelineno-9-35"></a><span class="n">lst</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">]</span>  <span class="c1"># 修改索引 2 到 4 的值</span>
+</span><span id="__span-9-36"><a id="__codelineno-9-36" name="__codelineno-9-36" href="#__codelineno-9-36"></a><span class="nb">print</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>  <span class="c1"># 输出 [0, 1, 100, 200, 300, 5, 6, 7, 8, 9]</span>
+</span><span id="__span-9-37"><a id="__codelineno-9-37" name="__codelineno-9-37" href="#__codelineno-9-37"></a>
+</span><span id="__span-9-38"><a id="__codelineno-9-38" name="__codelineno-9-38" href="#__codelineno-9-38"></a><span class="c1"># 删除部分列表元素</span>
+</span><span id="__span-9-39"><a id="__codelineno-9-39" name="__codelineno-9-39" href="#__codelineno-9-39"></a><span class="k">del</span> <span class="n">lst</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span>  <span class="c1"># 删除索引 3 到 5 的元素</span>
+</span><span id="__span-9-40"><a id="__codelineno-9-40" name="__codelineno-9-40" href="#__codelineno-9-40"></a><span class="nb">print</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>  <span class="c1"># 输出 [0, 1, 100, 7, 8, 9]</span>
+</span></code></pre></div>
+```</p>
 
 
 

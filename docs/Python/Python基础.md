@@ -195,7 +195,7 @@ print((1, 3) > (1, 2, 5))  # True，因为 3 > 2
 
 ```
 
-使用 enumerate() 函数在 for 循环中 同时返回索引和值
+## 使用 enumerate() 函数
 
 ```py
 
@@ -244,4 +244,77 @@ for index, (key, value) in enumerate(data.items()):
 # 索引: 1, 键: age, 值: 25
 # 索引: 2, 键: city, 值: New York
 
+```
+
+## 迭代器（Iterator）
+Python 中的一种对象，可以逐个返回元素，使用 `iter()` 生成，`next()` 进行访问
+
+```py
+# 创建一个可迭代对象（列表）
+nums = [1, 2, 3, 4]
+
+# 使用 iter() 将其转换为迭代器
+iter_nums = iter(nums)
+
+# 使用 next() 获取元素
+print(next(iter_nums))  # 输出 1
+print(next(iter_nums))  # 输出 2
+print(next(iter_nums))  # 输出 3
+print(next(iter_nums))  # 输出 4
+# print(next(iter_nums))  # 若超出范围，会抛出 StopIteration 异常
+
+# 通过 for 循环遍历迭代器
+iter_nums = iter(nums)  # 重新创建迭代器
+for num in iter_nums:
+    print(num)  # 依次输出 1, 2, 3, 4
+
+# 自定义迭代器（必须实现 __iter__() 和 __next__()）
+class MyIterator:
+    def __init__(self, start, end):
+        self.current = start
+        self.end = end
+
+    def __iter__(self):
+        return self  # 迭代器对象自身
+
+    def __next__(self):
+        if self.current >= self.end:
+            raise StopIteration  # 迭代结束
+        value = self.current
+        self.current += 1
+        return value
+
+# 创建迭代器实例
+my_iter = MyIterator(1, 5)
+
+# 使用 for 循环遍历
+for val in my_iter:
+    print(val)  # 输出 1, 2, 3, 4
+
+# 使用 next() 逐步获取
+my_iter = MyIterator(10, 13)
+print(next(my_iter))  # 输出 10
+print(next(my_iter))  # 输出 11
+print(next(my_iter))  # 输出 12
+# print(next(my_iter))  # 超出范围会抛出 StopIteration 异常
+
+# 使用生成器创建迭代器（更简洁）
+def my_generator(start, end):
+    while start < end:
+        yield start  # 生成一个值
+        start += 1
+
+# 生成器创建迭代器
+gen = my_generator(1, 5)
+
+# 使用 next() 获取生成器中的值
+print(next(gen))  # 输出 1
+print(next(gen))  # 输出 2
+print(next(gen))  # 输出 3
+print(next(gen))  # 输出 4
+# print(next(gen))  # 超出范围会抛出 StopIteration 异常
+
+# 通过 for 循环遍历生成器
+for val in my_generator(10, 13):
+    print(val)  # 输出 10, 11, 12
 ```

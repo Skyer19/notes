@@ -203,8 +203,12 @@ nav:
           - 'Transformer': ./nlp/Transformer模型.md
         
         - 自然语言处理的应用:
-          - RAG: './nlp/RAG.md'
+          - RAG: 
+            - 'RAG介绍': './nlp/RAG/RAG介绍.md'
+            - 'RAG中的重排序': './nlp/RAG/RAG中的重排序.md'
+          - '搜索介绍': './nlp/搜索系统.md'
           - 大模型:
+            - '有监督微调': './nlp/有监督微调.md'
             - '大模型的评估方法': ./Courses/nlp/EvaluatingLLM.md
 
         # - Pre-training models:

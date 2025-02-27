@@ -201,6 +201,11 @@ nav:
           - 'ELMo模型': ./nlp/ELMo模型.md
           - 'BERT': ./nlp/BERT模型.md
           - 'Transformer': ./nlp/Transformer模型.md
+        
+        - 自然语言处理的应用:
+          - RAG: './nlp/RAG.md'
+          - 大模型:
+            - '大模型的评估方法': ./Courses/nlp/EvaluatingLLM.md
 
         # - Pre-training models:
         #   - Encoder model:
@@ -211,7 +216,6 @@ nav:
         #     - 'Method': ./Courses/nlp/Pre-training_models/encoder-decoder/method.md
         # - 'Transformer': ./Courses/nlp/transformer.md
    
-        - '大模型的评估方法': ./Courses/nlp/EvaluatingLLM.md
     
     # - About: 'about.md'
 
